@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Science Explorer - Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f2ff, #f1eaff, #fff4fa);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #304c80;
+}
+
+/* Celebration Background */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 16px;
+    border-radius: 3px;
+    animation: fall linear infinite;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+/* Main Container */
+
+.container {
+    width: 90%;
+    max-width: 950px;
+    margin: 35px auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #4569a5;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #8b6bc5;
+}
+
+/* Celebration Card */
+
+.celebration-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 30px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(83, 105, 160, 0.16);
+    border: 3px solid #dce7ff;
+    overflow: hidden;
+}
+
+.small-title {
+    color: #8a6ac1;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #31568e;
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    color: #8b6bc5;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px 0 20px;
+}
+
+/* Robot */
+
+.robot {
+    font-size: 100px;
+    margin: 15px 0;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Student Name */
+
+.student-message {
+    font-size: 20px;
+    color: #526b9a;
+    margin: 15px 0;
+}
+
+.student-name {
+    display: inline-block;
+    color: #7957b5;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 8px 25px;
+    background: #f0eaff;
+    border-radius: 15px;
+}
+
+/* Explorer Title */
+
+.explorer-title {
+    font-size: 27px;
+    color: #31568e;
+    margin: 25px 0 10px;
+}
+
+.description {
+    color: #64799f;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* Units */
+
+.units-title {
+    color: #7957b5;
+    font-size: 23px;
+    margin: 35px 0 18px;
+}
+
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.unit-card {
+    background: #f2f6ff;
+    border: 2px solid #dce7ff;
+    border-radius: 18px;
+    padding: 18px 10px;
+    transition: 0.3s;
+}
+
+.unit-card:hover {
+    transform: translateY(-5px);
+    background: #eee8ff;
+    border-color: #bba6ed;
+}
+
+.unit-icon {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.unit-card h3 {
+    color: #405f99;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.unit-card p {
+    color: #8798b8;
+    font-size: 14px;
+    margin: 5px;
+}
+
+/* Final Message */
+
+.final-message {
+    margin-top: 35px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8eaff, #f6eaff);
+    border-radius: 20px;
+}
+
+.final-message h2 {
+    color: #7557b1;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.final-message p {
+    color: #62769d;
+    font-size: 16px;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore-btn {
+    background: #557bc0;
+    color: white;
+}
+
+.home-btn {
+    background: #9273c7;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(70, 80, 140, 0.2);
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    color: #8292b2;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    .celebration-card {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .robot {
+        font-size: 75px;
+    }
+
+    .student-name {
+        font-size: 24px;
+    }
+
+    .units-grid {
+        gap: 10px;
+    }
+
+    .unit-card {
+        padding: 14px 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">🌍 SCIENCE <span>WORLD</span></div>
+    </div>
+
+    <div class="celebration-card">
+
+        <div class="small-title">🎉 A SPECIAL MOMENT 🎉</div>
+
+        <h1>Congratulations!</h1>
+
+        <div class="subtitle">You Did It!</div>
+
+        <div class="robot">🤖🏆</div>
+
+        <div class="student-message">
+            Well done,
+            <br>
+            <span class="student-name" id="studentName">
+                Science Explorer
+            </span>
+        </div>
+
+        <h2 class="explorer-title">
+            You Are a Science Explorer! 🚀
+        </h2>
+
+        <p class="description">
+            You completed an amazing journey through the world of science.
+            You explored, learned, discovered, and challenged yourself.
+            Be proud of what you have achieved!
+        </p>
+
+        <h2 class="units-title">Your Learning Journey 🌟</h2>
+
+        <div class="units-grid">
+
+            <div class="unit-card">
+                <div class="unit-icon">🔥</div>
+                <h3>Unit One</h3>
+                <p>Burning</p>
+            </div>
+
+            <div class="unit-card">
+                <div class="unit-icon">🫁</div>
+                <h3>Unit Two</h3>
+                <p>Respiration</p>
+            </div>
+
+            <div class="unit-card">
+                <div class="unit-icon">🍎</div>
+                <h3>Unit Three</h3>
+                <p>Digestion</p>
+            </div>
+
+            <div class="unit-card">
+                <div class="unit-icon">❤️</div>
+                <h3>Unit Four</h3>
+                <p>Blood Circulation</p>
+            </div>
+
+        </div>
+
+        <div class="final-message">
+            <h2>Keep Exploring! 🌍</h2>
+            <p>
+                Keep Learning • Keep Discovering • Keep Shining!
+            </p>
+            <div style="font-size: 30px;">
+                ⭐ 🎓 🌟 🏆 ⭐
+            </div>
+        </div>
+
+        <div class="buttons">
+
+            <button class="explore-btn"
+            onclick="window.location.href='units.html'">
+                Explore Again 🚀
+            </button>
+
+            <button class="home-btn"
+            onclick="window.location.href='index.html'">
+                Back to Home 🏠
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Science World © 2026 | Learning Is an Adventure!
+    </div>
+
+</div>
+
+<script>
+
+// Get Student Name
+
+let studentName = localStorage.getItem("studentName");
+
+if (studentName && studentName.trim() !== "") {
+    document.getElementById("studentName").textContent = studentName;
+} else {
+    document.getElementById("studentName").textContent = "Science Explorer";
+}
+
+// Create Falling Confetti
+
+const colors = [
+    "#8b6bc5",
+    "#6b91d1",
+    "#f5b7d2",
+    "#f6cf72",
+    "#8dd8c5",
+    "#b7a5ee"
+];
+
+for (let i = 0; i < 45; i++) {
+
+    let confetti = document.createElement("div");
+
+    confetti.className = "confetti";
+
+    confetti.style.left = Math.random() * 100 + "vw";
+
+    confetti.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+    confetti.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+    confetti.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    confetti.style.width =
+        (6 + Math.random() * 7) + "px";
+
+    confetti.style.height =
+        (10 + Math.random() * 10) + "px";
+
+    document.body.appendChild(confetti);
+}
+
+</script>
+
+</body>
+</html>

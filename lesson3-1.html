@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 3-1 - Where Food Goes | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+    color: #263238;
+}
+
+header {
+    background: #176b87;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffb703;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.hero h1 {
+    color: #176b87;
+}
+
+.brainy {
+    font-size: 75px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 25px auto;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.section h2 {
+    color: #176b87;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.brainy-box {
+    background: #e0f7fa;
+    padding: 18px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.brainy-box span {
+    font-size: 55px;
+}
+
+button {
+    background: #176b87;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0d526b;
+    transform: scale(1.04);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.audio-box {
+    text-align: center;
+    background: #f3e5f5;
+    padding: 22px;
+    border-radius: 18px;
+}
+
+.audio-box button {
+    background: #8e44ad;
+}
+
+.audio-box button:hover {
+    background: #6c3483;
+}
+
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #111;
+}
+
+.video-box iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    left: 0;
+    top: 0;
+}
+
+.organs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+}
+
+.organ-card {
+    background: #e0f7fa;
+    padding: 18px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.organ-card:hover {
+    border-color: #176b87;
+    transform: translateY(-5px);
+}
+
+.organ-card .emoji {
+    font-size: 45px;
+}
+
+.organ-card h3 {
+    color: #176b87;
+}
+
+#organInfo {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 15px;
+    display: none;
+    line-height: 1.8;
+}
+
+.journey {
+    text-align: center;
+}
+
+.journey-track {
+    background: #e0f7fa;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+.food {
+    font-size: 45px;
+    display: inline-block;
+    animation: foodMove 3s infinite ease-in-out;
+}
+
+@keyframes foodMove {
+    0% { transform: translateX(-60px); }
+    50% { transform: translateX(60px); }
+    100% { transform: translateX(-60px); }
+}
+
+.path-step {
+    background: white;
+    padding: 12px;
+    margin: 8px auto;
+    max-width: 500px;
+    border-radius: 15px;
+    border: 2px solid #b2ebf2;
+    font-weight: bold;
+}
+
+.path-step.active {
+    background: #ffecb3;
+    border-color: #ffb703;
+    transform: scale(1.03);
+}
+
+.game-area {
+    background: #f3e5f5;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.game-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.game-options button {
+    background: #8e44ad;
+}
+
+#gameFeedback, #quizFeedback {
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 25px;
+}
+
+.progress {
+    height: 15px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #00a896;
+    transition: 0.4s;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #e0f7fa;
+    color: #263238;
+    margin: 10px 0;
+}
+
+.quiz-option:hover {
+    background: #b2ebf2;
+}
+
+#quizResult {
+    display: none;
+    text-align: center;
+    background: #e8f5e9;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+footer {
+    background: #176b87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media(max-width:600px) {
+    header {
+        gap: 15px;
+    }
+
+    header nav a {
+        margin-left: 7px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit3.html">Unit Three</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="brainy">🤖</div>
+
+    <h1>Lesson 3-1: Where Food Goes 🍎</h1>
+
+    <p>
+        Welcome, little scientists!
+        Let's discover the amazing journey of food inside our bodies!
+    </p>
+
+</section>
+
+<div class="container">
+
+<!-- INTRODUCTION -->
+<section class="section">
+
+    <div class="brainy-box">
+        <span>🤖</span>
+
+        <div>
+            <h2>Hello, Science Explorers!</h2>
+
+            <p>
+                Have you ever wondered what happens to food
+                after you eat it?
+                Today, we will follow its journey inside the body!
+            </p>
+        </div>
+    </div>
+
+    <h2>🎯 Learning Objectives</h2>
+
+    <ul>
+        <li>Understand the meaning of digestion.</li>
+        <li>Identify the organs of the digestive tract.</li>
+        <li>Arrange the path of food inside the body.</li>
+        <li>Recognize the digestive system diagram.</li>
+    </ul>
+
+</section>
+
+<!-- AUDIO EXPLANATION -->
+<section class="section">
+
+    <h2>🎙️ Listen to Brainy's Explanation</h2>
+
+    <div class="audio-box">
+
+        <div style="font-size:55px;">🔊</div>
+
+        <p>
+            Listen to the lesson explanation in English.
+            You can pause and continue whenever you want.
+        </p>
+
+        <button onclick="speakLesson()">▶ Play Explanation</button>
+
+        <button onclick="pauseSpeech()">⏸ Pause</button>
+
+        <button onclick="resumeSpeech()">▶ Continue</button>
+
+        <button onclick="stopSpeech()">⏹ Stop</button>
+
+        <p id="audioStatus">Ready to listen!</p>
+
+    </div>
+
+</section>
+
+<!-- VIDEO -->
+<section class="section">
+
+    <h2>🎬 Watch the Learning Video</h2>
+
+    <p>
+        Watch this educational animation to explore
+        how food travels through the digestive system.
+    </p>
+
+    <div class="video-box">
+
+        <iframe
+            src="https://www.youtube-nocookie.com/embed/HW1_0LSJIwc"
+            title="Digestive System Educational Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <p>
+        💡 Watch carefully, then try the activities below!
+    </p>
+
+</section>
+
+<!-- WHAT IS DIGESTION -->
+<section class="section">
+
+    <h2>📘 What Is Digestion?</h2>
+
+    <p>
+        Breaking down food with teeth and changing it
+        into a form that is easy to absorb is called
+        <strong>digestion</strong>.
+    </p>
+
+    <div style="text-align:center; font-size:65px;">
+        🍎 ➡️ 🦷 ➡️ 🍽️
+    </div>
+
+    <div class="brainy-box">
+        <span>🤖</span>
+
+        <p>
+            Brainy says: Digestion helps our bodies process
+            the food we eat. The journey begins in the mouth!
+        </p>
+    </div>
+
+</section>
+
+<!-- CLICKABLE ORGANS -->
+<section class="section">
+
+    <h2>🧍 Explore the Digestive Organs</h2>
+
+    <p>
+        Click on each organ to discover its name and place
+        in the journey of food.
+    </p>
+
+    <div class="organs-grid">
+
+        <div class="organ-card" onclick="showOrgan('mouth')">
+            <div class="emoji">👄</div>
+            <h3>Mouth</h3>
+            <p>Where food enters.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('pharynx')">
+            <div class="emoji">🗣️</div>
+            <h3>Pharynx</h3>
+            <p>The passage behind the mouth.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('esophagus')">
+            <div class="emoji">〰️</div>
+            <h3>Esophagus</h3>
+            <p>The food pipe.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('stomach')">
+            <div class="emoji">🫃</div>
+            <h3>Stomach</h3>
+            <p>Receives the food.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('small')">
+            <div class="emoji">🌀</div>
+            <h3>Small Intestine</h3>
+            <p>Part of the digestive tract.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('large')">
+            <div class="emoji">⭕</div>
+            <h3>Large Intestine</h3>
+            <p>Follows the small intestine.</p>
+        </div>
+
+        <div class="organ-card" onclick="showOrgan('anus')">
+            <div class="emoji">⬇️</div>
+            <h3>Anus</h3>
+            <p>The exit of undigested waste.</p>
+        </div>
+
+    </div>
+
+    <div id="organInfo"></div>
+
+</section>
+
+<!-- FOOD JOURNEY -->
+<section class="section journey">
+
+    <h2>🚀 The Journey of Food</h2>
+
+    <p>
+        Let's follow the food from the mouth to the anus!
+    </p>
+
+    <div class="journey-track">
+
+        <div class="food">🍎</div>
+
+        <div id="journeySteps">
+
+            <div class="path-step">1. Mouth 👄</div>
+            <div class="path-step">2. Pharynx 🗣️</div>
+            <div class="path-step">3. Esophagus 〰️</div>
+            <div class="path-step">4. Stomach 🫃</div>
+            <div class="path-step">5. Small Intestine 🌀</div>
+            <div class="path-step">6. Large Intestine ⭕</div>
+            <div class="path-step">7. Anus ⬇️</div>
+
+        </div>
+
+        <button onclick="startJourney()">
+            ▶ Start Food Journey
+        </button>
+
+        <button onclick="resetJourney()">
+            🔄 Restart
+        </button>
+
+        <p id="journeyMessage">
+            Press Start to begin!
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ORDER GAME -->
+<section class="section">
+
+    <h2>🎮 Brainy's Ordering Game</h2>
+
+    <div class="game-area">
+
+        <div style="font-size:55px;">🤖</div>
+
+        <h3>Can You Find the Next Organ?</h3>
+
+        <p id="gameQuestion">
+            What is the first organ food enters?
+        </p>
+
+        <div class="game-options" id="gameOptions">
+
+            <button onclick="checkGame('Mouth')">Mouth</button>
+            <button onclick="checkGame('Stomach')">Stomach</button>
+            <button onclick="checkGame('Anus')">Anus</button>
+
+        </div>
+
+        <p id="gameFeedback"></p>
+
+        <p id="gameScore">Score: 0</p>
+
+        <button onclick="restartGame()">🔄 Restart Game</button>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+<section class="section">
+
+    <h2>🏆 Lesson Challenge</h2>
+
+    <p>
+        Answer the questions and test what you learned!
+    </p>
+
+    <div id="quizArea">
+
+        <div class="progress">
+            <div class="progress-fill" id="quizProgress"></div>
+        </div>
+
+        <p id="questionNumber"></p>
+
+        <h3 id="questionText"></h3>
+
+        <div id="quizOptions"></div>
+
+        <p id="quizFeedback"></p>
+
+        <button id="nextQuestion" onclick="nextQuizQuestion()" disabled>
+            Next Question ➡️
+        </button>
+
+    </div>
+
+    <div id="quizResult">
+
+        <h2>🎉 Great Work, Scientist!</h2>
+
+        <p id="finalScore"></p>
+
+        <p id="finalMessage"></p>
+
+        <button onclick="restartQuiz()">Try Again 🔄</button>
+
+    </div>
+
+</section>
+
+<!-- NAVIGATION -->
+<div class="navigation">
+
+    <button onclick="location.href='unit3.html'">
+        📚 Back to Unit Three
+    </button>
+
+    <button onclick="location.href='unit3.html'">
+        ➡️ Next Lesson
+    </button>
+
+    <button onclick="location.href='units.html'">
+        All Units
+    </button>
+
+    <button onclick="location.href='index.html'">
+        🏠 Home
+    </button>
+
+</div>
+
+</div>
+
+<footer>
+    <p>Science World | Learn, Explore, Discover!</p>
+</footer>
+
+<script>
+
+// AUDIO EXPLANATION
+
+let speech;
+
+function speakLesson() {
+
+    if (!('speechSynthesis' in window)) {
+        document.getElementById("audioStatus").textContent =
+            "Your browser does not support audio reading.";
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    let explanation = `
+    Hello little scientists!
+    Welcome to lesson three dash one, Where Food Goes.
+    Today we will learn about digestion.
+    Digestion means breaking down food with teeth
+    and changing it into a form that is easy to absorb.
+    Food enters the body through the mouth.
+    Then it passes through the pharynx.
+    Next, it travels through the esophagus,
+    which is also called the food pipe.
+    After that, food reaches the stomach.
+    Then it moves into the small intestine,
+    followed by the large intestine.
+    Finally, undigested food leaves the body through the anus.
+    The path of food from the mouth to the anus
+    is called the digestive tract.
+    Great job, little scientists!
+    `;
+
+    speech = new SpeechSynthesisUtterance(explanation);
+    speech.lang = "en-US";
+    speech.rate = 0.85;
+    speech.pitch = 1;
+
+    speech.onstart = function() {
+        document.getElementById("audioStatus").textContent =
+            "🔊 Brainy is explaining...";
+    };
+
+    speech.onend = function() {
+        document.getElementById("audioStatus").textContent =
+            "Explanation completed! Great job!";
+    };
+
+    speechSynthesis.speak(speech);
+}
+
+function pauseSpeech() {
+    speechSynthesis.pause();
+    document.getElementById("audioStatus").textContent = "Audio paused.";
+}
+
+function resumeSpeech() {
+    speechSynthesis.resume();
+    document.getElementById("audioStatus").textContent = "Audio continued.";
+}
+
+function stopSpeech() {
+    speechSynthesis.cancel();
+    document.getElementById("audioStatus").textContent = "Audio stopped.";
+}
+
+
+// ORGAN INFORMATION
+
+const organData = {
+
+    mouth: {
+        title: "Mouth 👄",
+        text: "Food enters the digestive tract through the mouth. Teeth break food into smaller pieces."
+    },
+
+    pharynx: {
+        title: "Pharynx 🗣️",
+        text: "The pharynx is the passage behind the mouth. Food passes through it on its way to the esophagus."
+    },
+
+    esophagus: {
+        title: "Esophagus 〰️",
+        text: "The esophagus is also called the food pipe. It carries food from the pharynx to the stomach."
+    },
+
+    stomach: {
+        title: "Stomach 🫃",
+        text: "The stomach receives food after it passes through the esophagus."
+    },
+
+    small: {
+        title: "Small Intestine 🌀",
+        text: "Food passes into the small intestine after leaving the stomach."
+    },
+
+    large: {
+        title: "Large Intestine ⭕",
+        text: "The large intestine follows the small intestine in the digestive tract."
+    },
+
+    anus: {
+        title: "Anus ⬇️",
+        text: "Undigested food comes out of the body through the anus."
+    }
+
+};
+
+function showOrgan(name) {
+
+    let organ = organData[name];
+
+    let box = document.getElementById("organInfo");
+
+    box.style.display = "block";
+
+    box.innerHTML = `
+        <h3>${organ.title}</h3>
+        <p>${organ.text}</p>
+    `;
+
+}
+
+
+// FOOD JOURNEY ANIMATION
+
+let journeyIndex = 0;
+let journeyTimer = null;
+
+const journeyNames = [
+    "Mouth",
+    "Pharynx",
+    "Esophagus",
+    "Stomach",
+    "Small Intestine",
+    "Large Intestine",
+    "Anus"
+];
+
+function startJourney() {
+
+    clearInterval(journeyTimer);
+
+    journeyIndex = 0;
+
+    let steps = document.querySelectorAll(".path-step");
+
+    steps.forEach(step => step.classList.remove("active"));
+
+    document.getElementById("journeyMessage").textContent =
+        "The food journey has started!";
+
+    journeyTimer = setInterval(function() {
+
+        if (journeyIndex >= journeyNames.length) {
+
+            clearInterval(journeyTimer);
+
+            document.getElementById("journeyMessage").textContent =
+                "🎉 The journey is complete!";
+
+            return;
+        }
+
+        steps.forEach(step => step.classList.remove("active"));
+
+        steps[journeyIndex].classList.add("active");
+
+        document.getElementById("journeyMessage").textContent =
+            "Food is now at: " + journeyNames[journeyIndex];
+
+        journeyIndex++;
+
+    }, 1400);
+
+}
+
+function resetJourney() {
+
+    clearInterval(journeyTimer);
+
+    journeyIndex = 0;
+
+    document.querySelectorAll(".path-step").forEach(step => {
+        step.classList.remove("active");
+    });
+
+    document.getElementById("journeyMessage").textContent =
+        "Press Start to begin!";
+
+}
+
+
+// ORDERING GAME
+
+const gameQuestions = [
+    {
+        question: "What is the first organ food enters?",
+        options: ["Mouth", "Stomach", "Anus"],
+        answer: "Mouth"
+    },
+    {
+        question: "What comes after the mouth?",
+        options: ["Large Intestine", "Pharynx", "Stomach"],
+        answer: "Pharynx"
+    },
+    {
+        question: "Which organ is also called the food pipe?",
+        options: ["Stomach", "Esophagus", "Anus"],
+        answer: "Esophagus"
+    },
+    {
+        question: "What comes after the esophagus?",
+        options: ["Stomach", "Mouth", "Large Intestine"],
+        answer: "Stomach"
+    },
+    {
+        question: "Which comes after the stomach?",
+        options: ["Anus", "Small Intestine", "Pharynx"],
+        answer: "Small Intestine"
+    },
+    {
+        question: "What comes after the small intestine?",
+        options: ["Mouth", "Large Intestine", "Esophagus"],
+        answer: "Large Intestine"
+    },
+    {
+        question: "Where does undigested food leave the body?",
+        options: ["Stomach", "Mouth", "Anus"],
+        answer: "Anus"
+    }
+];
+
+let gameIndex = 0;
+let gamePoints = 0;
+
+function loadGame() {
+
+    let q = gameQuestions[gameIndex];
+
+    document.getElementById("gameQuestion").textContent = q.question;
+
+    let options = document.getElementById("gameOptions");
+
+    options.innerHTML = "";
+
+    q.options.forEach(option => {
+
+        let btn = document.createElement("button");
+
+        btn.textContent = option;
+
+        btn.onclick = function() {
+            checkGame(option);
+        };
+
+        options.appendChild(btn);
+
+    });
+
+    document.getElementById("gameFeedback").textContent = "";
+
+}
+
+function checkGame(answer) {
+
+    let correct = gameQuestions[gameIndex].answer;
+
+    if (answer === correct) {
+
+        gamePoints++;
+
+        document.getElementById("gameFeedback").textContent =
+            "✅ Excellent! Correct answer!";
+
+    } else {
+
+        document.getElementById("gameFeedback").textContent =
+            "❌ Try again! Think carefully.";
+
+        return;
+    }
+
+    document.getElementById("gameScore").textContent =
+        "Score: " + gamePoints;
+
+    document.querySelectorAll("#gameOptions button").forEach(btn => {
+        btn.disabled = true;
+    });
+
+    setTimeout(function() {
+
+        gameIndex++;
+
+        if (gameIndex >= gameQuestions.length) {
+
+            document.getElementById("gameQuestion").textContent =
+                "🎉 You completed the game!";
+
+            document.getElementById("gameOptions").innerHTML = "";
+
+            document.getElementById("gameFeedback").textContent =
+                "Your final score is " + gamePoints + " / 7";
+
+        } else {
+
+            loadGame();
+
+        }
+
+    }, 1000);
+
+}
+
+function restartGame() {
+
+    gameIndex = 0;
+    gamePoints = 0;
+
+    document.getElementById("gameScore").textContent = "Score: 0";
+
+    loadGame();
+
+}
+
+loadGame();
+
+
+// FINAL QUIZ
+
+const quizQuestions = [
+
+    {
+        q: "What is digestion?",
+        options: [
+            "Breaking down food",
+            "Breathing air",
+            "Moving the body"
+        ],
+        answer: 0,
+        explain: "Digestion means breaking down food into a form that is easy to absorb."
+    },
+
+    {
+        q: "Where does food enter the digestive tract?",
+        options: [
+            "Stomach",
+            "Mouth",
+            "Small intestine"
+        ],
+        answer: 1,
+        explain: "Food enters the digestive tract through the mouth."
+    },
+
+    {
+        q: "What is another name for the esophagus?",
+        options: [
+            "Food pipe",
+            "Air pipe",
+            "Blood vessel"
+        ],
+        answer: 0,
+        explain: "The esophagus is also called the food pipe."
+    },
+
+    {
+        q: "Which organ comes after the stomach?",
+        options: [
+            "Pharynx",
+            "Mouth",
+            "Small intestine"
+        ],
+        answer: 2,
+        explain: "Food passes from the stomach to the small intestine."
+    },
+
+    {
+        q: "What is the path of food from the mouth to the anus called?",
+        options: [
+            "Respiratory system",
+            "Digestive tract",
+            "Circulatory system"
+        ],
+        answer: 1,
+        explain: "The path of food from the mouth to the anus is called the digestive tract."
+    }
+
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function loadQuiz() {
+
+    quizAnswered = false;
+
+    let q = quizQuestions[quizIndex];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (quizIndex + 1) + " of " + quizQuestions.length;
+
+    document.getElementById("questionText").textContent = q.q;
+
+    document.getElementById("quizProgress").style.width =
+        (quizIndex / quizQuestions.length * 100) + "%";
+
+    document.getElementById("quizFeedback").textContent = "";
+
+    document.getElementById("nextQuestion").disabled = true;
+
+    let optionsBox = document.getElementById("quizOptions");
+
+    optionsBox.innerHTML = "";
+
+    q.options.forEach((option, index) => {
+
+        let btn = document.createElement("button");
+
+        btn.className = "quiz-option";
+
+        btn.textContent = option;
+
+        btn.onclick = function() {
+            answerQuiz(index);
+        };
+
+        optionsBox.appendChild(btn);
+
+    });
+
+}
+
+function answerQuiz(index) {
+
+    if (quizAnswered) return;
+
+    quizAnswered = true;
+
+    let q = quizQuestions[quizIndex];
+
+    let buttons = document.querySelectorAll(".quiz-option");
+
+    if (index === q.answer) {
+
+        quizScore++;
+
+        document.getElementById("quizFeedback").textContent =
+            "✅ Correct! " + q.explain;
+
+    } else {
+
+        document.getElementById("quizFeedback").textContent =
+            "❌ Not quite. " + q.explain;
+
+    }
+
+    buttons.forEach((btn, i) => {
+
+        btn.disabled = true;
+
+        if (i === q.answer) {
+            btn.style.background = "#c8e6c9";
+        }
+
+    });
+
+    document.getElementById("nextQuestion").disabled = false;
+
+    if (quizIndex === quizQuestions.length - 1) {
+        document.getElementById("nextQuestion").textContent =
+            "See My Result 🏆";
+    }
+
+}
+
+function nextQuizQuestion() {
+
+    quizIndex++;
+
+    if (quizIndex < quizQuestions.length) {
+
+        document.getElementById("nextQuestion").textContent =
+            "Next Question ➡️";
+
+        loadQuiz();
+
+    } else {
+
+        showQuizResult();
+
+    }
+
+}
+
+function showQuizResult() {
+
+    document.getElementById("quizArea").style.display = "none";
+
+    document.getElementById("quizResult").style.display = "block";
+
+    let percentage = Math.round(
+        quizScore / quizQuestions.length * 100
+    );
+
+    document.getElementById("quizProgress").style.width = "100%";
+
+    document.getElementById("finalScore").textContent =
+        "Your Score: " + quizScore + " / " + quizQuestions.length +
+        " (" + percentage + "%)";
+
+    let studentName = localStorage.getItem("studentName") || "Science Explorer";
+
+    localStorage.setItem("lesson31Score", quizScore);
+    localStorage.setItem("lesson31Percentage", percentage);
+
+    document.getElementById("finalMessage").textContent =
+        percentage >= 80
+        ? "Amazing work, " + studentName + "! 🌟"
+        : "Good try, " + studentName + "! Keep learning and try again!";
+
+}
+
+function restartQuiz() {
+
+    quizIndex = 0;
+    quizScore = 0;
+
+    document.getElementById("quizArea").style.display = "block";
+
+    document.getElementById("quizResult").style.display = "none";
+
+    document.getElementById("nextQuestion").textContent =
+        "Next Question ➡️";
+
+    loadQuiz();
+
+}
+
+loadQuiz();
+
+</script>
+
+</body>
+</html>

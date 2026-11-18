@@ -1,0 +1,1243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3-2 - The Function of Saliva | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #effbfc;
+    color: #24434b;
+}
+
+header {
+    background: linear-gradient(120deg, #087e8b, #20b8b0);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+.hero {
+    background: linear-gradient(135deg, #b8f0ed, #e0f8ff);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #087e8b;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.brainy {
+    font-size: 75px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 35px auto;
+}
+
+.section {
+    background: white;
+    padding: 27px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 5px 18px rgba(0,100,110,0.09);
+}
+
+.section h2 {
+    color: #07838c;
+    margin-top: 0;
+}
+
+.section p {
+    line-height: 1.9;
+}
+
+.objectives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.objective {
+    background: #e7f9f8;
+    border: 1px solid #c6eeeb;
+    padding: 17px;
+    border-radius: 14px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #079b9d;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 6px 3px;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #056f79;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.audio-box {
+    background: linear-gradient(135deg, #e0f8f5, #e6f4ff);
+    padding: 23px;
+    border-radius: 17px;
+    text-align: center;
+}
+
+.audio-icon {
+    font-size: 55px;
+    margin: 8px;
+}
+
+.audio-status {
+    color: #087e8b;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+    border-radius: 15px;
+}
+
+.video-note {
+    background: #fff5df;
+    padding: 13px;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.info-card {
+    background: #f0fbfa;
+    border: 2px solid #d2f0ed;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #16aaa7;
+}
+
+.info-card .emoji {
+    font-size: 42px;
+}
+
+.info-card h3 {
+    color: #087e8b;
+}
+
+.info-detail {
+    display: none;
+    background: #e6f8f6;
+    border-left: 5px solid #0ba5a1;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.definition {
+    background: #e5f9f7;
+    border-left: 6px solid #0a9d9a;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.experiment {
+    background: #f0fbff;
+    border: 2px solid #c9edf5;
+    border-radius: 17px;
+    padding: 22px;
+    text-align: center;
+}
+
+.tubes {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.tube-card {
+    width: 190px;
+    background: white;
+    padding: 17px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.test-tube {
+    width: 65px;
+    height: 135px;
+    border: 5px solid #8aaeb7;
+    border-top: none;
+    border-radius: 0 0 22px 22px;
+    margin: 15px auto;
+    position: relative;
+    overflow: hidden;
+    background: #f8ffff;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65%;
+    background: #e9d7a0;
+    transition: background 1s;
+}
+
+.tube-label {
+    font-weight: bold;
+    color: #087e8b;
+}
+
+.result-label {
+    min-height: 45px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.experiment-controls {
+    background: white;
+    padding: 17px;
+    border-radius: 12px;
+    line-height: 1.8;
+}
+
+.step-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.step {
+    padding: 16px;
+    background: white;
+    border: 2px solid #d8eeee;
+    border-radius: 13px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+    color: #24434b;
+}
+
+.step.active {
+    background: #d9f7f1;
+    border-color: #079b9d;
+}
+
+.step-number {
+    display: inline-flex;
+    background: #079b9d;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+}
+
+.step-description {
+    background: #e9f9f7;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 15px;
+    min-height: 75px;
+    line-height: 1.8;
+}
+
+.prediction-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.prediction-options button {
+    background: #e5f3f7;
+    color: #145b67;
+    border: 2px solid #c5e7ed;
+}
+
+.prediction-options button.selected {
+    background: #078d91;
+    color: white;
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 30px;
+}
+
+.game-box {
+    background: linear-gradient(135deg, #e4f9f6, #e8f5ff);
+    padding: 23px;
+    border-radius: 17px;
+    text-align: center;
+}
+
+.question {
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.7;
+}
+
+.answer-options {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.answer-options button {
+    background: white;
+    color: #24535b;
+    border: 2px solid #cce9e8;
+    border-radius: 12px;
+    width: 100%;
+    margin: 0;
+}
+
+.answer-options button:hover {
+    background: #d9f5f1;
+}
+
+.answer-options button.correct {
+    background: #d6f5df;
+    border-color: #43a86b;
+}
+
+.answer-options button.wrong {
+    background: #ffe0dc;
+    border-color: #e47b6c;
+}
+
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #d7e9e9;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #0aa5a0;
+    transition: 0.4s;
+}
+
+.result {
+    display: none;
+    background: #e4f8f0;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+footer {
+    background: linear-gradient(120deg, #087e8b, #20b8b0);
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    .tubes {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌍 Science World</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit3.html">Unit Three</a>
+        <a href="lesson3-1.html">Lesson One</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="brainy">🤖</div>
+    <h1>Lesson 3-2: The Function of Saliva</h1>
+    <p>
+        Welcome back, Science Explorer! 🔬<br>
+        Today, we will discover how saliva helps our body digest food!
+    </p>
+    <button onclick="document.getElementById('audioSection').scrollIntoView({behavior:'smooth'})">
+        Start Exploring 🚀
+    </button>
+</section>
+
+<main class="container">
+
+<!-- OBJECTIVES -->
+<section class="section">
+    <h2>🎯 What Will You Learn?</h2>
+    <div class="objectives">
+        <div class="objective">🧠 Understand the function of saliva.</div>
+        <div class="objective">🍚 Learn how saliva breaks down starch.</div>
+        <div class="objective">🧪 Explore the iodine experiment.</div>
+        <div class="objective">💧 Understand digestive juices.</div>
+    </div>
+</section>
+
+<!-- AUDIO -->
+<section class="section" id="audioSection">
+    <h2>🔊 Listen to Brainy's Explanation</h2>
+
+    <div class="audio-box">
+        <div class="audio-icon">🎧🤖</div>
+        <h3>Let's Learn About Saliva!</h3>
+        <p>
+            Listen to the lesson explanation in English.
+            You can pause, continue, or stop the audio.
+        </p>
+
+        <button onclick="speakLesson()">▶ Play Explanation</button>
+        <button onclick="pauseSpeech()">⏸ Pause</button>
+        <button onclick="resumeSpeech()">▶ Resume</button>
+        <button onclick="stopSpeech()">⏹ Stop</button>
+
+        <p class="audio-status" id="audioStatus">
+            Ready to listen!
+        </p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section">
+    <h2>💧 What Is the Function of Saliva?</h2>
+
+    <p>
+        When we eat food like rice or bread, it contains a substance
+        called <strong>starch</strong>.
+    </p>
+
+    <p>
+        Saliva in the mouth helps break down starch and changes it
+        into another substance that is easier for the body to digest.
+    </p>
+
+    <div class="definition">
+        <strong>Remember:</strong><br>
+        A liquid that has the function of digesting food,
+        like saliva, is called a
+        <strong>Digestive Juice</strong>.
+    </div>
+
+    <p>
+        Digestive juices are produced in:
+    </p>
+
+    <div class="info-grid">
+        <div class="info-card" onclick="showOrgan('mouthInfo')">
+            <div class="emoji">👄</div>
+            <h3>Mouth</h3>
+            <p>Saliva helps break down starch.</p>
+        </div>
+
+        <div class="info-card" onclick="showOrgan('stomachInfo')">
+            <div class="emoji">🫃</div>
+            <h3>Stomach</h3>
+            <p>Digestive juices are also produced here.</p>
+        </div>
+
+        <div class="info-card" onclick="showOrgan('intestineInfo')">
+            <div class="emoji">🌀</div>
+            <h3>Small Intestine</h3>
+            <p>Digestive juices are also produced here.</p>
+        </div>
+    </div>
+
+    <div class="info-detail" id="mouthInfo">
+        <strong>👄 Mouth:</strong> Saliva starts the digestion of starch
+        found in foods such as rice and bread.
+    </div>
+
+    <div class="info-detail" id="stomachInfo">
+        <strong>🫃 Stomach:</strong> The stomach also produces digestive juices.
+    </div>
+
+    <div class="info-detail" id="intestineInfo">
+        <strong>🌀 Small Intestine:</strong> The small intestine also produces
+        digestive juices.
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section">
+    <h2>🎬 Watch the Science Experiment</h2>
+    <p>
+        Watch how saliva affects starch in a science experiment.
+    </p>
+
+    <iframe
+        class="video-frame"
+        src="https://www.youtube-nocookie.com/embed/Gm1_xhNH0eY"
+        title="How Saliva Changes Starch Experiment"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-note">
+        💡 Brainy's Tip: Focus on what happens when iodine solution
+        is added to the two test tubes.
+    </div>
+</section>
+
+<!-- EXPERIMENT -->
+<section class="section">
+    <h2>🧪 Virtual Science Lab</h2>
+
+    <p>
+        Let's investigate whether saliva changes starch!
+        We will compare two test tubes.
+    </p>
+
+    <div class="experiment">
+
+        <div class="tubes">
+
+            <div class="tube-card">
+                <div class="tube-label">Test Tube A</div>
+                <div class="test-tube">
+                    <div class="liquid" id="liquidA"></div>
+                </div>
+                <p>Starch + Water</p>
+                <div class="result-label" id="resultA">
+                    Waiting for the experiment...
+                </div>
+            </div>
+
+            <div class="tube-card">
+                <div class="tube-label">Test Tube B</div>
+                <div class="test-tube">
+                    <div class="liquid" id="liquidB"></div>
+                </div>
+                <p>Starch + Saliva</p>
+                <div class="result-label" id="resultB">
+                    Waiting for the experiment...
+                </div>
+            </div>
+
+        </div>
+
+        <div class="experiment-controls">
+            <h3>🔬 Experiment Steps</h3>
+            <p>
+                1. Put starch solution in both test tubes.<br>
+                2. Add water to tube A.<br>
+                3. Add saliva to tube B.<br>
+                4. Place both tubes in hot water at about 40°C for a few minutes.<br>
+                5. Add 1 or 2 drops of dilute iodine solution.
+            </p>
+
+            <button onclick="runExperiment()">Run Experiment 🧪</button>
+            <button onclick="resetExperiment()">Reset Experiment ↻</button>
+
+            <p id="experimentMessage" class="feedback">
+                Press Run Experiment to see the results!
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PREDICTION -->
+<section class="section">
+    <h2>🤔 Predict the Result!</h2>
+
+    <p class="question">
+        What do you think happens when iodine solution is added
+        to starch mixed with water?
+    </p>
+
+    <div class="prediction-options">
+        <button onclick="checkPrediction(this,false)">
+            It turns dark blue.
+        </button>
+
+        <button onclick="checkPrediction(this,true)">
+            It does not turn dark blue.
+        </button>
+    </div>
+
+    <p class="feedback" id="predictionFeedback"></p>
+</section>
+
+<!-- EXPERIMENT STEPS -->
+<section class="section">
+    <h2>📚 Explore the Experiment Step by Step</h2>
+
+    <p>Click each step to learn how the experiment is done.</p>
+
+    <div class="step-list">
+
+        <button class="step active" onclick="showStep(0)">
+            <span class="step-number">1</span>
+            Preparation
+        </button>
+
+        <button class="step" onclick="showStep(1)">
+            <span class="step-number">2</span>
+            Add Solutions
+        </button>
+
+        <button class="step" onclick="showStep(2)">
+            <span class="step-number">3</span>
+            Warm the Tubes
+        </button>
+
+        <button class="step" onclick="showStep(3)">
+            <span class="step-number">4</span>
+            Add Iodine
+        </button>
+
+        <button class="step" onclick="showStep(4)">
+            <span class="step-number">5</span>
+            Compare Results
+        </button>
+
+    </div>
+
+    <div class="step-description" id="stepDescription">
+        <strong>Step 1 - Preparation:</strong><br>
+        Prepare starch solution, dilute iodine solution, two test tubes,
+        a dropper, water, and hot water. Use safety goggles.
+    </div>
+</section>
+
+<!-- KNOWLEDGE CHECK -->
+<section class="section">
+    <h2>🧠 Brainy's Quick Challenge</h2>
+
+    <div class="game-box">
+        <div style="font-size:55px;">🤖</div>
+
+        <p class="question">
+            Which food contains starch?
+        </p>
+
+        <div class="answer-options">
+            <button onclick="quickAnswer(this,false)">A. Plain water</button>
+            <button onclick="quickAnswer(this,true)">B. Rice</button>
+            <button onclick="quickAnswer(this,false)">C. Salt</button>
+        </div>
+
+        <p class="feedback" id="quickFeedback"></p>
+    </div>
+</section>
+
+<!-- FINAL QUIZ -->
+<section class="section">
+    <h2>🏆 Lesson 3-2 Final Quiz</h2>
+
+    <p>
+        Answer the questions and test what you have learned!
+    </p>
+
+    <div id="quizArea">
+        <div>
+            <strong id="questionNumber">Question 1 of 5</strong>
+            <span id="quizScore" style="float:right;">Score: 0</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p class="question" id="quizQuestion"></p>
+
+        <div class="answer-options" id="quizOptions"></div>
+
+        <p class="feedback" id="quizFeedback"></p>
+
+        <button id="nextButton" onclick="nextQuestion()" style="display:none;">
+            Next Question ➜
+        </button>
+    </div>
+
+    <div class="result" id="quizResult">
+        <div style="font-size:65px;">🏆</div>
+        <h2>Excellent Work, Science Explorer!</h2>
+
+        <h3 id="finalScore"></h3>
+        <h3 id="finalPercentage"></h3>
+        <p id="resultMessage"></p>
+
+        <button onclick="restartQuiz()">Try Again ↻</button>
+        <button onclick="window.location.href='unit3.html'">
+            Back to Unit Three
+        </button>
+    </div>
+</section>
+
+<!-- NAVIGATION -->
+<section class="section">
+    <h2>🚀 What's Next?</h2>
+
+    <div class="navigation">
+        <button onclick="window.location.href='lesson3-1.html'">
+            ← Previous Lesson
+        </button>
+
+        <button onclick="window.location.href='unit3.html'">
+            Unit Three
+        </button>
+
+        <button onclick="window.location.href='units.html'">
+            All Units
+        </button>
+
+        <button onclick="window.location.href='index.html'">
+            Home 🏠
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h3>🌍 Science World</h3>
+    <p>Learn Science, Explore the World! 🚀</p>
+</footer>
+
+<script>
+
+// ================= AUDIO EXPLANATION =================
+
+let speechUtterance = null;
+
+function speakLesson() {
+
+    if (!("speechSynthesis" in window)) {
+        document.getElementById("audioStatus").textContent =
+            "Audio is not supported in this browser.";
+        return;
+    }
+
+    stopSpeech();
+
+    let explanation = `
+    Hello Science Explorer!
+    Today we will learn about the function of saliva.
+    Food like rice and bread contains starch.
+    Saliva in the mouth helps break down starch.
+    A liquid that helps digest food is called a digestive juice.
+    Digestive juices are also produced in the stomach and the small intestine.
+    Now let's explore an experiment.
+    We need two test tubes containing starch solution.
+    We add water to test tube A, and saliva to test tube B.
+    We put both tubes in hot water at about forty degrees Celsius.
+    Then we add one or two drops of dilute iodine solution.
+    In test tube A, starch is still present, so the color turns dark blue.
+    In test tube B, saliva has broken down the starch, so it does not turn dark blue.
+    This experiment shows that saliva helps break down starch.
+    Great job, Science Explorer!
+    `;
+
+    speechUtterance = new SpeechSynthesisUtterance(explanation);
+    speechUtterance.lang = "en-US";
+    speechUtterance.rate = 0.88;
+    speechUtterance.pitch = 1.05;
+
+    speechUtterance.onstart = function() {
+        document.getElementById("audioStatus").textContent =
+            "🔊 Brainy is explaining the lesson...";
+    };
+
+    speechUtterance.onend = function() {
+        document.getElementById("audioStatus").textContent =
+            "✅ Explanation completed!";
+    };
+
+    speechUtterance.onerror = function() {
+        document.getElementById("audioStatus").textContent =
+            "Audio could not be played. Try again.";
+    };
+
+    speechSynthesis.speak(speechUtterance);
+}
+
+function pauseSpeech() {
+    if ("speechSynthesis" in window && speechSynthesis.speaking) {
+        speechSynthesis.pause();
+        document.getElementById("audioStatus").textContent =
+            "⏸ Audio paused.";
+    }
+}
+
+function resumeSpeech() {
+    if ("speechSynthesis" in window && speechSynthesis.paused) {
+        speechSynthesis.resume();
+        document.getElementById("audioStatus").textContent =
+            "▶ Audio resumed.";
+    }
+}
+
+function stopSpeech() {
+    if ("speechSynthesis" in window) {
+        speechSynthesis.cancel();
+        document.getElementById("audioStatus").textContent =
+            "Audio stopped.";
+    }
+}
+
+
+// ================= CLICKABLE INFO CARDS =================
+
+function showOrgan(id) {
+
+    document.querySelectorAll(".info-detail").forEach(function(item) {
+        item.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "block";
+}
+
+
+// ================= VIRTUAL EXPERIMENT =================
+
+let experimentRunning = false;
+
+function runExperiment() {
+
+    if (experimentRunning) return;
+
+    experimentRunning = true;
+
+    document.getElementById("experimentMessage").textContent =
+        "Step 1: Preparing the two test tubes...";
+
+    document.getElementById("resultA").textContent = "Adding iodine...";
+    document.getElementById("resultB").textContent = "Adding iodine...";
+
+    document.getElementById("liquidA").style.background = "#e8d9a5";
+    document.getElementById("liquidB").style.background = "#e8d9a5";
+
+    setTimeout(function() {
+
+        document.getElementById("experimentMessage").textContent =
+            "Step 2: Comparing the color changes...";
+
+        document.getElementById("liquidA").style.background = "#172b83";
+        document.getElementById("liquidB").style.background = "#d8bd75";
+
+        document.getElementById("resultA").textContent =
+            "Dark blue: Starch is still present.";
+
+        document.getElementById("resultB").textContent =
+            "No dark blue color: Saliva has broken down the starch.";
+
+        document.getElementById("experimentMessage").textContent =
+            "🎉 Result: Saliva helps break down starch!";
+
+    }, 1800);
+}
+
+function resetExperiment() {
+
+    experimentRunning = false;
+
+    document.getElementById("liquidA").style.background = "#e9d7a0";
+    document.getElementById("liquidB").style.background = "#e9d7a0";
+
+    document.getElementById("resultA").textContent =
+        "Waiting for the experiment...";
+
+    document.getElementById("resultB").textContent =
+        "Waiting for the experiment...";
+
+    document.getElementById("experimentMessage").textContent =
+        "Press Run Experiment to see the results!";
+}
+
+
+// ================= PREDICTION =================
+
+function checkPrediction(button, correct) {
+
+    document.querySelectorAll(".prediction-options button").forEach(function(btn) {
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    if (correct) {
+        document.getElementById("predictionFeedback").textContent =
+            "Not quite! Starch mixed with water turns dark blue when iodine is added.";
+        document.getElementById("predictionFeedback").style.color = "#c45b36";
+    } else {
+        document.getElementById("predictionFeedback").textContent =
+            "Correct! Iodine turns dark blue when starch is present. ⭐";
+        document.getElementById("predictionFeedback").style.color = "#16834c";
+    }
+}
+
+
+// ================= EXPERIMENT STEPS =================
+
+const steps = [
+    "<strong>Step 1 - Preparation:</strong><br>Prepare starch solution, dilute iodine solution, two test tubes, a dropper, water, hot water, and safety goggles.",
+
+    "<strong>Step 2 - Add Solutions:</strong><br>Put starch solution in both test tubes. Add a cotton piece moistened with saliva to one tube, and a cotton piece moistened with water to the other.",
+
+    "<strong>Step 3 - Warm the Tubes:</strong><br>Put both test tubes in hot water at about 40 degrees Celsius for a few minutes. This makes the environment similar to the temperature inside the body.",
+
+    "<strong>Step 4 - Add Iodine:</strong><br>Add one or two drops of dilute iodine solution to each warmed test tube.",
+
+    "<strong>Step 5 - Compare Results:</strong><br>Tube A turns dark blue because starch is still present. Tube B does not turn dark blue because saliva has broken down the starch."
+];
+
+function showStep(index) {
+
+    document.querySelectorAll(".step").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    document.querySelectorAll(".step")[index].classList.add("active");
+
+    document.getElementById("stepDescription").innerHTML = steps[index];
+}
+
+
+// ================= QUICK CHALLENGE =================
+
+let quickDone = false;
+
+function quickAnswer(button, correct) {
+
+    if (quickDone) return;
+
+    quickDone = true;
+
+    if (correct) {
+        button.classList.add("correct");
+        document.getElementById("quickFeedback").textContent =
+            "Excellent! Rice contains starch. 🌟";
+        document.getElementById("quickFeedback").style.color = "#16834c";
+    } else {
+        button.classList.add("wrong");
+        document.getElementById("quickFeedback").textContent =
+            "Try to remember: rice is a food that contains starch.";
+        document.getElementById("quickFeedback").style.color = "#c45b36";
+    }
+}
+
+
+// ================= FINAL QUIZ =================
+
+const questions = [
+
+    {
+        question: "What is the function of saliva?",
+        options: [
+            "It breaks down starch.",
+            "It carries blood.",
+            "It produces oxygen."
+        ],
+        answer: 0,
+        explanation: "Correct! Saliva helps break down starch in food."
+    },
+
+    {
+        question: "Which of these foods contains starch?",
+        options: [
+            "Water",
+            "Rice",
+            "Salt"
+        ],
+        answer: 1,
+        explanation: "Rice contains starch."
+    },
+
+    {
+        question: "What is a liquid that helps digest food called?",
+        options: [
+            "Digestive juice",
+            "Blood",
+            "Air"
+        ],
+        answer: 0,
+        explanation: "A liquid that helps digest food is called a digestive juice."
+    },
+
+    {
+        question: "At what temperature is the hot water in the experiment?",
+        options: [
+            "About 10°C",
+            "About 40°C",
+            "About 100°C"
+        ],
+        answer: 1,
+        explanation: "The test tubes are placed in hot water at about 40°C."
+    },
+
+    {
+        question: "What happens to starch mixed with saliva when iodine is added?",
+        options: [
+            "It turns dark blue.",
+            "It does not turn dark blue.",
+            "It becomes solid."
+        ],
+        answer: 1,
+        explanation: "Saliva breaks down starch, so the solution does not turn dark blue."
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+
+    answered = false;
+
+    let q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + score;
+
+    document.getElementById("quizQuestion").textContent = q.question;
+
+    document.getElementById("progressFill").style.width =
+        (currentQuestion / questions.length * 100) + "%";
+
+    document.getElementById("quizFeedback").textContent = "";
+
+    document.getElementById("nextButton").style.display = "none";
+
+    let optionsHTML = "";
+
+    q.options.forEach(function(option, index) {
+
+        optionsHTML +=
+            '<button onclick="checkQuizAnswer(' + index + ', this)">' +
+            option +
+            '</button>';
+
+    });
+
+    document.getElementById("quizOptions").innerHTML = optionsHTML;
+}
+
+function checkQuizAnswer(index, button) {
+
+    if (answered) return;
+
+    answered = true;
+
+    let q = questions[currentQuestion];
+
+    let buttons = document.querySelectorAll("#quizOptions button");
+
+    buttons.forEach(function(btn) {
+        btn.disabled = true;
+    });
+
+    if (index === q.answer) {
+
+        score++;
+
+        button.classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "✅ " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "#16834c";
+
+    } else {
+
+        button.classList.add("wrong");
+        buttons[q.answer].classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "❌ " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "#c45b36";
+    }
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + score;
+
+    document.getElementById("nextButton").style.display = "inline-block";
+
+    document.getElementById("nextButton").textContent =
+        currentQuestion === questions.length - 1
+        ? "See My Result 🏆"
+        : "Next Question ➜";
+}
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+
+    document.getElementById("quizArea").style.display = "none";
+    document.getElementById("quizResult").style.display = "block";
+
+    let percentage = Math.round((score / questions.length) * 100);
+
+    document.getElementById("finalScore").textContent =
+        "Your Score: " + score + " / " + questions.length;
+
+    document.getElementById("finalPercentage").textContent =
+        "Your Result: " + percentage + "%";
+
+    let message = "";
+
+    if (score === 5) {
+        message = "Amazing! You are a Super Science Explorer! 🌟";
+    } else if (score >= 3) {
+        message = "Great work! Keep learning and exploring! 👏";
+    } else {
+        message = "Good try! Review the lesson and try again! 💪";
+    }
+
+    document.getElementById("resultMessage").textContent = message;
+
+    localStorage.setItem("lesson32Score", score);
+    localStorage.setItem("lesson32Percentage", percentage);
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("quizArea").style.display = "block";
+    document.getElementById("quizResult").style.display = "none";
+
+    loadQuestion();
+}
+
+
+// ================= START =================
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

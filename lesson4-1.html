@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 4-1 - Heart and Blood | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff4ed, #eaf5ff);
+    color: #263238;
+}
+
+header {
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffdf6c;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+}
+
+.hero-icon {
+    font-size: 75px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.13); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.section-title {
+    color: #a52a3a;
+    text-align: center;
+    font-size: 26px;
+    margin-top: 0;
+}
+
+.brainy-box {
+    text-align: center;
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #0002;
+    margin-bottom: 25px;
+}
+
+.brainy {
+    font-size: 60px;
+}
+
+.brainy-box p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.objectives li {
+    line-height: 2;
+    font-size: 17px;
+}
+
+button {
+    background: #ffb703;
+    color: #263238;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: .25s;
+}
+
+button:hover {
+    background: #fb8500;
+    color: white;
+    transform: scale(1.04);
+}
+
+.audio-controls {
+    text-align: center;
+    background: #fff4ed;
+    padding: 18px;
+    border-radius: 15px;
+}
+
+.audio-status {
+    color: #a52a3a;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.info-card {
+    background: #f5faff;
+    padding: 18px;
+    border-radius: 15px;
+    border: 2px solid #d6eaf5;
+    text-align: center;
+}
+
+.info-card .icon {
+    font-size: 45px;
+}
+
+.info-card h3 {
+    color: #247ba0;
+}
+
+.info-card p {
+    line-height: 1.7;
+}
+
+.diagram {
+    background: #f5faff;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.flow-item {
+    background: white;
+    border: 2px solid #247ba0;
+    border-radius: 15px;
+    padding: 13px;
+    min-width: 115px;
+    font-weight: bold;
+}
+
+.flow-item.red {
+    border-color: #d94350;
+    color: #b83245;
+}
+
+.flow-item.blue {
+    border-color: #247ba0;
+    color: #247ba0;
+}
+
+.arrow {
+    font-size: 25px;
+    font-weight: bold;
+    color: #b83245;
+}
+
+.explorer {
+    text-align: center;
+    background: #fff4ed;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.explorer-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.explorer-buttons button {
+    background: #247ba0;
+    color: white;
+}
+
+.explorer-buttons button:hover {
+    background: #185d7a;
+}
+
+.explorer-result {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 15px;
+    line-height: 1.8;
+    min-height: 65px;
+}
+
+.pulse-box {
+    text-align: center;
+    background: #fff4ed;
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.pulse-heart {
+    font-size: 75px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.timer {
+    font-size: 42px;
+    font-weight: bold;
+    color: #b83245;
+    margin: 15px;
+}
+
+.pulse-number {
+    font-size: 35px;
+    font-weight: bold;
+    color: #247ba0;
+}
+
+.pulse-note {
+    line-height: 1.8;
+}
+
+.game-box {
+    background: #f5faff;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.game-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.game-options button {
+    background: #247ba0;
+    color: white;
+}
+
+.game-result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 28px;
+}
+
+.quiz-question {
+    background: #fff4ed;
+    padding: 18px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.quiz-answer {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    background: #247ba0;
+    color: white;
+}
+
+.quiz-answer:hover {
+    background: #185d7a;
+}
+
+.quiz-answer:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+.correct {
+    background: #218838 !important;
+}
+
+.wrong {
+    background: #c0392b !important;
+}
+
+.feedback {
+    font-weight: bold;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.progress-bg {
+    background: #eee;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #b83245, #247ba0);
+    transition: .3s;
+}
+
+#quizResult {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background: #fff4ed;
+    border-radius: 15px;
+}
+
+.final-score {
+    font-size: 38px;
+    font-weight: bold;
+    color: #b83245;
+}
+
+.navigation {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.navigation a {
+    display: inline-block;
+    background: #247ba0;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin: 6px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: #185d7a;
+}
+
+footer {
+    background: #a52a3a;
+    color: white;
+    text-align: center;
+    padding: 17px;
+}
+
+@media(max-width: 600px) {
+    header {
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    .flow {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit4.html">Unit Four</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-icon">❤️</div>
+    <h1>Lesson 4-1: Heart and Blood</h1>
+    <p>
+        Discover how the heart pumps blood
+        and how blood travels throughout your body!
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="brainy-box">
+        <div class="brainy">🤖</div>
+        <h2>Hello, Science Explorers!</h2>
+        <p>
+            I'm Brainy! Have you ever wondered why your heart beats faster
+            when you exercise?
+            Let's discover the amazing journey of blood inside your body!
+        </p>
+        <strong>Are you ready? Let's begin! 🚀</strong>
+    </section>
+
+    <!-- Objectives -->
+
+    <section class="section objectives">
+        <h2 class="section-title">🎯 Learning Objectives</h2>
+
+        <ul>
+            <li>Understand the role of the heart in pumping blood.</li>
+            <li>Identify what blood carries throughout the body.</li>
+            <li>Understand the meaning of heartbeat and pulse.</li>
+            <li>Explain how blood circulates through the body.</li>
+            <li>Discover why the pulse becomes faster after exercise.</li>
+        </ul>
+    </section>
+
+    <!-- Audio -->
+
+    <section class="section">
+        <h2 class="section-title">🎧 Listen to Brainy's Explanation</h2>
+
+        <div class="audio-controls">
+            <div style="font-size:45px;">🔊</div>
+
+            <p>
+                Listen to the lesson explanation.
+                You can pause, resume, or stop the audio.
+            </p>
+
+            <button onclick="speakLesson()">▶ Play</button>
+            <button onclick="pauseSpeech()">⏸ Pause</button>
+            <button onclick="resumeSpeech()">▶ Resume</button>
+            <button onclick="stopSpeech()">⏹ Stop</button>
+
+            <p class="audio-status" id="audioStatus">
+                Ready to listen!
+            </p>
+        </div>
+    </section>
+
+    <!-- Heart and blood -->
+
+    <section class="section">
+        <h2 class="section-title">❤️ The Heart and Blood</h2>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <div class="icon">❤️</div>
+                <h3>The Heart</h3>
+                <p>
+                    The heart works like a pump.
+                    It pumps blood out to the whole body
+                    and receives blood returning to it.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">🩸</div>
+                <h3>The Blood</h3>
+                <p>
+                    Blood carries oxygen and nutrients
+                    to the whole body, and collects carbon dioxide
+                    and waste produced in the body.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <div class="icon">🛣️</div>
+                <h3>Blood Vessels</h3>
+                <p>
+                    Blood flows through blood vessels
+                    that spread all over the body.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Heartbeat -->
+
+    <section class="section">
+        <h2 class="section-title">💓 What Is a Heartbeat?</h2>
+
+        <div class="explorer">
+            <div class="pulse-heart">❤️</div>
+
+            <h3>Heartbeat</h3>
+
+            <p>
+                The movement of the heart during pumping out blood
+                is called a <strong>heartbeat</strong>.
+            </p>
+
+            <h3>Pulse</h3>
+
+            <p>
+                The heartbeat travels through the blood vessels
+                and can be felt as a <strong>pulse</strong> at the wrist.
+            </p>
+
+            <button onclick="showHeartInfo()">
+                Discover More 🔍
+            </button>
+
+            <div class="explorer-result" id="heartInfo">
+                Click the button to learn about heartbeat and pulse.
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood circulation -->
+
+    <section class="section">
+        <h2 class="section-title">🔄 Blood Circulation</h2>
+
+        <p style="line-height:1.8; text-align:center;">
+            Blood travels through the body in blood vessels.
+            Follow the steps to understand how circulation works.
+        </p>
+
+        <div class="diagram">
+
+            <h3>🔴 Blood leaving the heart</h3>
+
+            <div class="flow">
+                <div class="flow-item red">❤️ Heart</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item red">🩸 Blood</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item red">🌍 Whole Body</div>
+            </div>
+
+            <p>
+                Blood carries oxygen and nutrients to the whole body.
+            </p>
+
+            <h3>🔵 Blood returning to the heart</h3>
+
+            <div class="flow">
+                <div class="flow-item blue">🌍 Whole Body</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item blue">🩸 Blood</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item blue">❤️ Heart</div>
+            </div>
+
+            <p>
+                Blood collects carbon dioxide and waste produced in the body
+                and returns to the heart.
+            </p>
+
+            <h3>🫁 The Role of the Lungs</h3>
+
+            <div class="flow">
+                <div class="flow-item blue">❤️ Heart</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item">🫁 Lungs</div>
+                <div class="arrow">➜</div>
+                <div class="flow-item red">❤️ Heart</div>
+            </div>
+
+            <p>
+                Blood returning to the heart is sent to the lungs
+                to let out carbon dioxide and take in oxygen.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Interactive exploration -->
+
+    <section class="section">
+        <h2 class="section-title">🔍 Explore the Blood Journey</h2>
+
+        <div class="explorer">
+
+            <p>Click each organ to discover its role in blood circulation.</p>
+
+            <div class="explorer-buttons">
+                <button onclick="showJourney('heart')">❤️ Heart</button>
+                <button onclick="showJourney('body')">🌍 Whole Body</button>
+                <button onclick="showJourney('lungs')">🫁 Lungs</button>
+            </div>
+
+            <div class="explorer-result" id="journeyResult">
+                Choose an organ to discover its role!
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pulse experiment -->
+
+    <section class="section">
+        <h2 class="section-title">🏃 Let's Measure Your Pulse!</h2>
+
+        <div class="pulse-box">
+
+            <div style="font-size:50px;">⏱️</div>
+
+            <h3>Pulse Measurement Activity</h3>
+
+            <p class="pulse-note">
+                1. Put your finger near the base of your thumb on your wrist
+                and find where it is beating.<br>
+                2. Count how many times your pulse beats in one minute.<br>
+                3. After jumping lightly, measure it again.
+            </p>
+
+            <p>
+                Click Start and count your pulse beats for 15 seconds.
+                Then multiply your count by 4 to estimate the number
+                of beats in one minute.
+            </p>
+
+            <div class="timer" id="timer">15</div>
+
+            <p id="timerStatus">Ready to measure your pulse?</p>
+
+            <button id="timerButton" onclick="startPulseTimer()">
+                Start 15-Second Timer ⏱️
+            </button>
+
+            <div style="margin-top:20px;">
+                <label for="pulseCount">
+                    <strong>Enter the beats you counted in 15 seconds:</strong>
+                </label>
+
+                <br><br>
+
+                <input
+                    type="number"
+                    id="pulseCount"
+                    min="0"
+                    max="100"
+                    placeholder="Your pulse count"
+                    style="padding:12px; width:200px; border:2px solid #247ba0; border-radius:10px; font-size:16px;"
+                >
+
+                <br>
+
+                <button onclick="calculatePulse()">
+                    Calculate My Pulse 💓
+                </button>
+            </div>
+
+            <div class="pulse-number" id="pulseResult"></div>
+
+            <p id="pulseExplanation" class="pulse-note"></p>
+
+            <p class="pulse-note">
+                Repeat the activity after light exercise and compare
+                the two results. This is a learning activity, not a medical test.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Why pulse increases -->
+
+    <section class="section">
+        <h2 class="section-title">🧠 Brainy's Thinking Question</h2>
+
+        <div class="game-box">
+            <div style="font-size:55px;">🤖</div>
+
+            <h3>
+                Why does your pulse become faster after exercising?
+            </h3>
+
+            <div class="game-options">
+                <button onclick="checkThinking(0)">
+                    A. To allow blood to rest slowly.
+                </button>
+
+                <button onclick="checkThinking(1)">
+                    B. To carry more oxygen and nutrients to the body quickly.
+                </button>
+
+                <button onclick="checkThinking(2)">
+                    C. Because there are no blood vessels.
+                </button>
+            </div>
+
+            <p class="game-result" id="thinkingResult"></p>
+        </div>
+    </section>
+
+    <!-- Final quiz -->
+
+    <section class="section">
+        <h2 class="section-title">🏆 Brainy's Lesson Challenge</h2>
+
+        <div id="quizArea">
+
+            <p id="quizCounter">Question 1 of 6</p>
+
+            <div class="progress-bg">
+                <div class="progress" id="quizProgress"></div>
+            </div>
+
+            <div class="quiz-question">
+                <h3 id="quizQuestion"></h3>
+            </div>
+
+            <div id="quizAnswers"></div>
+
+            <p class="feedback" id="quizFeedback"></p>
+
+            <button id="nextQuestionBtn"
+                    onclick="nextQuizQuestion()"
+                    style="display:none;">
+                Next Question ➜
+            </button>
+
+        </div>
+
+        <div id="quizResult">
+            <div style="font-size:55px;">🏆</div>
+            <h2>Lesson Completed!</h2>
+
+            <div class="final-score" id="finalScore"></div>
+
+            <p id="finalMessage"></p>
+
+            <button onclick="restartQuiz()">
+                Try Again 🔄
+            </button>
+        </div>
+
+    </section>
+
+    <!-- Navigation -->
+
+    <div class="navigation">
+        <a href="unit4.html">⬅️ Unit Four</a>
+        <a href="lesson4-2.html">Next Lesson ➡️</a>
+        <a href="units.html">📚 All Units</a>
+        <a href="index.html">🏠 Home</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>Science World | Keep Learning, Keep Discovering! 🌟</p>
+</footer>
+
+<script>
+
+// AUDIO EXPLANATION
+
+const lessonSpeech = `
+Hello Science Explorers!
+Today we will learn about the heart and blood.
+The heart works like a pump.
+It pumps blood out to the whole body and receives blood returning to it.
+Blood carries oxygen and nutrients to the whole body.
+It also collects carbon dioxide and waste produced in the body.
+Blood flows through blood vessels that spread all over the body.
+The movement of the heart during pumping out blood is called a heartbeat.
+The heartbeat travels through blood vessels and can be felt as a pulse at the wrist.
+Blood returning to the heart is sent to the lungs to let out carbon dioxide and take in oxygen.
+When you exercise, your heart beats faster.
+Let's measure our pulse before and after light exercise.
+Great job, Science Explorers!
+`;
+
+function speakLesson() {
+    if (!("speechSynthesis" in window)) {
+        document.getElementById("audioStatus").textContent =
+            "Audio is not supported in this browser.";
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech = new SpeechSynthesisUtterance(lessonSpeech);
+    speech.lang = "en-US";
+    speech.rate = 0.85;
+
+    speech.onstart = () => {
+        document.getElementById("audioStatus").textContent =
+            "🔊 Brainy is explaining the lesson...";
+    };
+
+    speech.onend = () => {
+        document.getElementById("audioStatus").textContent =
+            "Lesson explanation completed!";
+    };
+
+    window.speechSynthesis.speak(speech);
+}
+
+function pauseSpeech() {
+    window.speechSynthesis.pause();
+    document.getElementById("audioStatus").textContent = "Audio paused.";
+}
+
+function resumeSpeech() {
+    window.speechSynthesis.resume();
+    document.getElementById("audioStatus").textContent = "Audio resumed.";
+}
+
+function stopSpeech() {
+    window.speechSynthesis.cancel();
+    document.getElementById("audioStatus").textContent = "Audio stopped.";
+}
+
+
+// HEARTBEAT INFORMATION
+
+function showHeartInfo() {
+    document.getElementById("heartInfo").innerHTML =
+        "<strong>Heartbeat:</strong> The movement of the heart during pumping out blood." +
+        "<br><br>" +
+        "<strong>Pulse:</strong> The heartbeat can be felt through blood vessels at the wrist.";
+}
+
+
+// BLOOD JOURNEY EXPLORER
+
+function showJourney(part) {
+    const result = document.getElementById("journeyResult");
+
+    const information = {
+        heart:
+            "❤️ <strong>The Heart</strong><br>" +
+            "The heart pumps blood out to the whole body and receives blood returning to it.",
+
+        body:
+            "🌍 <strong>The Whole Body</strong><br>" +
+            "Blood carries oxygen and nutrients to the body and collects carbon dioxide and waste.",
+
+        lungs:
+            "🫁 <strong>The Lungs</strong><br>" +
+            "Blood is sent to the lungs to let out carbon dioxide and take in oxygen."
+    };
+
+    result.innerHTML = information[part];
+}
+
+
+// PULSE TIMER
+
+let pulseInterval = null;
+let remainingSeconds = 15;
+
+function startPulseTimer() {
+    clearInterval(pulseInterval);
+
+    remainingSeconds = 15;
+
+    document.getElementById("timer").textContent = remainingSeconds;
+    document.getElementById("timerStatus").textContent =
+        "Start counting your pulse now!";
+
+    document.getElementById("timerButton").disabled = true;
+
+    pulseInterval = setInterval(function() {
+        remainingSeconds--;
+
+        document.getElementById("timer").textContent = remainingSeconds;
+
+        if (remainingSeconds <= 0) {
+            clearInterval(pulseInterval);
+
+            document.getElementById("timerStatus").textContent =
+                "⏰ Time is up! Enter your pulse count.";
+
+            document.getElementById("timerButton").disabled = false;
+            document.getElementById("timerButton").textContent =
+                "Start Again ⏱️";
+        }
+    }, 1000);
+}
+
+function calculatePulse() {
+    const count = Number(document.getElementById("pulseCount").value);
+
+    if (
+        document.getElementById("pulseCount").value === "" ||
+        !Number.isInteger(count) ||
+        count < 0 ||
+        count > 100
+    ) {
+        document.getElementById("pulseExplanation").textContent =
+            "Please enter a valid number of beats.";
+        return;
+    }
+
+    const result = count * 4;
+
+    document.getElementById("pulseResult").textContent =
+        result + " beats per minute";
+
+    document.getElementById("pulseExplanation").textContent =
+        "You counted " + count +
+        " beats in 15 seconds. Multiply by 4 to estimate the number of beats in one minute.";
+}
+
+
+// THINKING QUESTION
+
+function checkThinking(answer) {
+    const result = document.getElementById("thinkingResult");
+
+    if (answer === 1) {
+        result.textContent =
+            "✅ Excellent! The heart beats faster to carry more oxygen and nutrients to the whole body quickly.";
+        result.style.color = "green";
+    } else {
+        result.textContent =
+            "❌ Try again! Think about the need for oxygen and nutrients during exercise.";
+        result.style.color = "red";
+    }
+}
+
+
+// FINAL QUIZ
+
+const quizQuestions = [
+    {
+        question: "Which organ works like a pump to send blood to the whole body?",
+        answers: ["The stomach", "The heart", "The lungs"],
+        correct: 1,
+        explanation: "Correct! The heart pumps blood out to the whole body."
+    },
+    {
+        question: "What does blood carry to the whole body?",
+        answers: ["Oxygen and nutrients", "Only water", "Only waste"],
+        correct: 0,
+        explanation: "Blood carries oxygen and nutrients to the whole body."
+    },
+    {
+        question: "What is the movement of the heart during pumping out blood called?",
+        answers: ["Digestion", "Pulse", "Heartbeat"],
+        correct: 2,
+        explanation: "The movement of the heart during pumping out blood is called a heartbeat."
+    },
+    {
+        question: "Where can we feel the pulse?",
+        answers: ["At the wrist", "At the stomach", "At the knee only"],
+        correct: 0,
+        explanation: "The heartbeat travels through blood vessels and can be felt as a pulse at the wrist."
+    },
+    {
+        question: "What does blood collect from the body?",
+        answers: ["Only oxygen", "Carbon dioxide and waste", "Only nutrients"],
+        correct: 1,
+        explanation: "Blood collects carbon dioxide and waste produced in the body."
+    },
+    {
+        question: "Why does the pulse become faster after exercise?",
+        answers: [
+            "To carry more oxygen and nutrients quickly",
+            "To stop blood circulation",
+            "To make the heart rest"
+        ],
+        correct: 0,
+        explanation: "The pulse becomes faster after exercise to help carry more oxygen and nutrients to the body quickly."
+    }
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function loadQuizQuestion() {
+    quizAnswered = false;
+
+    const q = quizQuestions[quizIndex];
+
+    document.getElementById("quizCounter").textContent =
+        "Question " + (quizIndex + 1) + " of " + quizQuestions.length;
+
+    document.getElementById("quizProgress").style.width =
+        (quizIndex / quizQuestions.length * 100) + "%";
+
+    document.getElementById("quizQuestion").textContent = q.question;
+
+    document.getElementById("quizFeedback").textContent = "";
+    document.getElementById("nextQuestionBtn").style.display = "none";
+
+    const answers = document.getElementById("quizAnswers");
+    answers.innerHTML = "";
+
+    q.answers.forEach((answer, index) => {
+        const btn = document.createElement("button");
+
+        btn.textContent = String.fromCharCode(65 + index) + ". " + answer;
+        btn.className = "quiz-answer";
+
+        btn.onclick = () => checkQuizAnswer(index, btn);
+
+        answers.appendChild(btn);
+    });
+}
+
+function checkQuizAnswer(selected, selectedButton) {
+    if (quizAnswered) return;
+
+    quizAnswered = true;
+
+    const q = quizQuestions[quizIndex];
+
+    const buttons = document.querySelectorAll(".quiz-answer");
+
+    buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === q.correct) {
+            button.classList.add("correct");
+        }
+    });
+
+    if (selected === q.correct) {
+        quizScore++;
+
+        selectedButton.classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "✅ Excellent! " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "green";
+
+    } else {
+        selectedButton.classList.add("wrong");
+
+        document.getElementById("quizFeedback").textContent =
+            "❌ Not quite! " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "#b83245";
+    }
+
+    document.getElementById("nextQuestionBtn").style.display = "inline-block";
+
+    document.getElementById("nextQuestionBtn").textContent =
+        quizIndex === quizQuestions.length - 1
+        ? "Show My Result 🏆"
+        : "Next Question ➜";
+}
+
+function nextQuizQuestion() {
+    if (!quizAnswered) return;
+
+    quizIndex++;
+
+    if (quizIndex < quizQuestions.length) {
+        loadQuizQuestion();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    document.getElementById("quizArea").style.display = "none";
+    document.getElementById("quizResult").style.display = "block";
+
+    const percentage = Math.round(
+        quizScore / quizQuestions.length * 100
+    );
+
+    document.getElementById("quizProgress").style.width = "100%";
+
+    document.getElementById("finalScore").textContent =
+        quizScore + " / " + quizQuestions.length;
+
+    let message;
+
+    if (quizScore >= 5) {
+        message = "🌟 Amazing work! You are a Heart and Blood expert!";
+    } else if (quizScore >= 3) {
+        message = "👏 Good job! Keep reviewing the lesson.";
+    } else {
+        message = "💪 Keep practicing! You can do better next time.";
+    }
+
+    document.getElementById("finalMessage").textContent =
+        message + " Your result is " + percentage + "%.";
+
+    localStorage.setItem("lesson41Score", quizScore);
+    localStorage.setItem("lesson41Percentage", percentage);
+}
+
+function restartQuiz() {
+    quizIndex = 0;
+    quizScore = 0;
+    quizAnswered = false;
+
+    document.getElementById("quizArea").style.display = "block";
+    document.getElementById("quizResult").style.display = "none";
+
+    loadQuizQuestion();
+}
+
+loadQuizQuestion();
+
+</script>
+
+</body>
+</html>

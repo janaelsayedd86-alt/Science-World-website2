@@ -1,0 +1,245 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unit One - Science World</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            color: #263238;
+        }
+
+        header {
+            background: #176b87;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            color: #ffb703;
+        }
+
+        .welcome-section {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .welcome-box {
+            max-width: 750px;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px #0002;
+        }
+
+        .brainy {
+            font-size: 100px;
+            margin-bottom: 10px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .welcome-box h1 {
+            color: #176b87;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .start-button {
+            background: #ffb703;
+            color: #263238;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .start-button:hover {
+            background: #fb8500;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .navigation-buttons a {
+            display: inline-block;
+            background: #176b87;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navigation-buttons a:hover {
+            background: #0d526b;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #176b87;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .welcome-box h1 {
+                font-size: 29px;
+            }
+
+            .welcome-box {
+                padding: 30px 20px;
+            }
+
+            header {
+                gap: 15px;
+            }
+
+            header nav a {
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h2>🌍 Science World</h2>
+
+        <nav>
+            <a href="index.html">Home 🏠</a>
+            <a href="units.html">All Units 📚</a>
+            <a href="lessons.html">Lessons 📖</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Welcome Section -->
+    <main>
+
+        <section class="welcome-section">
+
+            <div class="welcome-box">
+
+                <div class="brainy">🤖</div>
+
+                <h1>Welcome to Unit One!</h1>
+
+                <h2>Conditions for Burning 🔥</h2>
+
+                <p>
+                    Hello, little scientists!
+                    I'm Brainy, your science adventure friend.
+                    Are you ready to discover the secrets of burning
+                    and explore the amazing world of science?
+                </p>
+
+                <p>
+                    Let's learn, play, and discover together!
+                </p>
+
+                <button
+                    class="start-button"
+                    onclick="window.location.href='lessons.html'">
+
+                    Start Learning 🚀
+
+                </button>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+
+                    <a href="index.html">
+                        🏠 Home
+                    </a>
+
+                    <a href="units.html">
+                        📚 All Units
+                    </a>
+
+                    <a href="lessons.html">
+                        📖 Lessons
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Science World | Learn, Explore, Discover!</p>
+    </footer>
+
+</body>
+
+</html>
+```

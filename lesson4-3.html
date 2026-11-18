@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4-3 - Various Organs | Science World</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#f1eaff,#e8f7ff);color:#263238}
+header{background:linear-gradient(135deg,#6041a5,#247ba0);color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+header h2{margin:0}
+header nav{display:flex;flex-wrap:wrap;gap:15px}
+header nav a{color:white;text-decoration:none;font-weight:bold}
+header nav a:hover{color:#ffdf6c}
+.hero{text-align:center;padding:45px 20px;background:linear-gradient(135deg,#6041a5,#247ba0);color:white}
+.hero-icon{font-size:80px;animation:float 2s infinite ease-in-out}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero h1{font-size:36px;margin:10px}
+.hero p{font-size:18px;line-height:1.7}
+.container{max-width:1100px;margin:auto;padding:25px 20px}
+.section-title{text-align:center;color:#6041a5;font-size:27px;margin:35px 0 20px}
+.card{background:white;padding:25px;border-radius:20px;box-shadow:0 5px 18px #0002;margin:25px 0}
+.brainy-box{text-align:center}
+.brainy{font-size:65px}
+.brainy-box p{font-size:18px;line-height:1.8}
+.objectives li{font-size:17px;line-height:2}
+.definition{background:#f1eaff;border-left:6px solid #6041a5;padding:18px;border-radius:12px;line-height:1.8;margin:18px 0}
+.audio-box{text-align:center;background:#eaf5ff;padding:20px;border-radius:18px}
+.audio-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+button{border:none;background:#ffb703;color:#263238;padding:12px 22px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;transition:.3s}
+button:hover{background:#fb8500;color:white;transform:scale(1.04)}
+.blue-btn{background:#247ba0;color:white}
+.blue-btn:hover{background:#185d7a}
+.purple-btn{background:#6041a5;color:white}
+.purple-btn:hover{background:#432b7c}
+.video-frame{width:100%;aspect-ratio:16/9;border:none;border-radius:18px}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.location-card{background:#f7f2ff;padding:20px;border-radius:17px;text-align:center;border:2px solid #ded1fa}
+.location-card .emoji{font-size:50px}
+.location-card h3{color:#6041a5}
+
+/* REAL ANATOMICAL IMAGE */
+.anatomy-container{background:#f8f8fc;border:2px solid #ded1fa;border-radius:18px;padding:20px;text-align:center}
+.anatomy-image{width:100%;max-width:760px;height:auto;display:block;margin:15px auto;border-radius:12px;background:white}
+.anatomy-caption{color:#555;line-height:1.8;font-size:14px}
+.organ-buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:22px}
+.organ-buttons button{background:#6041a5;color:white;border-radius:12px}
+.organ-buttons button:hover{background:#247ba0}
+#organInfo{display:none;background:#f1eaff;padding:20px;border-radius:15px;margin-top:20px;line-height:1.8;text-align:center}
+#organInfo h3{color:#6041a5}
+
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:450px}
+th,td{padding:14px;border:1px solid #ddd;text-align:center;line-height:1.6}
+th{background:#6041a5;color:white}
+tr:nth-child(even){background:#f5f0ff}
+.team-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;text-align:center;margin-top:20px}
+.team-step{background:#eaf5ff;padding:20px 12px;border-radius:15px;border:2px solid #c8e1f1}
+.team-step span{display:block;font-size:42px;margin-bottom:10px}
+.team-step strong{color:#6041a5}
+.activity-box{background:#f3efff;padding:22px;border-radius:18px;text-align:center}
+.activity-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.activity-options button{background:#6041a5;color:white;border-radius:13px}
+.activity-options button:hover{background:#432b7c}
+#activityFeedback{font-weight:bold;line-height:1.7}
+.quiz-question{background:#f1eaff;padding:17px;border-radius:15px;margin:15px 0}
+.quiz-answer{display:block;width:100%;max-width:600px;margin:10px auto;background:#247ba0;color:white;border-radius:12px}
+.quiz-answer.correct{background:#319b58}
+.quiz-answer.wrong{background:#d94b4b}
+.quiz-answer:disabled{opacity:1;cursor:default}
+#quizFeedback{font-weight:bold;line-height:1.8;margin-top:15px}
+#quizNext{display:none}
+.result-box{display:none;text-align:center;background:#eaf5ff;padding:25px;border-radius:18px}
+.result-score{font-size:40px;color:#6041a5;font-weight:bold}
+.navigation{text-align:center;margin:35px 0}
+.navigation a{display:inline-block;background:#6041a5;color:white;text-decoration:none;padding:12px 20px;border-radius:25px;margin:6px;font-weight:bold}
+.navigation a:hover{background:#432b7c}
+footer{background:#6041a5;color:white;text-align:center;padding:18px}
+@media(max-width:600px){.hero h1{font-size:28px}.card{padding:18px}}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit4.html">Unit Four</a>
+        <a href="lesson4-2.html">Previous Lesson</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-icon">🫀</div>
+    <h1>Lesson 4-3: Various Organs</h1>
+    <p>
+        Explore the amazing organs inside your body!
+        <br>
+        Discover where they are located and how they work together.
+    </p>
+</section>
+
+<main class="container">
+
+<section class="card brainy-box">
+    <div class="brainy">🤖</div>
+    <h2>Hello, Science Explorers!</h2>
+    <p>
+        I'm Brainy! We have learned about the heart, lungs,
+        digestive organs, and kidneys.
+        Today, we will discover where these organs are located
+        and how they are connected.
+    </p>
+    <strong>Let's explore the human body! 🚀</strong>
+</section>
+
+<section class="card objectives">
+    <h2 class="section-title">🎯 Learning Objectives</h2>
+    <ul>
+        <li>Identify the main organs in the human body.</li>
+        <li>Locate the organs in the chest, abdomen, and lower back.</li>
+        <li>Identify the organs protected by the ribs.</li>
+        <li>Understand the relationship between the small and large intestines.</li>
+        <li>Understand how blood vessels connect the organs.</li>
+        <li>Explain how organs work together as one body.</li>
+    </ul>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🔊 Listen to Brainy's Explanation</h2>
+    <div class="audio-box">
+        <div style="font-size:55px">🎧</div>
+        <p>Listen to the lesson explanation in English. You can pause, resume, or stop the audio.</p>
+        <div class="audio-buttons">
+            <button onclick="speakLesson()">▶ Play</button>
+            <button class="blue-btn" onclick="pauseSpeech()">⏸ Pause</button>
+            <button class="blue-btn" onclick="resumeSpeech()">▶ Resume</button>
+            <button class="purple-btn" onclick="stopSpeech()">⏹ Stop</button>
+        </div>
+        <p id="audioStatus">Ready to start listening!</p>
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🎬 Watch and Learn</h2>
+    <p style="text-align:center;line-height:1.8">
+        Watch this educational video about the organs and their locations in the human body.
+    </p>
+    <iframe class="video-frame"
+        src="https://www.youtube-nocookie.com/embed/5d5p0J4Q9kI"
+        title="Human Body Organs" allowfullscreen>
+    </iframe>
+    <p style="text-align:center;color:#666">
+        If the video does not load, continue with the interactive lesson below.
+    </p>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🧍 Explore the Real Human Internal Organs</h2>
+
+    <div class="definition">
+        <strong>Organs:</strong>
+        Different parts of the body that have special functions.
+        Many organs are located close to each other and work together.
+    </div>
+
+    <p style="line-height:1.8;text-align:center">
+        Look carefully at the anatomical image below.
+        It shows the internal organs and their anatomical appearance.
+        Select an organ name to learn more about it.
+    </p>
+
+    <div class="anatomy-container">
+
+        <h3 style="color:#6041a5">Human Internal Organs</h3>
+
+        <img
+            class="anatomy-image"
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Internal_organs.svg"
+            alt="Anatomical illustration showing human internal organs"
+            loading="lazy">
+
+        <p class="anatomy-caption">
+            Anatomical illustration of human internal organs.
+            Source: Wikimedia Commons, public domain.
+        </p>
+
+        <h3 style="color:#6041a5">Choose an Organ to Explore</h3>
+
+        <div class="organ-buttons">
+            <button onclick="showOrgan('lungs')">🫁 Lungs</button>
+            <button onclick="showOrgan('heart')">🫀 Heart</button>
+            <button onclick="showOrgan('liver')">Liver</button>
+            <button onclick="showOrgan('stomach')">Stomach</button>
+            <button onclick="showOrgan('small')">Small Intestine</button>
+            <button onclick="showOrgan('large')">Large Intestine</button>
+            <button onclick="showOrgan('kidneys')">Kidneys</button>
+        </div>
+
+        <div id="organInfo">
+            <h3 id="organName"></h3>
+            <p id="organDescription"></p>
+        </div>
+
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">📍 Organ Locations</h2>
+
+    <div class="location-grid">
+
+        <div class="location-card">
+            <div class="emoji">🫁</div>
+            <h3>Chest</h3>
+            <p>
+                The left and right lungs are located in the chest.
+                The heart is between them.
+                The ribs protect the heart and lungs.
+            </p>
+        </div>
+
+        <div class="location-card">
+            <div class="emoji">🍽️</div>
+            <h3>Abdomen</h3>
+            <p>
+                The stomach is at the top of the abdomen.
+                The small intestine is below it,
+                and the large intestine surrounds it.
+                The liver is also in the upper abdomen.
+            </p>
+        </div>
+
+        <div class="location-card">
+            <div class="emoji">🫘</div>
+            <h3>Lower Back</h3>
+            <p>
+                There are two kidneys at the back,
+                one on each side of the backbone.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">📋 Compare the Organs</h2>
+
+    <div class="table-wrap">
+        <table>
+            <tr>
+                <th>Body Area</th>
+                <th>Organs</th>
+                <th>Important Information</th>
+            </tr>
+            <tr>
+                <td>Chest</td>
+                <td>Heart and lungs</td>
+                <td>The heart is between the lungs. The ribs protect them.</td>
+            </tr>
+            <tr>
+                <td>Abdomen</td>
+                <td>Liver and stomach</td>
+                <td>They are located in the upper abdomen.</td>
+            </tr>
+            <tr>
+                <td>Abdomen</td>
+                <td>Small intestine</td>
+                <td>It is located inside the large intestine.</td>
+            </tr>
+            <tr>
+                <td>Abdomen</td>
+                <td>Large intestine</td>
+                <td>It surrounds the small intestine.</td>
+            </tr>
+            <tr>
+                <td>Lower Back</td>
+                <td>Two kidneys</td>
+                <td>One kidney is on each side of the backbone.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🩸 How Are Organs Connected?</h2>
+
+    <div class="definition">
+        <strong>Blood vessels:</strong>
+        Tubes that carry blood through the body and connect its organs.
+    </div>
+
+    <p style="line-height:1.8">
+        Our organs do not work separately.
+        They are connected by blood vessels.
+        Blood carries oxygen and nutrients to the organs
+        and collects waste products from the body.
+    </p>
+
+    <div class="team-flow">
+        <div class="team-step">
+            <span>🫁</span>
+            <strong>Lungs</strong>
+            <p>Provide oxygen to the blood.</p>
+        </div>
+        <div class="team-step">
+            <span>🫀</span>
+            <strong>Heart</strong>
+            <p>Pumps blood throughout the body.</p>
+        </div>
+        <div class="team-step">
+            <span>🩸</span>
+            <strong>Blood Vessels</strong>
+            <p>Carry oxygen and nutrients to organs.</p>
+        </div>
+        <div class="team-step">
+            <span>🍎</span>
+            <strong>Digestive Organs</strong>
+            <p>Digest food and absorb nutrients.</p>
+        </div>
+        <div class="team-step">
+            <span>🫘</span>
+            <strong>Kidneys</strong>
+            <p>Filter waste products and excess water.</p>
+        </div>
+    </div>
+
+    <div class="definition">
+        <strong>Remember:</strong>
+        The blood circulation system connects the organs
+        and helps the whole body work together.
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🎮 Brainy's Organ Location Game!</h2>
+
+    <div class="activity-box">
+        <div style="font-size:55px">🤖</div>
+        <h3>Can You Find the Correct Organ?</h3>
+        <p id="activityProgress">Question 1 of 6</p>
+        <h3 id="activityQuestion"></h3>
+        <div class="activity-options" id="activityOptions"></div>
+        <p id="activityFeedback"></p>
+        <button class="purple-btn" onclick="restartActivity()">🔄 Restart Game</button>
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">🧠 Brainy's Quick Challenge</h2>
+
+    <div class="activity-box">
+        <div style="font-size:55px">🤖</div>
+        <h3 id="quickQuestion"></h3>
+        <div id="quickAnswers"></div>
+        <p id="quickFeedback"></p>
+        <p id="quickScore">Score: 0 / 3</p>
+        <button class="blue-btn" onclick="restartQuick()">🔄 Try Again</button>
+    </div>
+</section>
+
+<section class="card">
+    <h2 class="section-title">📝 Lesson 4-3 Final Quiz</h2>
+
+    <p style="text-align:center">
+        Answer all the questions to test your knowledge!
+        <br><strong>7 Questions | 7 Points</strong>
+    </p>
+
+    <div id="quizBox">
+        <p id="quizCounter"></p>
+        <div class="quiz-question">
+            <h3 id="quizQuestion"></h3>
+        </div>
+        <div id="quizAnswers"></div>
+        <p id="quizFeedback"></p>
+        <button id="quizNext" onclick="nextQuizQuestion()">Next Question ➡️</button>
+    </div>
+
+    <div class="result-box" id="quizResult">
+        <div style="font-size:60px">🏆</div>
+        <h2>Lesson Completed!</h2>
+        <p id="quizResultName"></p>
+        <div class="result-score" id="quizFinalScore"></div>
+        <p id="quizMessage"></p>
+        <button onclick="restartQuiz()">Try Again 🔄</button>
+    </div>
+</section>
+
+<div class="navigation">
+    <a href="lesson4-2.html">⬅️ Previous Lesson</a>
+    <a href="unit4.html">Unit Four</a>
+    <a href="unit4-quiz.html">Unit Four Final Quiz 🏆</a>
+    <a href="units.html">All Units</a>
+    <a href="index.html">Home 🏠</a>
+</div>
+
+</main>
+
+<footer>
+    <p>Science World | Learn, Explore, Discover!</p>
+</footer>
+
+<script>
+
+// ORGAN INFORMATION
+
+const organDetails = {
+    lungs:{
+        name:"🫁 The Lungs",
+        description:"The left and right lungs are located inside the chest. They are on both sides of the heart and are protected by the ribs."
+    },
+    heart:{
+        name:"🫀 The Heart",
+        description:"The heart is located between the two lungs. It works like a pump to send blood throughout the body."
+    },
+    liver:{
+        name:"The Liver",
+        description:"The liver is located in the upper abdomen. It stores some nutrients and sends them to the body when needed."
+    },
+    stomach:{
+        name:"The Stomach",
+        description:"The stomach is located in the upper part of the abdomen. It is connected to the esophagus."
+    },
+    small:{
+        name:"The Small Intestine",
+        description:"The small intestine is located in the center of the abdomen, inside the large intestine."
+    },
+    large:{
+        name:"The Large Intestine",
+        description:"The large intestine surrounds the small intestine."
+    },
+    kidneys:{
+        name:"The Kidneys",
+        description:"There are two kidneys in the lower back, one on each side of the backbone. They filter waste products from the blood."
+    }
+};
+
+function showOrgan(name){
+    const organ=organDetails[name];
+    document.getElementById("organName").textContent=organ.name;
+    document.getElementById("organDescription").textContent=organ.description;
+    document.getElementById("organInfo").style.display="block";
+    document.getElementById("organInfo").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+
+
+// AUDIO
+
+const lessonScript=`
+Hello Science Explorers!
+Welcome to lesson four three, Various Organs.
+
+Today we will learn where the main organs are located
+and how they work together.
+
+First, let's explore the chest.
+The two lungs are located on the left and right sides.
+The heart is between the lungs.
+The ribs protect the heart and lungs.
+
+Next, let's explore the abdomen.
+The stomach is in the upper abdomen.
+The liver is also in the upper abdomen.
+The small intestine is located inside the large intestine.
+The large intestine surrounds the small intestine.
+
+Now, let's look at the back.
+There are two kidneys in the lower back.
+One kidney is on each side of the backbone.
+
+Our organs are connected by blood vessels.
+Blood carries oxygen and nutrients to the organs
+and collects waste products.
+
+The lungs provide oxygen.
+The heart pumps blood.
+The digestive organs digest food and absorb nutrients.
+The kidneys filter waste products and excess water.
+
+All our organs work together.
+Great job, Science Explorers!
+`;
+
+function speakLesson(){
+    if(!("speechSynthesis" in window)){
+        document.getElementById("audioStatus").textContent="Audio is not supported in this browser.";
+        return;
+    }
+    window.speechSynthesis.cancel();
+    const speech=new SpeechSynthesisUtterance(lessonScript);
+    speech.lang="en-US";
+    speech.rate=0.9;
+    speech.onstart=()=>document.getElementById("audioStatus").textContent="🔊 Brainy is explaining the lesson...";
+    speech.onend=()=>document.getElementById("audioStatus").textContent="✅ Explanation completed!";
+    window.speechSynthesis.speak(speech);
+}
+
+function pauseSpeech(){
+    if(window.speechSynthesis.speaking){
+        window.speechSynthesis.pause();
+        document.getElementById("audioStatus").textContent="Audio paused.";
+    }
+}
+function resumeSpeech(){
+    if(window.speechSynthesis.paused){
+        window.speechSynthesis.resume();
+        document.getElementById("audioStatus").textContent="Audio resumed.";
+    }
+}
+function stopSpeech(){
+    window.speechSynthesis.cancel();
+    document.getElementById("audioStatus").textContent="Audio stopped.";
+}
+
+
+// ORGAN LOCATION GAME
+
+const activityQuestions=[
+{q:"Which organs are located inside the chest?",options:["Heart and lungs","Stomach and liver","Kidneys and stomach"],answer:0},
+{q:"Which organ is located between the two lungs?",options:["Stomach","Heart","Liver"],answer:1},
+{q:"Which organ surrounds the small intestine?",options:["Large intestine","Heart","Lungs"],answer:0},
+{q:"Where are the two kidneys located?",options:["Inside the chest","In the lower back","Inside the stomach"],answer:1},
+{q:"Which organs are protected by the ribs?",options:["Heart and lungs","Kidneys and liver","Stomach and intestines"],answer:0},
+{q:"Which organ is located in the upper abdomen?",options:["Lungs","Stomach","Heart"],answer:1}
+];
+
+let activityIndex=0;
+let activityScore=0;
+let activityAnswered=false;
+
+function loadActivity(){
+    activityAnswered=false;
+    const q=activityQuestions[activityIndex];
+    document.getElementById("activityProgress").textContent="Question "+(activityIndex+1)+" of 6";
+    document.getElementById("activityQuestion").textContent=q.q;
+    document.getElementById("activityFeedback").textContent="";
+    const area=document.getElementById("activityOptions");
+    area.innerHTML="";
+    q.options.forEach((option,index)=>{
+        const btn=document.createElement("button");
+        btn.textContent=option;
+        btn.onclick=()=>answerActivity(index);
+        area.appendChild(btn);
+    });
+}
+
+function answerActivity(index){
+    if(activityAnswered)return;
+    activityAnswered=true;
+    const q=activityQuestions[activityIndex];
+    const buttons=document.querySelectorAll("#activityOptions button");
+    buttons.forEach((btn,i)=>{
+        btn.disabled=true;
+        if(i===q.answer)btn.style.background="#319b58";
+    });
+    if(index===q.answer){
+        activityScore++;
+        document.getElementById("activityFeedback").textContent="✅ Correct! Excellent work!";
+        document.getElementById("activityFeedback").style.color="green";
+    }else{
+        document.getElementById("activityFeedback").textContent="❌ Correct answer: "+q.options[q.answer];
+        document.getElementById("activityFeedback").style.color="red";
+    }
+    const next=document.createElement("button");
+    next.className="blue-btn";
+    next.textContent=activityIndex===activityQuestions.length-1?"See My Result 🏆":"Next Question ➡️";
+    next.onclick=nextActivity;
+    document.getElementById("activityOptions").appendChild(next);
+}
+
+function nextActivity(){
+    activityIndex++;
+    if(activityIndex<activityQuestions.length){
+        loadActivity();
+    }else{
+        document.getElementById("activityQuestion").textContent="🎉 Game Completed!";
+        document.getElementById("activityOptions").innerHTML="";
+        document.getElementById("activityFeedback").textContent="Your score: "+activityScore+" / 6";
+        document.getElementById("activityProgress").textContent="Mission Completed!";
+    }
+}
+
+function restartActivity(){
+    activityIndex=0;
+    activityScore=0;
+    loadActivity();
+}
+loadActivity();
+
+
+// QUICK CHALLENGE
+
+const quickQuestions=[
+{q:"Which organ is located between the lungs?",options:["Heart","Stomach","Kidneys"],answer:0},
+{q:"Which organ surrounds the small intestine?",options:["Lungs","Large intestine","Heart"],answer:1},
+{q:"What connects all the organs?",options:["Bones","Blood vessels","Skin"],answer:1}
+];
+
+let quickIndex=0;
+let quickScore=0;
+let quickAnswered=false;
+
+function loadQuick(){
+    quickAnswered=false;
+    document.getElementById("quickQuestion").textContent=quickQuestions[quickIndex].q;
+    document.getElementById("quickFeedback").textContent="";
+    const area=document.getElementById("quickAnswers");
+    area.innerHTML="";
+    quickQuestions[quickIndex].options.forEach((option,index)=>{
+        const btn=document.createElement("button");
+        btn.className="blue-btn";
+        btn.style.display="block";
+        btn.style.margin="10px auto";
+        btn.style.width="100%";
+        btn.style.maxWidth="400px";
+        btn.textContent=option;
+        btn.onclick=()=>answerQuick(index);
+        area.appendChild(btn);
+    });
+    document.getElementById("quickScore").textContent="Score: "+quickScore+" / 3";
+}
+
+function answerQuick(index){
+    if(quickAnswered)return;
+    quickAnswered=true;
+    const q=quickQuestions[quickIndex];
+    if(index===q.answer){
+        quickScore++;
+        document.getElementById("quickFeedback").textContent="✅ Correct! Great job!";
+        document.getElementById("quickFeedback").style.color="green";
+    }else{
+        document.getElementById("quickFeedback").textContent="❌ Correct answer: "+q.options[q.answer];
+        document.getElementById("quickFeedback").style.color="red";
+    }
+    document.getElementById("quickScore").textContent="Score: "+quickScore+" / 3";
+    const next=document.createElement("button");
+    next.className="purple-btn";
+    next.textContent=quickIndex===2?"Finish Challenge 🏆":"Next Question ➡️";
+    next.onclick=nextQuick;
+    document.getElementById("quickAnswers").appendChild(next);
+}
+
+function nextQuick(){
+    quickIndex++;
+    if(quickIndex<quickQuestions.length){
+        loadQuick();
+    }else{
+        document.getElementById("quickQuestion").textContent="🎉 Challenge Completed!";
+        document.getElementById("quickAnswers").innerHTML="";
+        document.getElementById("quickFeedback").textContent="You scored "+quickScore+" out of 3!";
+    }
+}
+
+function restartQuick(){
+    quickIndex=0;
+    quickScore=0;
+    loadQuick();
+}
+loadQuick();
+
+
+// FINAL QUIZ
+
+const quizQuestions=[
+{
+q:"Which organs are located inside the chest?",
+options:["Heart and lungs","Stomach and intestines","Kidneys and liver"],
+answer:0,
+explanation:"The heart and lungs are located in the chest."
+},
+{
+q:"Where is the heart located?",
+options:["Below the stomach","Between the two lungs","In the lower back"],
+answer:1,
+explanation:"The heart is located between the left and right lungs."
+},
+{
+q:"Which organs are protected by the ribs?",
+options:["Heart and lungs","Kidneys and stomach","Liver and intestines"],
+answer:0,
+explanation:"The ribs protect the heart and lungs."
+},
+{
+q:"Which organ surrounds the small intestine?",
+options:["Stomach","Large intestine","Liver"],
+answer:1,
+explanation:"The large intestine surrounds the small intestine."
+},
+{
+q:"Where are the kidneys located?",
+options:["In the chest","In the lower back, on both sides of the backbone","Between the lungs"],
+answer:1,
+explanation:"There are two kidneys in the lower back, one on each side of the backbone."
+},
+{
+q:"What connects the different organs?",
+options:["Blood vessels","Hair","Bones only"],
+answer:0,
+explanation:"Blood vessels connect the organs and carry blood through the body."
+},
+{
+q:"What does blood carry to the organs?",
+options:["Only waste products","Oxygen and nutrients","Only water"],
+answer:1,
+explanation:"Blood carries oxygen and nutrients to the organs and collects waste products."
+}
+];
+
+let quizIndex=0;
+let quizScore=0;
+let quizAnswered=false;
+
+function loadQuiz(){
+    quizAnswered=false;
+    const q=quizQuestions[quizIndex];
+    document.getElementById("quizCounter").textContent="Question "+(quizIndex+1)+" of "+quizQuestions.length;
+    document.getElementById("quizQuestion").textContent=q.q;
+    document.getElementById("quizFeedback").textContent="";
+    document.getElementById("quizNext").style.display="none";
+    const area=document.getElementById("quizAnswers");
+    area.innerHTML="";
+    q.options.forEach((option,index)=>{
+        const btn=document.createElement("button");
+        btn.className="quiz-answer";
+        btn.textContent=option;
+        btn.onclick=()=>answerQuiz(index);
+        area.appendChild(btn);
+    });
+}
+
+function answerQuiz(index){
+    if(quizAnswered)return;
+    quizAnswered=true;
+    const q=quizQuestions[quizIndex];
+    const buttons=document.querySelectorAll(".quiz-answer");
+    buttons.forEach((btn,i)=>{
+        btn.disabled=true;
+        if(i===q.answer)btn.classList.add("correct");
+    });
+    if(index===q.answer){
+        quizScore++;
+        document.getElementById("quizFeedback").textContent="✅ Correct! "+q.explanation;
+        document.getElementById("quizFeedback").style.color="green";
+    }else{
+        buttons[index].classList.add("wrong");
+        document.getElementById("quizFeedback").textContent="❌ Not quite! "+q.explanation;
+        document.getElementById("quizFeedback").style.color="red";
+    }
+    document.getElementById("quizNext").style.display="inline-block";
+    document.getElementById("quizNext").textContent=quizIndex===quizQuestions.length-1?"Show My Result 🏆":"Next Question ➡️";
+}
+
+function nextQuizQuestion(){
+    if(!quizAnswered)return;
+    quizIndex++;
+    if(quizIndex<quizQuestions.length){
+        loadQuiz();
+    }else{
+        showQuizResult();
+    }
+}
+
+function showQuizResult(){
+    document.getElementById("quizBox").style.display="none";
+    document.getElementById("quizResult").style.display="block";
+    const percentage=Math.round((quizScore/quizQuestions.length)*100);
+    const studentName=localStorage.getItem("studentName");
+    document.getElementById("quizResultName").textContent=studentName?"Well done, "+studentName+"!":"Well done, Science Explorer!";
+    document.getElementById("quizFinalScore").textContent=quizScore+" / "+quizQuestions.length;
+    let message="";
+    if(quizScore===7)message="🌟 Perfect! You are a Human Body Expert!";
+    else if(quizScore>=5)message="👏 Excellent work! Keep it up!";
+    else if(quizScore>=3)message="👍 Good job! Review the lesson and try again.";
+    else message="💪 Keep practicing! You can do better!";
+    document.getElementById("quizMessage").textContent=message+" Your result is "+percentage+"%.";
+    localStorage.setItem("lesson43Score",quizScore);
+    localStorage.setItem("lesson43Percentage",percentage);
+}
+
+function restartQuiz(){
+    quizIndex=0;
+    quizScore=0;
+    quizAnswered=false;
+    document.getElementById("quizBox").style.display="block";
+    document.getElementById("quizResult").style.display="none";
+    loadQuiz();
+}
+loadQuiz();
+
+</script>
+
+</body>
+</html>

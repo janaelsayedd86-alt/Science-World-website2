@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Two - The Role of Oxygen</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .oxygen-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+            color: #263653;
+        }
+
+        .oxygen-hero {
+            background: linear-gradient(135deg, #d8f5e9, #dceeff);
+            border-radius: 25px;
+            padding: 35px 20px;
+            text-align: center;
+            margin: 20px 0 30px;
+        }
+
+        .oxygen-hero h1 {
+            color: #176b87;
+            font-size: 32px;
+        }
+
+        .brainy-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .brainy-icon {
+            font-size: 65px;
+        }
+
+        .brainy-message {
+            background: white;
+            padding: 15px 22px;
+            border-radius: 20px;
+            max-width: 400px;
+            box-shadow: 0 4px 12px #00000012;
+        }
+
+        .oxygen-section {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 22px;
+            box-shadow: 0 5px 18px #00000010;
+        }
+
+        .oxygen-section h2 {
+            color: #176b87;
+            margin-bottom: 15px;
+        }
+
+        .gas-chart {
+            display: flex;
+            height: 55px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nitrogen {
+            width: 78%;
+            background: #42a5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .oxygen {
+            width: 21%;
+            background: #26a69a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .other-gases {
+            width: 1%;
+            background: #ffb74d;
+        }
+
+        .gas-labels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .gas-label {
+            padding: 15px;
+            border-radius: 15px;
+            background: #f2f8ff;
+            text-align: center;
+        }
+
+        .gas-label strong {
+            display: block;
+            font-size: 22px;
+            color: #176b87;
+            margin-bottom: 5px;
+        }
+
+        .experiment-box {
+            background: #f2faff;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .jar {
+            width: 150px;
+            height: 190px;
+            border: 5px solid #80c9e8;
+            border-top: 9px solid #80c9e8;
+            border-radius: 25px 25px 35px 35px;
+            margin: 20px auto;
+            background: #dff5ff80;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            position: relative;
+        }
+
+        .candle {
+            width: 42px;
+            height: 90px;
+            background: #ffce75;
+            border-radius: 7px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .candle::before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: 19px;
+            width: 4px;
+            height: 12px;
+            background: #333;
+        }
+
+        .flame {
+            position: absolute;
+            width: 25px;
+            height: 40px;
+            background: linear-gradient(#fff176, #ff9800);
+            border-radius: 50% 50% 45% 45%;
+            top: -48px;
+            left: 8px;
+            animation: flicker 0.6s infinite alternate;
+            transform-origin: bottom;
+        }
+
+        .flame.off {
+            display: none;
+        }
+
+        @keyframes flicker {
+            from { transform: scale(1) rotate(-4deg); }
+            to { transform: scale(1.12) rotate(4deg); }
+        }
+
+        .gas-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .gas-buttons button,
+        .oxygen-page .action-button {
+            background: #176b87;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .gas-buttons button:hover,
+        .oxygen-page .action-button:hover {
+            background: #0d5068;
+            transform: translateY(-2px);
+        }
+
+        .experiment-result {
+            background: white;
+            border-radius: 14px;
+            padding: 15px;
+            min-height: 55px;
+            line-height: 1.7;
+        }
+
+        .question {
+            background: #f4f9ff;
+            padding: 18px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
+        .question label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        @media(max-width: 600px) {
+            .oxygen-page {
+                padding: 12px;
+            }
+
+            .oxygen-hero h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="oxygen-page">
+
+    <!-- Header -->
+    <header>
+        <h2>🔬 Science World</h2>
+        <p>Home | Unit One | Lesson Two</p>
+    </header>
+
+    <!-- Welcome -->
+    <section class="oxygen-hero">
+
+        <h1>Lesson Two: The Role of Oxygen 🫧</h1>
+
+        <p>Let's discover which gas helps things burn!</p>
+
+        <div class="brainy-box">
+
+            <div class="brainy-icon">🤖</div>
+
+            <div class="brainy-message">
+                <strong>Hi, I'm Brainy!</strong>
+                <p>Today we will explore the gases in the air and discover the secret of oxygen!</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Objectives -->
+    <section class="oxygen-section">
+
+        <h2>🎯 What Will You Learn?</h2>
+
+        <ul>
+            <li>Identify the main gases in the air.</li>
+            <li>Know the percentage of oxygen and nitrogen.</li>
+            <li>Understand the role of oxygen in burning.</li>
+            <li>Compare how different gases affect burning.</li>
+        </ul>
+
+    </section>
+
+    <!-- Air Components -->
+    <section class="oxygen-section">
+
+        <h2>🌍 What Is Air Made Of?</h2>
+
+        <p>
+            Air is a mixture of different gases, such as nitrogen,
+            oxygen, and carbon dioxide.
+        </p>
+
+        <div class="gas-chart">
+            <div class="nitrogen">78%</div>
+            <div class="oxygen">21%</div>
+            <div class="other-gases"></div>
+        </div>
+
+        <div class="gas-labels">
+
+            <div class="gas-label">
+                <strong>78%</strong>
+                Nitrogen
+            </div>
+
+            <div class="gas-label">
+                <strong>21%</strong>
+                Oxygen
+            </div>
+
+            <div class="gas-label">
+                <strong>About 1%</strong>
+                Other gases
+            </div>
+
+        </div>
+
+        <p>
+            <strong>Remember:</strong>
+            Oxygen helps things burn, but nitrogen and carbon dioxide
+            do not support burning.
+        </p>
+
+    </section>
+
+    <!-- Experiment -->
+    <section class="oxygen-section">
+
+        <h2>🧪 Brainy's Virtual Experiment</h2>
+
+        <p>
+            Let's compare what happens to a burning candle
+            in different gases.
+        </p>
+
+        <div class="experiment-box">
+
+            <h3>Choose a Gas</h3>
+
+            <div class="jar">
+
+                <div class="candle">
+                    <div class="flame" id="candleFlame"></div>
+                </div>
+
+            </div>
+
+            <div class="gas-buttons">
+
+                <button onclick="testGas('oxygen')">
+                    Oxygen
+                </button>
+
+                <button onclick="testGas('nitrogen')">
+                    Nitrogen
+                </button>
+
+                <button onclick="testGas('carbon')">
+                    Carbon Dioxide
+                </button>
+
+            </div>
+
+            <div class="experiment-result" id="gasResult">
+                Choose a gas to see what happens to the candle!
+            </div>
+
+        </div>
+
+        <p>
+            <strong>Safety:</strong>
+            This is a virtual experiment. Do not try experiments
+            involving fire or gas cylinders at home.
+        </p>
+
+    </section>
+<!-- Experiment Results -->
+
+<section class="oxygen-section">
+
+    <h2>🔬 What Did We Discover?</h2>
+
+    <p>Let's compare the effect of different gases on burning.</p>
+
+    <div style="overflow-x:auto;">
+
+        <table style="
+            width:100%;
+            border-collapse:collapse;
+            text-align:center;
+            background:white;
+        ">
+
+            <tr style="background:#176b87;color:white;">
+                <th style="padding:14px;">Gas</th>
+                <th style="padding:14px;">Observation</th>
+                <th style="padding:14px;">Result</th>
+            </tr>
+
+            <tr>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    Oxygen 🫧
+                </td>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    Burns brightly
+                </td>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    🔥 Supports burning
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    Nitrogen 💨
+                </td>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    Flame goes out
+                </td>
+                <td style="padding:14px;border-bottom:1px solid #ddd;">
+                    Does not support burning
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding:14px;">
+                    Carbon Dioxide ☁️
+                </td>
+                <td style="padding:14px;">
+                    Flame goes out
+                </td>
+                <td style="padding:14px;">
+                    Does not support burning
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <p style="
+        background:#e6f7ee;
+        padding:15px;
+        border-radius:12px;
+        margin-top:20px;
+    ">
+        ⭐ <strong>Brainy's Conclusion:</strong>
+        Oxygen is the gas that helps things burn!
+    </p>
+
+</section>
+    <!-- Summary -->
+    <section class="oxygen-section">
+
+        <h2>⭐ Let's Remember!</h2>
+
+        <ul>
+            <li>Air contains about 78% nitrogen.</li>
+            <li>Air contains about 21% oxygen.</li>
+            <li>Oxygen helps things burn.</li>
+            <li>Nitrogen and carbon dioxide do not support burning.</li>
+        </ul>
+
+    </section>
+
+<!-- Help Brainy Game -->
+
+<section class="oxygen-section" id="brainyGame">
+
+    <h2>🎮 Help Brainy!</h2>
+
+    <p>
+        Brainy needs your help! Answer the science questions
+        and collect stars.
+    </p>
+
+    <div class="game-score">
+        ⭐ Your Score: <span id="gameScore">0</span> / 4
+    </div>
+
+    <div class="game-card">
+
+        <div class="game-character">🤖</div>
+
+        <h3 id="gameQuestion">
+            Ready for the challenge?
+        </h3>
+
+        <div id="gameOptions" class="game-options"></div>
+
+        <div id="gameFeedback" class="game-feedback">
+            Click Start Game to begin!
+        </div>
+
+        <button
+            class="action-button"
+            id="gameNextButton"
+            onclick="nextGameQuestion()">
+            Start Game 🚀
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- Quiz -->
+    <section class="oxygen-section">
+
+        <h2>🧠 Brainy's Challenge</h2>
+
+        <p>Choose the correct answer:</p>
+
+        <form id="oxygenQuiz">
+
+            <div class="question">
+
+                <strong>1. Which gas helps things burn?</strong>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    Nitrogen
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    Oxygen
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    Carbon dioxide
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <strong>2. How much nitrogen is in the air?</strong>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    About 21%
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    About 50%
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    About 78%
+                </label>
+
+            </div>
+
+            <div class="question">
+
+                <strong>3. What happens to a burning incense stick in a jar of oxygen?</strong>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    It burns brightly.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    It goes out immediately.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    Nothing happens.
+                </label>
+
+            </div>
+
+            <button type="button"
+                    class="action-button"
+                    onclick="checkOxygenQuiz()">
+                Check My Answers
+            </button>
+
+            <div class="feedback" id="quizFeedback"></div>
+
+        </form>
+
+    </section>
+
+    <!-- Navigation -->
+    <div class="lesson-navigation">
+
+        <button class="action-button"
+                onclick="window.location.href='lessons.html'">
+            ⬅ Back to Lessons
+        </button>
+
+        <button class="action-button"
+                onclick="window.location.href='lesson1.html'">
+            Previous Lesson
+        </button>
+
+    </div>
+
+    <footer style="text-align:center; padding:20px;">
+        <p>🌟 Science World - Learn, Explore and Discover!</p>
+    </footer>
+
+</div>
+
+<script>
+
+    // Virtual Gas Experiment
+
+    function testGas(gas) {
+
+        const flame = document.getElementById("candleFlame");
+        const result = document.getElementById("gasResult");
+
+        if (gas === "oxygen") {
+
+            flame.classList.remove("off");
+
+            result.innerHTML =
+                "🔥 The candle burns brightly in oxygen! " +
+                "Oxygen helps things burn.";
+
+        }
+
+        else if (gas === "nitrogen") {
+
+            flame.classList.add("off");
+
+            result.innerHTML =
+                "💨 The flame goes out in nitrogen. " +
+                "Nitrogen does not support burning.";
+
+        }
+
+        else if (gas === "carbon") {
+
+            flame.classList.add("off");
+
+            result.innerHTML =
+                "💨 The flame goes out in carbon dioxide. " +
+                "Carbon dioxide does not support burning.";
+
+        }
+
+    }
+
+
+    // Quiz
+
+    function checkOxygenQuiz() {
+
+        const answers = {
+            q1: "b",
+            q2: "c",
+            q3: "a"
+        };
+
+        let score = 0;
+        let unanswered = false;
+
+        for (let question in answers) {
+
+            const selected = document.querySelector(
+                'input[name="' + question + '"]:checked'
+            );
+
+            if (!selected) {
+                unanswered = true;
+            }
+
+            else if (selected.value === answers[question]) {
+                score++;
+            }
+
+        }
+
+        const feedback = document.getElementById("quizFeedback");
+
+        if (unanswered) {
+
+            feedback.innerHTML =
+                "⚠️ Please answer all questions first.";
+
+            feedback.style.color = "#e67e22";
+
+            return;
+
+        }
+
+        if (score === 3) {
+
+            feedback.innerHTML =
+                "🎉 Excellent! You got all 3 answers correct!";
+
+            feedback.style.color = "green";
+
+        }
+
+        else {
+
+            feedback.innerHTML =
+                "⭐ You got " + score +
+                " out of 3. Try again, little scientist!";
+
+            feedback.style.color = "#176b87";
+
+        }
+
+    }
+
+// Help Brainy Game
+
+const gameQuestions = [
+
+    {
+        question: "1. Which gas helps things burn?",
+        options: ["Nitrogen", "Oxygen", "Carbon dioxide"],
+        answer: 1,
+        explanation: "Excellent! Oxygen helps things burn."
+    },
+
+    {
+        question: "2. Which gas makes up about 78% of air?",
+        options: ["Oxygen", "Carbon dioxide", "Nitrogen"],
+        answer: 2,
+        explanation: "Correct! Nitrogen makes up about 78% of air."
+    },
+
+    {
+        question: "3. What happens to a burning incense stick in oxygen?",
+        options: ["It burns brightly", "It goes out", "It disappears"],
+        answer: 0,
+        explanation: "Great! The incense stick burns brightly in oxygen."
+    },
+
+    {
+        question: "4. How much oxygen is in the air?",
+        options: ["About 78%", "About 21%", "About 50%"],
+        answer: 1,
+        explanation: "Amazing! Oxygen makes up about 21% of air."
+    }
+
+];
+
+let currentGameQuestion = 0;
+let gameScore = 0;
+let gameAnswered = false;
+
+function startBrainyGame() {
+
+    currentGameQuestion = 0;
+    gameScore = 0;
+    gameAnswered = false;
+
+    document.getElementById("gameScore").textContent = gameScore;
+
+    showGameQuestion();
+
+}
+
+function showGameQuestion() {
+
+    gameAnswered = false;
+
+    const question = gameQuestions[currentGameQuestion];
+
+    document.getElementById("gameQuestion").textContent =
+        question.question;
+
+    document.getElementById("gameFeedback").textContent =
+        "Choose the correct answer!";
+
+    const optionsContainer =
+        document.getElementById("gameOptions");
+
+    optionsContainer.innerHTML = "";
+
+    question.options.forEach((option, index) => {
+
+        const button = document.createElement("button");
+
+        button.textContent = option;
+
+        button.onclick = function () {
+            checkGameAnswer(index, button);
+        };
+
+        optionsContainer.appendChild(button);
+
+    });
+
+    document.getElementById("gameNextButton").textContent =
+        "Next Question ➡️";
+
+    document.getElementById("gameNextButton").disabled = true;
+
+}
+
+function checkGameAnswer(selectedIndex, selectedButton) {
+
+    if (gameAnswered) return;
+
+    gameAnswered = true;
+
+    const question = gameQuestions[currentGameQuestion];
+
+    const allButtons =
+        document.querySelectorAll("#gameOptions button");
+
+    allButtons.forEach(button => {
+        button.disabled = true;
+    });
+
+    if (selectedIndex === question.answer) {
+
+        gameScore++;
+
+        selectedButton.classList.add("correct");
+
+        document.getElementById("gameFeedback").textContent =
+            "🎉 Correct! " + question.explanation;
+
+    } else {
+
+        selectedButton.classList.add("wrong");
+
+        allButtons[question.answer].classList.add("correct");
+
+        document.getElementById("gameFeedback").textContent =
+            "💡 Not quite! " + question.explanation;
+
+    }
+
+    document.getElementById("gameScore").textContent = gameScore;
+
+    document.getElementById("gameNextButton").disabled = false;
+
+}
+
+function nextGameQuestion() {
+
+    if (currentGameQuestion === 0 && !gameAnswered) {
+
+        startBrainyGame();
+        return;
+
+    }
+
+    if (!gameAnswered) return;
+
+    currentGameQuestion++;
+
+    if (currentGameQuestion < gameQuestions.length) {
+
+        showGameQuestion();
+
+    } else {
+
+        finishBrainyGame();
+
+    }
+
+}
+
+function finishBrainyGame() {
+
+    document.getElementById("gameQuestion").textContent =
+        "You completed the challenge! 🏆";
+
+    document.getElementById("gameOptions").innerHTML = "";
+
+    document.getElementById("gameFeedback").textContent =
+        "Brainy is proud of you! You scored " +
+        gameScore + " out of 4 stars.";
+
+    document.getElementById("gameNextButton").textContent =
+        "Play Again 🔄";
+
+    document.getElementById("gameNextButton").disabled = false;
+
+    document.getElementById("gameNextButton").onclick =
+        startBrainyGame;
+
+}
+
+</script>
+<button class="main-btn" onclick="window.location.href='index.html'">
+    🏠 Back to Home
+</button>
+</body>
+</html>

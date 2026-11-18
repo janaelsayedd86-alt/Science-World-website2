@@ -1,0 +1,554 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fc;
+    color: #183153;
+}
+
+header {
+    background: #142b4a;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #55d6be;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 65px 7%;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 43px;
+    color: #1677d2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+button {
+    background: #1677d2;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #105ba3;
+}
+
+.units {
+    text-align: center;
+    padding: 55px 7%;
+}
+
+.units h2 {
+    font-size: 32px;
+    color: #1677d2;
+    margin-bottom: 15px;
+}
+
+.units > p {
+    margin-bottom: 30px;
+}
+
+.unit-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.unit-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    flex: 1;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+.unit-card h3 {
+    margin-bottom: 15px;
+}
+
+.unit-card p {
+    margin-bottom: 20px;
+}
+
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e4f2ff;
+}
+
+#about h2 {
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #142b4a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .unit-container {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+}
+
+/* Kids Friendly Design */
+
+body {
+    background: #f0f9ff;
+}
+
+header {
+    background: linear-gradient(90deg, #173b68, #2869a8);
+    border-bottom: 5px solid #ffd166;
+}
+
+.logo {
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #e0f7fa, #f3e8ff);
+    border-radius: 0 0 40px 40px;
+}
+
+.hero-text h1 {
+    color: #2457a6;
+    line-height: 1.3;
+}
+
+.hero-image img {
+    border: 7px solid white;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px #24476b25;
+}
+
+button {
+    background: #ff9f43;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f07822;
+    transform: translateY(-3px);
+}
+
+.unit-card {
+    border: 2px solid #e0efff;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.unit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px #00000018;
+}
+
+.unit-card h3 {
+    color: #2468ae;
+    font-size: 22px;
+}
+
+#about {
+    background: #dff5ff;
+    border-radius: 35px 35px 0 0;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.brainy {
+    text-align: center;
+    flex: 0.8;
+}
+
+.brainy-icon {
+    font-size: 130px;
+    margin-top: 15px;
+}
+
+.brainy h3 {
+    color: #1677d2;
+    font-size: 25px;
+}
+
+.brainy p {
+    color: #555;
+    margin-top: 8px;
+}
+
+.speech {
+    background: white;
+    padding: 18px;
+    border-radius: 25px;
+    color: #2457a6;
+    font-weight: bold;
+    box-shadow: 0 5px 15px #00000015;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+    }
+}
+
+.unit-card {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    padding: 30px 22px;
+    border-radius: 25px;
+    flex: 1;
+    border: 3px solid #d9edff;
+    box-shadow: 0 8px 20px #1b4b6b15;
+    transition: 0.3s;
+}
+
+.unit-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffbd59;
+}
+
+.unit-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.unit-number {
+    display: inline-block;
+    background: #e4f4ff;
+    color: #1677d2;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.unit-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #2457a6;
+}
+
+.unit-card p {
+    line-height: 1.7;
+    color: #586b80;
+    min-height: 80px;
+}
+
+.unit-card button {
+    margin-top: 15px;
+}
+
+.unit-hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 7%;
+    background: linear-gradient(135deg, #e0f7fa, #f3e8ff);
+    border-radius: 0 0 40px 40px;
+}
+
+.unit-hero h1 {
+    color: #2457a6;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.unit-hero p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.unit-character {
+    text-align: center;
+    font-size: 100px;
+}
+
+.unit-character h3 {
+    font-size: 25px;
+    color: #1677d2;
+}
+
+.unit-character p {
+    font-size: 16px;
+}
+
+.lessons {
+    text-align: center;
+    padding: 55px 7%;
+}
+
+.lessons h2 {
+    color: #1677d2;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.lesson-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.lesson-card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    border: 2px solid #d9edff;
+    box-shadow: 0 5px 15px #00000012;
+}
+
+.lesson-card h3 {
+    color: #2457a6;
+    margin-bottom: 15px;
+}
+
+.lesson-card p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .unit-hero,
+    .lesson-container {
+        flex-direction: column;
+    }
+}
+
+.lesson-hero {
+    text-align: center;
+    padding: 60px 7%;
+    background: linear-gradient(135deg, #e0f7fa, #f3e8ff);
+    border-radius: 0 0 40px 40px;
+}
+
+.lesson-welcome h1 {
+    font-size: 38px;
+    color: #2457a6;
+    margin-bottom: 20px;
+}
+
+.lesson-welcome > p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.lesson-brainy {
+    font-size: 90px;
+    margin: 20px 0;
+}
+
+.lesson-brainy h3 {
+    font-size: 25px;
+    color: #1677d2;
+}
+
+.lesson-brainy p {
+    font-size: 16px;
+}
+
+.lesson-content {
+    padding: 50px 7%;
+    text-align: center;
+}
+
+.lesson-content h2 {
+    color: #1677d2;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.lesson-box {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    border: 2px solid #d9edff;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px #00000010;
+}
+
+.lesson-box h3 {
+    color: #2457a6;
+    margin-bottom: 15px;
+}
+
+.lesson-box p {
+    line-height: 1.8;
+}
+
+.lesson-activity {
+    text-align: center;
+    padding: 50px 20px;
+    background: #e4f2ff;
+}
+
+.lesson-activity h2 {
+    color: #2457a6;
+    margin-bottom: 15px;
+}
+
+.lesson-activity p {
+    margin-bottom: 20px;
+}
+
+function startLesson() {
+    document.getElementById("lesson-content").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+/* Cartoon Science Illustrations */
+
+.science-drawings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.drawing-card {
+    background: #ffffff;
+    border: 2px solid #e4eaff;
+    border-radius: 22px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(70, 90, 150, 0.08);
+}
+
+.drawing-card svg {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+.drawing-card h3 {
+    color: #3949ab;
+    margin: 12px 0 8px;
+}
+
+.drawing-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.air-arrow {
+    stroke-dasharray: 7 5;
+}/* Moving Fresh Air Animation */
+
+.drawing-card:first-child svg path:nth-of-type(1),
+.drawing-card:first-child svg path:nth-of-type(2) {
+    stroke-dasharray: 8 6;
+    animation: airFlow 1.5s linear infinite;
+}
+
+@keyframes airFlow {
+    from {
+        stroke-dashoffset: 28;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}/* Fresh Air Movement */
+
+.drawing-card:first-child svg path:nth-child(3),
+.drawing-card:first-child svg path:nth-child(4) {
+    stroke-dasharray: 8 5;
+    animation: airMove 1s linear infinite;
+}
+
+@keyframes airMove {
+    from {
+        stroke-dashoffset: 26;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}/* Air movement animation */
+.science-drawings .drawing-card:first-child svg path {
+    stroke-dasharray: 8 5;
+    animation: moveAir 1s linear infinite !important;
+}
+
+@keyframes moveAir {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: -26;
+    }
+}

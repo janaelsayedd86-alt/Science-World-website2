@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Achievement - Science World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dff6ff, #f4e8ff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .achievement-card {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .trophy {
+            font-size: 75px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #3949ab;
+            font-size: 32px;
+        }
+
+        .brainy {
+            font-size: 65px;
+            margin: 15px;
+        }
+
+        .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            border: 8px solid #66bb6a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 25px auto;
+        }
+
+        .score {
+            font-size: 38px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .percentage {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .message {
+            font-size: 19px;
+            color: #444;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            background: #536dfe;
+        }
+
+        button:hover {
+            opacity: 0.85;
+            transform: scale(1.03);
+        }
+
+        .home-button {
+            background: #26a69a;
+        }
+
+        .no-score {
+            color: #e65100;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="achievement-card">
+
+        <div class="trophy">🏆</div>
+
+        <h1>My Achievement!</h1>
+
+        <div class="brainy">🤖</div>
+
+        <h2>Hello, Science Explorer!</h2>
+
+        <div id="resultArea"></div>
+
+        <div class="buttons">
+            <button onclick="window.location.href='unit1-quiz.html'">
+                Try Again 🔄
+            </button>
+
+            <button class="home-button"
+                onclick="window.location.href='lessons.html'">
+                Back to Lessons 📚
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        const score = localStorage.getItem("unit1Score");
+        const resultArea = document.getElementById("resultArea");
+
+        if (score === null) {
+
+            resultArea.innerHTML = `
+                <p class="no-score">
+                    You haven't completed the quiz yet!
+                    <br>
+                    Take the quiz first to see your achievement.
+                </p>
+            `;
+
+        } else {
+
+            const percentage = Math.round((Number(score) / 10) * 100);
+
+            let message = "";
+
+            if (Number(score) >= 9) {
+                message = "Amazing! You are a Science Superstar! 🌟";
+            } else if (Number(score) >= 7) {
+                message = "Great job! You are doing very well! 👏";
+            } else if (Number(score) >= 5) {
+                message = "Good work! Keep learning and practicing! 💪";
+            } else {
+                message = "Don't give up! Try again and you will improve! ❤️";
+            }
+
+            resultArea.innerHTML = `
+                <p class="message">
+                    Congratulations! You completed Unit One.
+                </p>
+
+                <div class="score-circle">
+                    <div class="score">${score}/10</div>
+                    <div class="percentage">${percentage}%</div>
+                </div>
+
+                <p class="message">
+                    ${message}
+                    <br><br>
+                    Brainy is proud of you! 🤖
+                </p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

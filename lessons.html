@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Lesson - Science World</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f3e5f5);
+            color: #263238;
+        }
+
+        .lessons-header {
+            background: #176b87;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lessons-header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .lessons-container {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .lessons-container h1 {
+            color: #176b87;
+            font-size: 38px;
+        }
+
+        .lessons-container p {
+            font-size: 19px;
+        }
+
+        .lessons-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .lesson-card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px #0002;
+            transition: 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .lesson-icon {
+            font-size: 65px;
+        }
+
+        .lesson-card h2 {
+            color: #176b87;
+        }
+
+        .lesson-card button {
+            background: #ffb703;
+            color: #263238;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lesson-card button:hover {
+            background: #fb8500;
+            color: white;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: #176b87;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="lessons-header">
+        <h2>🌍 Science World</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="unit1.html">Unit One</a>
+        </nav>
+    </header>
+
+    <main class="lessons-container">
+
+        <h1>Choose Your Lesson 🚀</h1>
+
+        <p>
+            Are you ready to explore science?
+            Choose a lesson and start your adventure!
+        </p>
+
+        <div class="lessons-cards">
+
+            <!-- Lesson One -->
+            <div class="lesson-card">
+                <div class="lesson-icon">🔥</div>
+
+                <h2>Lesson One</h2>
+
+                <p>Air Passages and Burning</p>
+
+                <button onclick="window.location.href='lesson1.html'">
+                    Start Lesson
+                </button>
+            </div>
+
+            <!-- Lesson Two -->
+            <div class="lesson-card">
+                <div class="lesson-icon">🫧</div>
+
+                <h2>Lesson Two</h2>
+
+                <p>The Role of Oxygen</p>
+
+                <button onclick="window.location.href='lesson2.html'">
+                    Start Lesson
+                </button>
+            </div>
+
+        </div>
+
+        <a href="unit1.html" class="back-button">
+            ← Back to Unit One
+        </a>
+
+    </main>
+<div style="text-align: center; margin: 35px 0;">
+    <button onclick="window.location.href='unit1-quiz.html'"
+        style="padding: 15px 30px; font-size: 20px; background: #ff9800; color: white; border: none; border-radius: 15px; cursor: pointer;">
+        Unit One Final Quiz 🎓
+    </button>
+</div>
+</body>
+</html>

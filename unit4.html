@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Four - Blood Circulation and Excretion | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f0, #eaf5ff);
+    color: #263238;
+}
+
+header {
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffdf6c;
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 10px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.hero-icon {
+    font-size: 85px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #a52a3a;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.brainy-box {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    margin-bottom: 35px;
+}
+
+.character {
+    font-size: 65px;
+}
+
+.brainy-box p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.lessons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.lesson-card {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    transition: 0.3s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px #0003;
+}
+
+.lesson-icon {
+    font-size: 65px;
+}
+
+.lesson-card h3 {
+    color: #b83245;
+}
+
+.lesson-card p {
+    line-height: 1.6;
+    color: #555;
+}
+
+button {
+    background: #ffb703;
+    color: #263238;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #fb8500;
+    color: white;
+    transform: scale(1.05);
+}
+
+.objectives {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 35px;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.objectives li {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.game-box {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    margin-top: 35px;
+}
+
+.question {
+    background: #fff0f0;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+    background: #247ba0;
+    color: white;
+}
+
+.answer:hover {
+    background: #185d7a;
+}
+
+#challengeResult {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.quiz-section {
+    background: linear-gradient(135deg, #ffe0e3, #d9f0ff);
+    padding: 30px;
+    border-radius: 22px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.navigation {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.navigation a {
+    display: inline-block;
+    background: #247ba0;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    margin: 7px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: #185d7a;
+}
+
+footer {
+    background: #a52a3a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    header {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit4.html">Unit Four</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-icon">🫀</div>
+    <h1>Unit Four: Blood Circulation and Excretion</h1>
+    <p>
+        Discover how blood travels through your body,
+        how the heart works, and how the kidneys remove waste!
+        <br>
+        Let's explore the amazing systems inside our body.
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="brainy-box">
+        <div class="character">🤖</div>
+        <h2>Hello, Science Explorers!</h2>
+
+        <p>
+            I'm Brainy! Are you ready for a new adventure inside
+            the human body?
+            We will explore the heart, follow the journey of blood,
+            discover how the kidneys clean the blood,
+            and learn where our important organs are located.
+        </p>
+
+        <p><strong>Let's begin our body adventure! 🚀</strong></p>
+    </section>
+
+    <h2 class="section-title">📚 Explore Our Lessons</h2>
+
+    <section class="lessons">
+
+        <div class="lesson-card">
+            <div class="lesson-icon">❤️</div>
+            <h3>Lesson 4-1</h3>
+            <h3>Heart and Blood</h3>
+
+            <p>
+                Discover how the heart pumps blood,
+                what blood carries, and how blood circulates
+                throughout the body.
+            </p>
+
+            <button onclick="location.href='lesson4-1.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+        <div class="lesson-card">
+            <div class="lesson-icon">🫘</div>
+            <h3>Lesson 4-2</h3>
+            <h3>How the Kidneys Work</h3>
+
+            <p>
+                Explore how the kidneys filter waste products
+                and excess water from the blood to produce urine.
+            </p>
+
+            <button onclick="location.href='lesson4-2.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+        <div class="lesson-card">
+            <div class="lesson-icon">🫁</div>
+            <h3>Lesson 4-3</h3>
+            <h3>Various Organs</h3>
+
+            <p>
+                Discover the locations of important organs
+                and how they work together through blood circulation.
+            </p>
+
+            <button onclick="location.href='lesson4-3.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+    </section>
+
+    <section class="objectives">
+        <h2 class="section-title">🎯 What Will You Learn?</h2>
+
+        <ul>
+            <li>Identify the heart as the organ that pumps blood.</li>
+            <li>Understand what blood carries throughout the body.</li>
+            <li>Learn how blood circulates through blood vessels.</li>
+            <li>Understand why the pulse becomes faster after exercise.</li>
+            <li>Discover how the kidneys filter waste products and excess water.</li>
+            <li>Learn how urine is produced, stored, and discharged.</li>
+            <li>Identify the locations of important organs in the body.</li>
+            <li>Understand how body organs are connected by blood vessels.</li>
+        </ul>
+    </section>
+
+    <section class="game-box">
+
+        <h2 class="section-title">🧠 Brainy's Quick Challenge!</h2>
+
+        <div class="character">🤖</div>
+
+        <div id="questionArea">
+
+            <div class="question">
+                <h3 id="questionText"></h3>
+            </div>
+
+            <div id="answers"></div>
+
+            <p id="challengeResult"></p>
+
+            <p id="scoreText">Score: 0 / 3</p>
+
+        </div>
+
+        <button onclick="restartChallenge()">
+            🔄 Try Again
+        </button>
+
+    </section>
+
+    <section class="quiz-section">
+
+        <div style="font-size:65px;">🏆</div>
+
+        <h2>Unit Four Final Challenge!</h2>
+
+        <p>
+            Have you completed all three lessons?
+            Now it's time to test what you learned about
+            blood circulation and excretion!
+        </p>
+
+        <h3>10 Questions | 10 Points</h3>
+
+        <button onclick="location.href='unit4-quiz.html'">
+            Start Final Quiz 🚀
+        </button>
+
+    </section>
+
+    <div class="navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="units.html">📚 All Units</a>
+        <a href="unit3.html">⬅️ Previous Unit</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>Science World | Learn, Explore, Discover!</p>
+</footer>
+
+<script>
+const questions = [
+    {
+        q: "Which organ works like a pump to send blood to the whole body?",
+        options: ["Stomach", "Heart", "Kidneys"],
+        answer: 1,
+        explanation: "Correct! The heart constantly pumps blood throughout the body."
+    },
+    {
+        q: "What does blood carry to the whole body?",
+        options: ["Oxygen and nutrients", "Only water", "Only carbon dioxide"],
+        answer: 0,
+        explanation: "Excellent! Blood carries oxygen and nutrients to the whole body."
+    },
+    {
+        q: "Which organs filter waste products and excess water from the blood?",
+        options: ["Lungs", "Stomach", "Kidneys"],
+        answer: 2,
+        explanation: "Correct! The kidneys filter waste products and excess water to produce urine."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function showQuestion() {
+    answered = false;
+
+    document.getElementById("questionText").textContent =
+        questions[currentQuestion].q;
+
+    document.getElementById("challengeResult").textContent = "";
+
+    const answersDiv = document.getElementById("answers");
+    answersDiv.innerHTML = "";
+
+    questions[currentQuestion].options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.className = "answer";
+        btn.onclick = () => checkAnswer(index);
+        answersDiv.appendChild(btn);
+    });
+
+    document.getElementById("scoreText").textContent =
+        "Score: " + score + " / 3";
+}
+
+function checkAnswer(index) {
+    if (answered) return;
+    answered = true;
+
+    const result = document.getElementById("challengeResult");
+
+    if (index === questions[currentQuestion].answer) {
+        score++;
+        result.textContent = "✅ " + questions[currentQuestion].explanation;
+        result.style.color = "green";
+    } else {
+        result.textContent =
+            "❌ Not quite! " + questions[currentQuestion].explanation;
+        result.style.color = "red";
+    }
+
+    document.getElementById("scoreText").textContent =
+        "Score: " + score + " / 3";
+
+    const nextButton = document.createElement("button");
+
+    nextButton.textContent =
+        currentQuestion === questions.length - 1
+        ? "See Result 🏆"
+        : "Next Question ➡️";
+
+    nextButton.onclick = nextQuestion;
+
+    document.getElementById("answers").appendChild(nextButton);
+}
+
+function nextQuestion() {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        document.getElementById("questionArea").innerHTML =
+            "<h2>🎉 Challenge Completed!</h2>" +
+            "<p>You scored " + score + " out of 3.</p>" +
+            "<p>" + (score === 3
+            ? "Amazing work, Science Explorer! 🌟"
+            : "Good try! Keep learning and try again! 💪") +
+            "</p>";
+    }
+}
+
+function restartChallenge() {
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("questionArea").innerHTML =
+        '<div class="question"><h3 id="questionText"></h3></div>' +
+        '<div id="answers"></div>' +
+        '<p id="challengeResult"></p>' +
+        '<p id="scoreText">Score: 0 / 3</p>';
+
+    showQuestion();
+}
+
+showQuestion();
+</script>
+
+</body>
+</html>

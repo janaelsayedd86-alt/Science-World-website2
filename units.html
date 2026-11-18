@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Your Unit</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.units-page {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.unit-card-new {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 22px;
+    box-shadow: 0 5px 18px #0002;
+    transition: 0.3s;
+}
+
+.unit-card-new:hover {
+    transform: translateY(-8px);
+}
+
+.unit-icon-new {
+    font-size: 60px;
+}
+
+.unit-card-new h2 {
+    color: #2563eb;
+}
+
+.unit-card-new p {
+    line-height: 1.7;
+}
+
+.unit-card-new button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.unit-card-new button:hover {
+    background: #1d4ed8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Science World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<main class="units-page">
+
+    <h1>🌟 Choose Your Science Adventure!</h1>
+
+    <h2 id="studentWelcome"></h2>
+
+    <p>Choose a unit and start exploring with Brainy!</p>
+
+    <div class="units-grid">
+
+        <div class="unit-card-new">
+            <div class="unit-icon-new">🔥</div>
+            <h2>Unit One</h2>
+            <p>Conditions for Burning</p>
+            <button onclick="openUnit('unit1.html')">
+                Explore Unit One 🚀
+            </button>
+        </div>
+
+        <div class="unit-card-new">
+            <div class="unit-icon-new">🔬</div>
+            <h2>Unit Two</h2>
+            <p>Discover new science topics!</p>
+            <button onclick="openUnit('unit2.html')">
+                Explore Unit Two 🚀
+            </button>
+        </div>
+
+        <div class="unit-card-new">
+            <div class="unit-icon-new">🌍</div>
+            <h2>Unit Three</h2>
+            <p>Let's explore more science!</p>
+            <button onclick="openUnit('unit3.html')">
+                Explore Unit Three 🚀
+            </button>
+        </div>
+
+        <div class="unit-card-new">
+            <div class="unit-icon-new">🫀</div>
+            <h2>Unit Four</h2>
+            <p>Blood Circulation and Excretion</p>
+            <button onclick="openUnit('unit4.html')">
+                Explore Unit Four 🚀
+            </button>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>🌍 Science World - Explore and Discover!</p>
+</footer>
+
+<script>
+const name = localStorage.getItem("studentName");
+
+document.getElementById("studentWelcome").textContent =
+    name ? "Welcome, " + name + "! 👋" : "Welcome, Science Explorer! 👋";
+
+function openUnit(page) {
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>

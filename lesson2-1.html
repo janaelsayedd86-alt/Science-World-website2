@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2-1 - How Does Respiration Occur?</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff7f5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #ff758c, #ff9a9e);
+    color: white;
+    padding: 22px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 22px 0;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px #00000012;
+}
+
+h2 {
+    color: #e85d75;
+}
+
+.brainy {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.robot {
+    font-size: 75px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+.diagram {
+    text-align: center;
+    font-size: 23px;
+    line-height: 1.8;
+    background: #fff0f2;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.step {
+    background: #fff0f2;
+    border-left: 6px solid #ff758c;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+button {
+    background: #ff758c;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    margin: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #e85d75;
+    transform: scale(1.03);
+}
+
+.simulation {
+    text-align: center;
+    background: #fff0f2;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.lungs {
+    font-size: 90px;
+    margin: 15px;
+    transition: transform 0.5s;
+}
+
+#simulationText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #a83d55;
+}
+
+.question {
+    background: #fff0f2;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 12px;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: white;
+    color: #333;
+    border: 2px solid #ffd0d8;
+}
+
+.answer:hover {
+    background: #ffe1e6;
+}
+
+#quizResult {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff758c;
+    color: white;
+    margin-top: 30px;
+}
+
+@media(max-width:600px) {
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+}
+
+/* Additional interactive activities */
+
+.activity-box {
+    background: #fff0f2;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.activity-feedback {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #a83d55;
+}
+
+.path-button {
+    background: white;
+    color: #333;
+    border: 2px solid #ffd0d8;
+    display: inline-block;
+}
+
+.path-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+    transform: none;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background: #ffe1e6;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #ff758c;
+    transition: width 0.3s;
+}
+
+.gas-card {
+    background: white;
+    border: 2px solid #ffd0d8;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.gas-card button {
+    display: block;
+    width: 100%;
+}
+
+.breathing {
+    animation: breathingAnimation 2s infinite ease-in-out;
+}
+
+@keyframes breathingAnimation {
+    0%, 100% { transform: scale(0.85); }
+    50% { transform: scale(1.25); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🫁 Lesson 2-1: How Does Respiration Occur?</h1>
+    <p>Unit Two: Respiration</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="unit2.html">Unit Two</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="card brainy">
+        <div class="robot">🤖</div>
+        <div>
+            <h2>Hello, Young Scientist!</h2>
+            <p>
+                Welcome back! I am Brainy.
+                Today, we will discover how air enters and leaves our bodies.
+                Are you ready for an exciting journey?
+            </p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🎯 Learning Objectives</h2>
+        <p>By the end of this lesson, you will be able to:</p>
+        <ul>
+            <li>Explain the meaning of respiration.</li>
+            <li>Differentiate between inhalation and exhalation.</li>
+            <li>Identify the gases in inhaled and exhaled air.</li>
+            <li>Describe how breathing occurs.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>📖 What Is Respiration?</h2>
+
+        <p>
+            Respiration is an important life process.
+            Our bodies need oxygen to release energy from food.
+        </p>
+
+        <div class="step">
+            <h3>🌬️ Inhalation</h3>
+            <p>
+                Inhalation is the process of taking air into the lungs.
+                The inhaled air contains oxygen.
+            </p>
+        </div>
+
+        <div class="step">
+            <h3>💨 Exhalation</h3>
+            <p>
+                Exhalation is the process of pushing air out of the lungs.
+                Exhaled air contains more carbon dioxide than inhaled air.
+            </p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🫁 The Respiratory System</h2>
+
+        <p>
+            The respiratory system helps us breathe.
+            Air passes through different parts until it reaches the lungs.
+        </p>
+
+        <div class="diagram">
+            👃 Nose
+            <div>⬇️</div>
+            <div>Throat</div>
+            <div>⬇️</div>
+            <div>Windpipe (Trachea)</div>
+            <div>⬇️</div>
+            <div>Bronchi</div>
+            <div>⬇️</div>
+            <div>🫁 Lungs</div>
+        </div>
+
+        <p>
+            The lungs are the main organs of the respiratory system.
+            They allow oxygen to enter the blood and carbon dioxide to leave it.
+        </p>
+    </section>
+
+    <!-- New Activity 1: Arrange the air pathway -->
+
+    <section class="card">
+        <h2>🎮 Activity 1: Help Brainy Find the Way!</h2>
+
+        <p>
+            Air passes through different parts of the respiratory system.
+            Can you arrange them in the correct order?
+        </p>
+
+        <div class="activity-box">
+            <h3>Choose the first part air passes through:</h3>
+
+            <div id="pathChoices">
+                <button class="path-button" onclick="choosePath('Lungs', this)">Lungs</button>
+                <button class="path-button" onclick="choosePath('Nose', this)">Nose</button>
+                <button class="path-button" onclick="choosePath('Bronchi', this)">Bronchi</button>
+                <button class="path-button" onclick="choosePath('Trachea', this)">Trachea</button>
+                <button class="path-button" onclick="choosePath('Throat', this)">Throat</button>
+            </div>
+
+            <p id="pathProgress">Correct steps: 0 / 5</p>
+            <p id="pathFeedback" class="activity-feedback">
+                Start your challenge!
+            </p>
+
+            <button onclick="resetPath()">🔄 Restart Activity</button>
+        </div>
+    </section>
+
+    <!-- New Activity 2: Compare the gases -->
+
+    <section class="card">
+        <h2>🌬️ Activity 2: Explore the Air!</h2>
+
+        <p>
+            Click on each type of air to discover what happens to the gases.
+        </p>
+
+        <div class="activity-box">
+            <div class="gas-card">
+                <h3>🌬️ Inhaled Air</h3>
+                <button onclick="showGas('inhaled')">Explore Inhaled Air</button>
+                <p id="inhaledInfo"></p>
+            </div>
+
+            <div class="gas-card">
+                <h3>💨 Exhaled Air</h3>
+                <button onclick="showGas('exhaled')">Explore Exhaled Air</button>
+                <p id="exhaledInfo"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🎮 Let's Try a Breathing Simulation!</h2>
+
+        <p>
+            Choose an action and watch what happens to the lungs.
+        </p>
+
+        <div class="simulation">
+            <div class="lungs" id="lungs">🫁</div>
+
+            <p id="simulationText">
+                Choose Inhale or Exhale to start!
+            </p>
+
+            <button onclick="inhale()">🌬️ Inhale</button>
+            <button onclick="exhale()">💨 Exhale</button>
+            <button onclick="toggleBreathing()" id="breathToggle">
+                ▶ Start Automatic Breathing
+            </button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>🧠 Brainy's Challenge</h2>
+        <p>Choose the correct answer for each question.</p>
+
+        <div class="question">
+            <h3>1. Which gas do we take into our bodies when we inhale?</h3>
+            <button class="answer" onclick="checkGame(this, false)">Carbon dioxide</button>
+            <button class="answer" onclick="checkGame(this, true)">Oxygen</button>
+            <button class="answer" onclick="checkGame(this, false)">Nitrogen only</button>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question">
+            <h3>2. What is exhalation?</h3>
+            <button class="answer" onclick="checkGame(this, true)">Pushing air out of the lungs</button>
+            <button class="answer" onclick="checkGame(this, false)">Taking air into the lungs</button>
+            <button class="answer" onclick="checkGame(this, false)">Eating food</button>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question">
+            <h3>3. Which organs help us breathe?</h3>
+            <button class="answer" onclick="checkGame(this, false)">Stomach</button>
+            <button class="answer" onclick="checkGame(this, false)">Kidneys</button>
+            <button class="answer" onclick="checkGame(this, true)">Lungs</button>
+            <p class="feedback"></p>
+        </div>
+
+        <p id="gameScore">Your Score: 0 / 3</p>
+        <button onclick="resetGame()">🔄 Play Again</button>
+    </section>
+
+    <section class="card">
+        <h2>📝 Test Your Knowledge</h2>
+        <p>Answer the following questions to complete the lesson.</p>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="quizProgress"></div>
+        </div>
+
+        <p id="questionNumber"></p>
+
+        <div id="quizArea"></div>
+
+        <p id="quizResult"></p>
+
+        <div style="text-align:center;">
+            <button id="nextBtn" onclick="nextQuestion()">Next Question ➡️</button>
+            <button id="restartBtn" onclick="restartQuiz()" style="display:none;">
+                Try Again 🔄
+            </button>
+        </div>
+    </section>
+
+    <section class="card" style="text-align:center;">
+        <h2>🏆 Great Job, Young Scientist!</h2>
+        <p>You have completed Lesson 2-1.</p>
+
+        <button onclick="window.location.href='unit2.html'">
+            Back to Unit Two
+        </button>
+
+        <button onclick="window.location.href='lesson2-2.html'">
+            Next Lesson ➡️
+        </button>
+
+        <button onclick="window.location.href='units.html'">
+            All Units 🏠
+        </button>
+    </section>
+
+</div>
+
+<footer>
+    <p>Science World 🌍 | Learn, Explore and Discover!</p>
+</footer>
+
+<script>
+
+// Breathing simulation
+
+function inhale() {
+    stopAutomaticBreathing();
+
+    document.getElementById("lungs").classList.remove("breathing");
+    document.getElementById("lungs").style.transform = "scale(1.25)";
+
+    document.getElementById("simulationText").textContent =
+        "Inhalation: Air enters the lungs. 🌬️";
+}
+
+function exhale() {
+    stopAutomaticBreathing();
+
+    document.getElementById("lungs").classList.remove("breathing");
+    document.getElementById("lungs").style.transform = "scale(0.85)";
+
+    document.getElementById("simulationText").textContent =
+        "Exhalation: Air leaves the lungs. 💨";
+}
+
+let breathingTimer = null;
+
+function toggleBreathing() {
+    const lungs = document.getElementById("lungs");
+    const button = document.getElementById("breathToggle");
+
+    if (breathingTimer) {
+        stopAutomaticBreathing();
+        return;
+    }
+
+    lungs.style.transform = "";
+    lungs.classList.add("breathing");
+
+    document.getElementById("simulationText").textContent =
+        "Watch! The lungs expand and relax as we breathe. 🫁";
+
+    button.textContent = "⏸ Stop Automatic Breathing";
+
+    breathingTimer = true;
+}
+
+function stopAutomaticBreathing() {
+    const lungs = document.getElementById("lungs");
+    const button = document.getElementById("breathToggle");
+
+    lungs.classList.remove("breathing");
+
+    if (breathingTimer) {
+        breathingTimer = null;
+    }
+
+    button.textContent = "▶ Start Automatic Breathing";
+}
+
+// Activity 1: Air pathway
+
+const correctPath = [
+    "Nose",
+    "Throat",
+    "Trachea",
+    "Bronchi",
+    "Lungs"
+];
+
+let pathStep = 0;
+
+function choosePath(answer, button) {
+    const feedback = document.getElementById("pathFeedback");
+
+    if (answer === correctPath[pathStep]) {
+        button.disabled = true;
+        button.style.background = "#c8f7c5";
+        button.style.borderColor = "green";
+
+        pathStep++;
+
+        document.getElementById("pathProgress").textContent =
+            "Correct steps: " + pathStep + " / 5";
+
+        if (pathStep === correctPath.length) {
+            feedback.textContent =
+                "🎉 Excellent! You arranged the air pathway correctly!";
+        } else {
+            feedback.textContent =
+                "Correct! Now find the next part. 🌟";
+        }
+    } else {
+        feedback.textContent =
+            "Not yet! Think about where air enters first and try again. 💡";
+    }
+}
+
+function resetPath() {
+    pathStep = 0;
+
+    document.querySelectorAll("#pathChoices button").forEach(button => {
+        button.disabled = false;
+        button.style.background = "white";
+        button.style.borderColor = "#ffd0d8";
+    });
+
+    document.getElementById("pathProgress").textContent =
+        "Correct steps: 0 / 5";
+
+    document.getElementById("pathFeedback").textContent =
+        "Start your challenge!";
+}
+
+// Activity 2: Compare air
+
+function showGas(type) {
+    if (type === "inhaled") {
+        document.getElementById("inhaledInfo").textContent =
+            "Inhaled air contains oxygen. It also contains nitrogen and a small amount of carbon dioxide.";
+    } else {
+        document.getElementById("exhaledInfo").textContent =
+            "Exhaled air contains more carbon dioxide and water vapor, and less oxygen than inhaled air.";
+    }
+}
+
+// Brainy's Challenge
+
+let gameScore = 0;
+let answeredQuestions = [];
+
+function checkGame(button, correct) {
+    const question = button.parentElement;
+    const feedback = question.querySelector(".feedback");
+    const buttons = question.querySelectorAll(".answer");
+
+    if (answeredQuestions.includes(question)) {
+        return;
+    }
+
+    answeredQuestions.push(question);
+
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (correct) {
+        gameScore++;
+
+        button.style.background = "#c8f7c5";
+        button.style.borderColor = "green";
+
+        feedback.textContent = "Correct! Well done! 🌟";
+        feedback.style.color = "green";
+    } else {
+        button.style.background = "#ffd0d0";
+        button.style.borderColor = "red";
+
+        buttons.forEach(btn => {
+            if (
+                (question.querySelector("h3").textContent.includes("Which gas") &&
+                 btn.textContent === "Oxygen") ||
+
+                (question.querySelector("h3").textContent.includes("What is exhalation") &&
+                 btn.textContent === "Pushing air out of the lungs") ||
+
+                (question.querySelector("h3").textContent.includes("Which organs") &&
+                 btn.textContent === "Lungs")
+            ) {
+                btn.style.background = "#c8f7c5";
+                btn.style.borderColor = "green";
+            }
+        });
+
+        feedback.textContent = "Not quite! Look at the green answer. 💡";
+        feedback.style.color = "red";
+    }
+
+    document.getElementById("gameScore").textContent =
+        "Your Score: " + gameScore + " / 3";
+}
+
+function resetGame() {
+    gameScore = 0;
+    answeredQuestions = [];
+
+    document.querySelectorAll(".question .answer").forEach(button => {
+        button.disabled = false;
+        button.style.background = "white";
+        button.style.borderColor = "#ffd0d8";
+    });
+
+    document.querySelectorAll(".question .feedback").forEach(feedback => {
+        feedback.textContent = "";
+    });
+
+    document.getElementById("gameScore").textContent =
+        "Your Score: 0 / 3";
+}
+
+// Final quiz
+
+const quizQuestions = [
+    {
+        question: "What is inhalation?",
+        answers: [
+            "Taking air into the lungs",
+            "Pushing air out of the lungs",
+            "Eating food"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which gas is taken into the body during inhalation?",
+        answers: [
+            "Carbon dioxide",
+            "Oxygen",
+            "Helium"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which organs are mainly responsible for breathing?",
+        answers: [
+            "Lungs",
+            "Stomach",
+            "Heart"
+        ],
+        correct: 0
+    },
+    {
+        question: "What happens during exhalation?",
+        answers: [
+            "Air enters the lungs",
+            "Air leaves the lungs",
+            "Food enters the stomach"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which gas is removed from the body in exhaled air?",
+        answers: [
+            "Oxygen only",
+            "Carbon dioxide",
+            "Hydrogen"
+        ],
+        correct: 1
+    }
+];
+
+let currentQuestion = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function loadQuestion() {
+    quizAnswered = false;
+
+    const q = quizQuestions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1) + " of " + quizQuestions.length;
+
+    document.getElementById("quizProgress").style.width =
+        ((currentQuestion) / quizQuestions.length * 100) + "%";
+
+    let html = "<h3>Question " + (currentQuestion + 1) +
+        " of " + quizQuestions.length + "</h3>";
+
+    html += "<h3>" + q.question + "</h3>";
+
+    q.answers.forEach((answer, index) => {
+        html += '<button class="answer" onclick="checkQuiz(' + index + ')">' +
+            answer + '</button>';
+    });
+
+    document.getElementById("quizArea").innerHTML = html;
+    document.getElementById("quizResult").textContent = "";
+
+    document.getElementById("nextBtn").style.display = "inline-block";
+    document.getElementById("nextBtn").textContent =
+        currentQuestion === quizQuestions.length - 1
+        ? "Show My Result 🏆"
+        : "Next Question ➡️";
+}
+
+function checkQuiz(selected) {
+    if (quizAnswered) return;
+
+    quizAnswered = true;
+
+    const q = quizQuestions[currentQuestion];
+    const buttons = document.querySelectorAll("#quizArea .answer");
+
+    buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === q.correct) {
+            button.style.background = "#c8f7c5";
+            button.style.borderColor = "green";
+        }
+
+        if (index === selected && selected !== q.correct) {
+            button.style.background = "#ffd0d0";
+            button.style.borderColor = "red";
+        }
+    });
+
+    if (selected === q.correct) {
+        quizScore++;
+
+        document.getElementById("quizResult").textContent =
+            "Excellent! Correct Answer! 🌟";
+
+        document.getElementById("quizResult").style.color = "green";
+    } else {
+        document.getElementById("quizResult").textContent =
+            "Good try! The correct answer is: " + q.answers[q.correct];
+
+        document.getElementById("quizResult").style.color = "red";
+    }
+
+    document.getElementById("quizProgress").style.width =
+        ((currentQuestion + 1) / quizQuestions.length * 100) + "%";
+}
+
+function nextQuestion() {
+    if (!quizAnswered) {
+        document.getElementById("quizResult").textContent =
+            "Please choose an answer first!";
+
+        document.getElementById("quizResult").style.color = "#e85d75";
+        return;
+    }
+
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    document.getElementById("quizArea").innerHTML = "";
+
+    let percentage = Math.round(
+        (quizScore / quizQuestions.length) * 100
+    );
+
+    document.getElementById("questionNumber").textContent =
+        "Quiz Completed!";
+
+    document.getElementById("quizProgress").style.width = "100%";
+
+    document.getElementById("quizResult").innerHTML =
+        "🎉 You finished the quiz!<br><br>" +
+        "Your Score: " + quizScore + " / " + quizQuestions.length +
+        "<br>Percentage: " + percentage + "%<br><br>" +
+        (percentage >= 80
+            ? "Amazing work! You are a Science Star! 🌟"
+            : "Good effort! Keep learning and try again! 💪");
+
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("restartBtn").style.display = "inline-block";
+
+    localStorage.setItem("lesson21Score", quizScore);
+    localStorage.setItem("lesson21Percentage", percentage);
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    quizScore = 0;
+
+    document.getElementById("restartBtn").style.display = "none";
+
+    loadQuestion();
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

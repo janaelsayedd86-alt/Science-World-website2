@@ -1,0 +1,1163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson One - Science World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0faff;
+            color: #263238;
+        }
+
+        header {
+            background: #176b87;
+            color: white;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #b9ecf5, #e9d9ff);
+        }
+
+        .brainy {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        .brainy svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 5px 5px #0002);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .speech-bubble {
+            background: white;
+            border: 3px solid #55b8d1;
+            border-radius: 25px;
+            padding: 15px 22px;
+            max-width: 500px;
+            margin: 15px auto;
+            color: #176b87;
+            font-size: 18px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .hero h1 {
+            color: #176b87;
+            font-size: 38px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        .main-button {
+            background: #ffb703;
+            color: #263238;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .main-button:hover {
+            background: #fb8500;
+            color: white;
+            transform: scale(1.04);
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            color: #176b87;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px #0001;
+        }
+
+        .card h3 {
+            color: #176b87;
+            font-size: 23px;
+        }
+
+        .card p, .card li {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: #fff3c4;
+            padding: 15px;
+            border-left: 5px solid #ffb703;
+            border-radius: 10px;
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .characters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .character {
+            font-size: 65px;
+            text-align: center;
+        }
+
+        .character p {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .lesson-illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            background: #f0faff;
+            padding: 20px;
+            border-radius: 18px;
+            margin-top: 15px;
+        }
+
+        .illustration-item {
+            text-align: center;
+            font-size: 65px;
+            min-width: 100px;
+        }
+
+        .illustration-item p {
+            font-size: 15px;
+            font-weight: bold;
+            color: #176b87;
+            margin: 5px;
+        }
+
+        /* Experiment */
+
+        .experiment {
+            background: #e6f7ff;
+            border: 2px dashed #55b8d1;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .jar {
+            width: 130px;
+            height: 180px;
+            border: 5px solid #80b9c9;
+            border-top: 9px solid #80b9c9;
+            border-radius: 12px 12px 28px 28px;
+            margin: 25px auto;
+            position: relative;
+            background: #dff7ff;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            box-shadow: inset 0 0 15px #ffffff;
+        }
+
+        .flame {
+            font-size: 48px;
+            position: absolute;
+            bottom: 18px;
+            animation: flicker 0.6s infinite alternate;
+        }
+
+        @keyframes flicker {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        .jar.off .flame {
+            display: none;
+        }
+
+        .experiment button {
+            background: #176b87;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            margin: 6px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .experiment button:hover {
+            background: #0d4c63;
+        }
+
+        #experimentResult {
+            font-size: 17px;
+            font-weight: bold;
+            color: #176b87;
+            margin-top: 15px;
+            min-height: 45px;
+            line-height: 1.6;
+        }
+
+        /* Activity */
+
+        select {
+            padding: 9px;
+            border: 2px solid #55b8d1;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        #activityResult {
+            font-weight: bold;
+            min-height: 25px;
+        }
+
+        /* Quiz */
+
+        .question {
+            background: #f6faff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 18px 0;
+        }
+
+        .question label {
+            display: block;
+            padding: 10px;
+            margin: 7px 0;
+            background: white;
+            border: 1px solid #d5e4ea;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .question label:hover {
+            background: #e3f5fa;
+        }
+
+        .question input {
+            margin-right: 8px;
+        }
+
+        #quizResult {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .finish-card {
+            text-align: center;
+            background: linear-gradient(135deg, #fff5d6, #e5f7ff);
+        }
+
+        footer {
+            background: #176b87;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            header {
+                gap: 12px;
+            }
+
+            nav a {
+                margin-left: 8px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h2>🌍 Science World</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="unit1.html">Unit One</a>
+            <a href="lessons.html">Lessons</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Welcome Section -->
+
+    <section class="hero">
+
+        <!-- Brainy Character -->
+
+        <div class="brainy">
+
+            <svg viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path d="M100 30 L100 12"
+                    stroke="#176b87" stroke-width="7"/>
+
+                <circle cx="100" cy="10" r="10"
+                    fill="#ffb703"/>
+
+                <rect x="25" y="35" width="150" height="125"
+                    rx="35" fill="#dcefff"
+                    stroke="#176b87" stroke-width="7"/>
+
+                <rect x="10" y="75" width="25" height="55"
+                    rx="10" fill="#42b8e8"/>
+
+                <rect x="165" y="75" width="25" height="55"
+                    rx="10" fill="#42b8e8"/>
+
+                <rect x="43" y="58" width="114" height="78"
+                    rx="25" fill="white"/>
+
+                <ellipse cx="75" cy="91" rx="12" ry="16"
+                    fill="#176b87"/>
+
+                <ellipse cx="125" cy="91" rx="12" ry="16"
+                    fill="#176b87"/>
+
+                <circle cx="78" cy="85" r="4" fill="white"/>
+
+                <circle cx="128" cy="85" r="4" fill="white"/>
+
+                <path d="M75 112 Q100 137 125 112"
+                    fill="none" stroke="#176b87"
+                    stroke-width="5" stroke-linecap="round"/>
+
+                <rect x="48" y="153" width="104" height="38"
+                    rx="15" fill="#42b8e8"
+                    stroke="#176b87" stroke-width="5"/>
+
+                <text x="100" y="178" font-size="17"
+                    font-weight="bold" text-anchor="middle"
+                    fill="white">Brainy</text>
+
+            </svg>
+
+        </div>
+
+        <div class="speech-bubble">
+
+            <strong>Brainy says:</strong><br>
+
+            Hello, little scientists! 👋
+            Today we will discover why fresh air
+            is important for things to keep burning.
+            Let's explore together!
+
+        </div>
+
+        <h1>Lesson One: How Things Burn and Air 🔥</h1>
+
+        <p>
+            Welcome to our new science adventure!
+            Let's learn, play, and discover together!
+        </p>
+
+        <button class="main-button"
+            onclick="document.getElementById('objectives').scrollIntoView()">
+
+            Start Exploring 🚀
+
+        </button>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- Objectives -->
+
+        <section id="objectives">
+
+            <h2 class="section-title">
+                🎯 Learning Objectives
+            </h2>
+
+            <div class="card">
+
+                <h3>By the end of this lesson, you will be able to:</h3>
+
+                <ul>
+                    <li>Understand why fresh air is important for burning.</li>
+
+                    <li>Explain what happens when a candle is covered with a jar.</li>
+
+                    <li>Describe how air moves during burning.</li>
+                </ul>
+
+                <div class="characters">
+
+                    <div class="character">
+                        🐱
+                        <p>Brainy</p>
+                    </div>
+
+                    <div class="character">
+                        🐶
+                        <p>Smarty</p>
+                    </div>
+
+                </div>
+
+                <div class="highlight">
+
+                    <strong>Brainy says:</strong>
+
+                    Are you ready to discover the secret of burning?
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Lesson Explanation -->
+
+        <section>
+
+            <h2 class="section-title">
+                📚 Let's Learn!
+            </h2>
+
+
+            <!-- First Explanation -->
+
+            <div class="card">
+
+                <h3>1. Air Passages and Burning</h3>
+
+                <p>
+                    For things to keep burning, fresh air must
+                    constantly flow in and out.
+                </p>
+
+                <p>
+                    In a place where the air is not replaced,
+                    things cannot keep burning.
+                </p>
+
+                <div class="lesson-illustration">
+
+                    <div class="illustration-item">
+                        🔥
+                        <p>Burning Flame</p>
+                    </div>
+
+                    <div class="illustration-item">
+                        🌬️
+                        <p>Fresh Air</p>
+                    </div>
+
+                    <div class="illustration-item">
+                        🪵
+                        <p>Wood</p>
+                    </div>
+                    
+<div class="science-drawings">
+
+    <!-- Drawing 1: Candle with Fresh Air -->
+    <div class="drawing-card">
+
+        <svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Background -->
+            <circle cx="150" cy="110" r="95" fill="#FFF4D6"/>
+
+            <!-- Air arrows -->
+            <path d="M35 90 Q75 60 110 90"
+                  fill="none" stroke="#29B6F6"
+                  stroke-width="5" stroke-linecap="round"
+                  class="air-arrow"/>
+
+            <path d="M105 82 L112 90 L101 94"
+                  fill="none" stroke="#29B6F6"
+                  stroke-width="4"/>
+
+            <path d="M265 90 Q225 60 190 90"
+                  fill="none" stroke="#29B6F6"
+                  stroke-width="5" stroke-linecap="round"
+                  class="air-arrow"/>
+
+            <path d="M195 82 L188 90 L199 94"
+                  fill="none" stroke="#29B6F6"
+                  stroke-width="4"/>
+
+            <!-- Flame -->
+            <path d="M150 65
+                     C115 35 145 15 155 5
+                     C160 30 185 35 177 60
+                     C172 78 130 82 150 65Z"
+                  fill="#FF9800"/>
+
+            <path d="M153 58
+                     C140 43 155 30 160 25
+                     C163 42 172 47 163 60Z"
+                  fill="#FFEB3B"/>
+
+            <!-- Wick -->
+            <path d="M150 80 L150 96"
+                  stroke="#333" stroke-width="4"/>
+
+            <!-- Candle -->
+            <rect x="115" y="95" width="70" height="100"
+                  rx="8" fill="#FFCA6A"/>
+
+            <path d="M115 110 Q150 120 185 110"
+                  fill="none" stroke="#F2A93B" stroke-width="3"/>
+
+            <!-- Candle face -->
+            <circle cx="137" cy="145" r="4" fill="#333"/>
+            <circle cx="163" cy="145" r="4" fill="#333"/>
+            <path d="M140 160 Q150 170 160 160"
+                  fill="none" stroke="#333" stroke-width="3"
+                  stroke-linecap="round"/>
+
+            <!-- Base -->
+            <ellipse cx="150" cy="198" rx="55" ry="8"
+                     fill="#E8B75D"/>
+
+        </svg>
+
+        <h3>Fresh Air Around the Candle</h3>
+        <p>Fresh air flows around the candle and helps it keep burning.</p>
+
+    </div>
+
+
+    <!-- Drawing 2: Candle Under a Jar -->
+    <div class="drawing-card">
+
+        <svg viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Background -->
+            <circle cx="150" cy="110" r="95" fill="#E9F5FF"/>
+
+            <!-- Jar -->
+            <path d="M85 65
+                     L85 185
+                     Q85 200 100 200
+                     L200 200
+                     Q215 200 215 185
+                     L215 65"
+                  fill="#B3E5FC" fill-opacity="0.25"
+                  stroke="#4FC3F7" stroke-width="5"/>
+
+            <!-- Jar top -->
+            <path d="M80 65 L220 65"
+                  stroke="#29B6F6" stroke-width="7"
+                  stroke-linecap="round"/>
+
+            <!-- Candle -->
+            <rect x="125" y="135" width="50" height="60"
+                  rx="6" fill="#FFCA6A"/>
+
+            <path d="M150 125 L150 138"
+                  stroke="#333" stroke-width="3"/>
+
+            <!-- Extinguished flame smoke -->
+            <path d="M150 115
+                     Q135 105 150 95
+                     Q165 85 150 75"
+                  fill="none" stroke="#9E9E9E"
+                  stroke-width="4" stroke-linecap="round"/>
+
+            <!-- Candle face -->
+            <circle cx="140" cy="160" r="3" fill="#333"/>
+            <circle cx="160" cy="160" r="3" fill="#333"/>
+            <path d="M143 175 Q150 170 157 175"
+                  fill="none" stroke="#333" stroke-width="2"/>
+
+            <!-- Base -->
+            <ellipse cx="150" cy="198" rx="65" ry="7"
+                     fill="#B0BEC5"/>
+
+            <!-- No flame label -->
+            <path d="M190 45 L210 25"
+                  stroke="#EF5350" stroke-width="3"/>
+
+            <circle cx="215" cy="20" r="12" fill="#EF5350"/>
+            <path d="M209 14 L221 26 M221 14 L209 26"
+                  stroke="white" stroke-width="3"/>
+
+        </svg>
+
+        <h3>Candle Covered with a Glass Jar</h3>
+        <p>The candle goes out when the air inside the jar is used up.</p>
+
+    </div>
+
+</div>
+                </div>
+
+                <div class="highlight">
+
+                    💡 Remember:
+
+                    Fresh air must constantly flow in and out
+                    for things to keep burning.
+
+                </div>
+
+            </div>
+
+
+            <!-- Second Explanation -->
+
+            <div class="card">
+
+                <h3>2. What Happens to a Candle?</h3>
+
+                <p>
+                    <strong>When the candle is not covered with a lid:</strong>
+                </p>
+
+                <p>
+                    Fresh air is supplied from the surroundings,
+                    so the candle keeps burning.
+                </p>
+
+                <p>
+                    <strong>When the candle is covered with a lid:</strong>
+                </p>
+
+                <p>
+                    Once the air inside the jar is used up,
+                    the flame goes out.
+                </p>
+
+                <div class="lesson-illustration">
+
+                    <div class="illustration-item">
+                        🕯️
+                        <p>Candle without a lid</p>
+                    </div>
+
+                    <div class="illustration-item">
+                        🫙
+                        <p>Glass jar</p>
+                    </div>
+
+                    <div class="illustration-item">
+                        💨
+                        <p>Air movement</p>
+                    </div>
+
+                </div>
+
+                <div class="highlight">
+
+                    🔥 The candle needs fresh air to keep burning.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Interactive Experiment -->
+
+        <section>
+
+            <h2 class="section-title">
+                🧪 Let's Try an Experiment!
+            </h2>
+
+            <div class="card experiment">
+
+                <h3>What happens to the candle?</h3>
+
+                <p>
+                    Choose what happens to the jar and observe
+                    the candle's flame.
+                </p>
+
+                <div class="jar" id="candleJar">
+
+                    <div class="flame">🔥</div>
+
+                </div>
+
+                <button onclick="showExperiment('open')">
+                    No Lid
+                </button>
+
+                <button onclick="showExperiment('closed')">
+                    Cover with a Lid
+                </button>
+
+                <button onclick="showExperiment('gaps')">
+                    Make Gaps
+                </button>
+
+                <div id="experimentResult">
+
+                    Choose an experiment to begin!
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Activity -->
+
+        <section>
+
+            <h2 class="section-title">
+                🎮 Brainy's Challenge!
+            </h2>
+
+            <div class="card">
+
+                <h3>Complete the sentence</h3>
+
+                <p>
+                    For things to keep burning, fresh
+
+                    <select id="activityAnswer">
+
+                        <option value="">Choose your answer</option>
+
+                        <option value="water">Water</option>
+
+                        <option value="air">Air</option>
+
+                        <option value="soil">Soil</option>
+
+                    </select>
+
+                    must constantly flow in and out.
+
+                </p>
+
+                <button class="main-button" onclick="checkActivity()">
+
+                    Check Answer
+
+                </button>
+
+                <p id="activityResult"></p>
+
+                <div class="characters">
+
+                    <div class="character">🤖</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quiz -->
+
+        <section>
+
+            <h2 class="section-title">
+                🏆 Lesson Quiz
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Let's test what you have learned!
+                    Answer all three questions.
+                </p>
+
+
+                <!-- Question 1 -->
+
+                <div class="question">
+
+                    <h3>Question 1</h3>
+
+                    <p>
+                        What does a candle need to keep burning?
+                    </p>
+
+                    <label>
+                        <input type="radio" name="q1" value="a">
+                        Water
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="b">
+                        Fresh air
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="c">
+                        Soil
+                    </label>
+
+                </div>
+
+
+                <!-- Question 2 -->
+
+                <div class="question">
+
+                    <h3>Question 2</h3>
+
+                    <p>
+                        What happens when a candle is covered with a lid?
+                    </p>
+
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        It burns forever.
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        The flame goes out after the air inside is used up.
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        The candle becomes bigger.
+                    </label>
+
+                </div>
+
+
+                <!-- Question 3 -->
+
+                <div class="question">
+
+                    <h3>Question 3</h3>
+
+                    <p>
+                        What happens when fresh air is supplied
+                        from the surroundings?
+                    </p>
+
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        The candle keeps burning.
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        The flame goes out immediately.
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        Nothing happens.
+                    </label>
+
+                </div>
+
+
+                <div style="text-align:center;">
+
+                    <button class="main-button" onclick="checkQuiz()">
+
+                        Submit Answers
+
+                    </button>
+
+                </div>
+
+                <div id="quizResult"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Finish -->
+
+        <section class="card finish-card">
+
+            <div style="font-size:70px;">
+                🏆
+            </div>
+
+            <h2>Great Job, Little Scientist!</h2>
+
+            <p>
+                You have completed Lesson One.
+                Keep exploring and learning!
+            </p>
+
+            <button class="main-button"
+                onclick="window.location.href='lessons.html'">
+
+                ← Back to Lessons
+
+            </button>
+
+            <button class="main-button"
+                onclick="window.location.href='lesson2.html'">
+
+                Next Lesson ➜
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Science World | Learn, Explore, Discover! 🌍
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        // Interactive Experiment
+
+        function showExperiment(type) {
+
+            const jar = document.getElementById("candleJar");
+
+            const result = document.getElementById("experimentResult");
+
+            jar.classList.remove("off");
+
+            if (type === "open") {
+
+                result.innerHTML =
+                    "🔥 The candle keeps burning because fresh air is supplied from the surroundings.";
+
+            }
+
+            else if (type === "closed") {
+
+                jar.classList.add("off");
+
+                result.innerHTML =
+                    "💨 Once the air inside the jar is used up, the flame goes out.";
+
+            }
+
+            else if (type === "gaps") {
+
+                result.innerHTML =
+                    "🌬️ Air can move through the gaps, helping fresh air reach the candle.";
+
+            }
+
+        }
+
+
+        // Brainy's Activity
+
+        function checkActivity() {
+
+            const answer =
+                document.getElementById("activityAnswer").value;
+
+            const result =
+                document.getElementById("activityResult");
+
+            if (answer === "air") {
+
+                result.innerHTML =
+                    "🎉 Excellent! Brainy is proud of you!";
+
+                result.style.color = "green";
+
+            }
+
+            else if (answer === "") {
+
+                result.innerHTML =
+                    "Please choose an answer first!";
+
+                result.style.color = "orange";
+
+            }
+
+            else {
+
+                result.innerHTML =
+                    "❌ Try again, little scientist!";
+
+                result.style.color = "red";
+
+            }
+
+        }
+
+
+        // Lesson Quiz
+
+        function checkQuiz() {
+
+            const answers = {
+
+                q1: "b",
+                q2: "b",
+                q3: "a"
+
+            };
+
+            let score = 0;
+
+            let unanswered = false;
+
+            for (let question in answers) {
+
+                const selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (!selected) {
+
+                    unanswered = true;
+
+                }
+
+                else if (selected.value === answers[question]) {
+
+                    score++;
+
+                }
+
+            }
+
+            const result =
+                document.getElementById("quizResult");
+
+            if (unanswered) {
+
+                result.innerHTML =
+                    "⚠️ Please answer all questions first!";
+
+                result.style.color = "orange";
+
+                return;
+
+            }
+
+            if (score === 3) {
+
+                result.innerHTML =
+                    "🏆 Perfect! You got " + score + " out of 3! Brainy is happy!";
+
+                result.style.color = "green";
+
+            }
+
+            else {
+
+                result.innerHTML =
+                    "⭐ You got " + score + " out of 3. Keep practicing!";
+
+                result.style.color = "#176b87";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

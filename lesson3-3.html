@@ -1,0 +1,1598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3-3 - How Does Absorption Occur? | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff9f0;
+    color: #44364f;
+}
+
+header {
+    background: linear-gradient(120deg, #7041a6, #a36bd1);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.hero {
+    background: linear-gradient(135deg, #f6d9b8, #eadbfa);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #7041a6;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.brainy {
+    font-size: 75px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 35px auto;
+}
+
+.section {
+    background: white;
+    padding: 27px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 5px 18px rgba(100,60,120,0.08);
+}
+
+.section h2 {
+    color: #8050a9;
+    margin-top: 0;
+}
+
+.section p {
+    line-height: 1.9;
+}
+
+.objectives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.objective {
+    background: #f7edff;
+    border: 1px solid #e5d2f5;
+    padding: 17px;
+    border-radius: 14px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #8753ae;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 6px 3px;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #63358c;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.audio-box {
+    background: linear-gradient(135deg, #f3e8ff, #fff0d9);
+    padding: 23px;
+    border-radius: 17px;
+    text-align: center;
+}
+
+.audio-icon {
+    font-size: 55px;
+    margin: 8px;
+}
+
+.audio-status {
+    color: #7041a6;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 0;
+    border-radius: 15px;
+}
+
+.video-note {
+    background: #fff3df;
+    padding: 13px;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.definition {
+    background: #fff1dc;
+    border-left: 6px solid #e79b3c;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.info-card {
+    background: #fbf5ff;
+    border: 2px solid #eadcf7;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #a477c9;
+}
+
+.info-card .emoji {
+    font-size: 42px;
+}
+
+.info-card h3 {
+    color: #8050a9;
+}
+
+.info-detail {
+    display: none;
+    background: #f3eaff;
+    border-left: 5px solid #8753ae;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.diagram-box {
+    background: #fff9ed;
+    border: 2px solid #f0d8ae;
+    border-radius: 17px;
+    padding: 22px;
+    text-align: center;
+}
+
+.pathway {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.path-item {
+    background: #f0e5fb;
+    border: 2px solid #d9c0ee;
+    padding: 15px;
+    border-radius: 14px;
+    min-width: 130px;
+    font-weight: bold;
+}
+
+.path-arrow {
+    font-size: 25px;
+    color: #d58b37;
+}
+
+.villi-area {
+    background: linear-gradient(135deg, #fff5e8, #f7ecff);
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+}
+
+.villi-drawing {
+    width: 100%;
+    max-width: 650px;
+    margin: 15px auto;
+    display: block;
+}
+
+.simulation {
+    background: #fbf7ff;
+    border: 2px solid #e7d7f4;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.surface-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.surface-card {
+    background: white;
+    border: 2px solid #e8d9f3;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.surface-visual {
+    height: 145px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 4px;
+    padding: 12px;
+    background: #fff8ed;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flat-wall {
+    width: 85%;
+    height: 35px;
+    background: #d99b67;
+    border-radius: 8px;
+}
+
+.villi-wall {
+    width: 85%;
+    height: 35px;
+    background: #d99b67;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.villi-wall span {
+    width: 13px;
+    height: 85px;
+    background: #d99b67;
+    border-radius: 10px 10px 0 0;
+    transform: translateY(-70px);
+}
+
+.nutrient-dots {
+    min-height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px;
+}
+
+.nutrient-dot {
+    width: 16px;
+    height: 16px;
+    background: #e9a13f;
+    border-radius: 50%;
+    animation: nutrientMove 1.5s infinite alternate;
+}
+
+@keyframes nutrientMove {
+    from { transform: translateY(-3px); }
+    to { transform: translateY(5px); }
+}
+
+.sim-result {
+    background: #fff0d9;
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 55px;
+    line-height: 1.8;
+    font-weight: bold;
+}
+
+.route-game {
+    background: linear-gradient(135deg, #f7edff, #fff4e4);
+    padding: 23px;
+    border-radius: 17px;
+    text-align: center;
+}
+
+.route-stops {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.route-stop {
+    background: white;
+    border: 2px solid #e3d2f2;
+    color: #553d69;
+    border-radius: 13px;
+    padding: 15px;
+    min-width: 135px;
+}
+
+.route-stop.active {
+    border-color: #d78c34;
+    background: #fff0d9;
+}
+
+.step-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.step {
+    padding: 16px;
+    background: white;
+    border: 2px solid #eadcf7;
+    border-radius: 13px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+    color: #44364f;
+}
+
+.step.active {
+    background: #f3eaff;
+    border-color: #8753ae;
+}
+
+.step-number {
+    display: inline-flex;
+    background: #8753ae;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 6px;
+}
+
+.step-description {
+    background: #fff4e4;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 15px;
+    min-height: 75px;
+    line-height: 1.8;
+}
+
+.game-box {
+    background: linear-gradient(135deg, #f3eaff, #fff3df);
+    padding: 23px;
+    border-radius: 17px;
+    text-align: center;
+}
+
+.question {
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.7;
+}
+
+.answer-options {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.answer-options button {
+    background: white;
+    color: #553d69;
+    border: 2px solid #e4d5f1;
+    border-radius: 12px;
+    width: 100%;
+    margin: 0;
+}
+
+.answer-options button:hover {
+    background: #f2e7ff;
+}
+
+.answer-options button.correct {
+    background: #dff5df;
+    border-color: #6dbb73;
+}
+
+.answer-options button.wrong {
+    background: #ffe0dc;
+    border-color: #e47b6c;
+}
+
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #e8dff0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #d78c34;
+    transition: 0.4s;
+}
+
+.feedback {
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 30px;
+}
+
+.result {
+    display: none;
+    background: #fff1dc;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer {
+    background: linear-gradient(120deg, #7041a6, #a36bd1);
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌍 Science World</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit3.html">Unit Three</a>
+        <a href="lesson3-2.html">Lesson Two</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="brainy">🤖</div>
+    <h1>Lesson 3-3: How Does Absorption Occur?</h1>
+    <p>
+        Welcome back, Science Explorer! 🌟<br>
+        Today, we will follow nutrients on their journey from the small intestine to the body!
+    </p>
+    <button onclick="document.getElementById('audioSection').scrollIntoView({behavior:'smooth'})">
+        Start Exploring 🚀
+    </button>
+</section>
+
+<main class="container">
+
+<!-- OBJECTIVES -->
+<section class="section">
+    <h2>🎯 What Will You Learn?</h2>
+
+    <div class="objectives">
+        <div class="objective">🍎 Understand where nutrients are absorbed.</div>
+        <div class="objective">🌀 Discover the function of villi.</div>
+        <div class="objective">🩸 Learn how blood carries nutrients.</div>
+        <div class="objective">🫀 Discover the role of the liver.</div>
+    </div>
+</section>
+
+<!-- AUDIO -->
+<section class="section" id="audioSection">
+    <h2>🔊 Listen to Brainy's Explanation</h2>
+
+    <div class="audio-box">
+        <div class="audio-icon">🎧🤖</div>
+        <h3>Let's Discover Absorption!</h3>
+
+        <p>
+            Listen to the lesson explanation in English.
+            You can pause, continue, or stop the audio.
+        </p>
+
+        <button onclick="speakLesson()">▶ Play Explanation</button>
+        <button onclick="pauseSpeech()">⏸ Pause</button>
+        <button onclick="resumeSpeech()">▶ Resume</button>
+        <button onclick="stopSpeech()">⏹ Stop</button>
+
+        <p class="audio-status" id="audioStatus">
+            Ready to listen!
+        </p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section">
+    <h2>🍎 What Is Absorption?</h2>
+
+    <p>
+        After food is digested, it becomes small nutrients.
+        These nutrients need to enter the body to be used.
+    </p>
+
+    <div class="definition">
+        <strong>Absorption:</strong><br>
+        The nutrients from digested food are mainly absorbed
+        in the <strong>small intestine</strong> along with water.
+    </div>
+
+    <p>
+        After that, more water is absorbed in the
+        <strong>large intestine</strong>.
+        What is left is eliminated from the anus as feces.
+    </p>
+
+    <div class="diagram-box">
+        <h3>Follow the Journey!</h3>
+
+        <div class="pathway">
+            <div class="path-item">🍎 Digested Food</div>
+            <div class="path-arrow">➜</div>
+            <div class="path-item">🌀 Small Intestine</div>
+            <div class="path-arrow">➜</div>
+            <div class="path-item">🩸 Blood</div>
+            <div class="path-arrow">➜</div>
+            <div class="path-item">🫀 Liver</div>
+        </div>
+
+        <p>
+            Nutrients are absorbed in the small intestine and carried
+            by the blood through the liver to the whole body.
+        </p>
+    </div>
+</section>
+
+<!-- CLICKABLE ORGANS -->
+<section class="section">
+    <h2>🔍 Explore the Digestive Organs</h2>
+
+    <p>Click each card to discover its role in absorption.</p>
+
+    <div class="info-grid">
+
+        <div class="info-card" onclick="showOrgan('smallInfo')">
+            <div class="emoji">🌀</div>
+            <h3>Small Intestine</h3>
+            <p>Main place for nutrient absorption.</p>
+        </div>
+
+        <div class="info-card" onclick="showOrgan('largeInfo')">
+            <div class="emoji">〰️</div>
+            <h3>Large Intestine</h3>
+            <p>Absorbs more water.</p>
+        </div>
+
+        <div class="info-card" onclick="showOrgan('bloodInfo')">
+            <div class="emoji">🩸</div>
+            <h3>Blood</h3>
+            <p>Carries absorbed nutrients.</p>
+        </div>
+
+        <div class="info-card" onclick="showOrgan('liverInfo')">
+            <div class="emoji">🫀</div>
+            <h3>Liver</h3>
+            <p>Stores some nutrients and sends them when needed.</p>
+        </div>
+
+    </div>
+
+    <div class="info-detail" id="smallInfo">
+        <strong>🌀 Small Intestine:</strong>
+        Most nutrients from digested food are absorbed here,
+        along with water.
+    </div>
+
+    <div class="info-detail" id="largeInfo">
+        <strong>〰️ Large Intestine:</strong>
+        More water is absorbed here. What remains is eliminated
+        from the anus as feces.
+    </div>
+
+    <div class="info-detail" id="bloodInfo">
+        <strong>🩸 Blood:</strong>
+        Blood carries the nutrients absorbed in the small intestine
+        to the whole body.
+    </div>
+
+    <div class="info-detail" id="liverInfo">
+        <strong>🫀 Liver:</strong>
+        The liver stores some nutrients and sends them out
+        to the whole body when needed.
+    </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section">
+    <h2>🎬 Watch: Small Intestine and Food Absorption</h2>
+
+    <p>
+        Watch this animation to understand how the small intestine
+        absorbs nutrients.
+    </p>
+
+    <iframe
+        class="video-frame"
+        src="https://www.youtube-nocookie.com/embed/cEh2Qip0-E4"
+        title="Small Intestine and Food Absorption"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <div class="video-note">
+        💡 Brainy's Tip: Pay attention to the inner surface of the
+        small intestine and the tiny structures called villi.
+    </div>
+</section>
+
+<!-- VILLI -->
+<section class="section">
+    <h2>🌀 Discover the Villi!</h2>
+
+    <p>
+        The inside wall of the small intestine has small bumps
+        called <strong>villi</strong>.
+    </p>
+
+    <div class="definition">
+        <strong>Villi:</strong><br>
+        Small bumps on the inside of the small intestine.
+        They increase the inner surface area, helping the intestine
+        absorb nutrients and water efficiently.
+    </div>
+
+    <div class="villi-area">
+
+        <h3>How Do Villi Look?</h3>
+
+        <svg class="villi-drawing" viewBox="0 0 650 260"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <rect x="20" y="150" width="610" height="75"
+                  rx="15" fill="#d9a06f"/>
+
+            <path d="
+            M35 155
+            Q55 30 78 155
+            Q100 20 125 155
+            Q150 35 175 155
+            Q200 15 225 155
+            Q250 30 275 155
+            Q300 15 325 155
+            Q350 30 375 155
+            Q400 15 425 155
+            Q450 30 475 155
+            Q500 15 525 155
+            Q550 30 575 155
+            Q600 20 620 155"
+            fill="#e9b58b" stroke="#a66b4a" stroke-width="3"/>
+
+            <path d="M75 180 Q110 165 145 190
+                     M180 185 Q215 165 250 190
+                     M280 180 Q315 165 350 190
+                     M380 185 Q415 165 450 190
+                     M480 180 Q515 165 550 190"
+                  stroke="#a94355" stroke-width="5"
+                  fill="none" stroke-linecap="round"/>
+
+            <g fill="#d58b34">
+                <circle cx="75" cy="65" r="9"/>
+                <circle cx="130" cy="90" r="9"/>
+                <circle cx="210" cy="55" r="9"/>
+                <circle cx="300" cy="90" r="9"/>
+                <circle cx="390" cy="55" r="9"/>
+                <circle cx="480" cy="90" r="9"/>
+                <circle cx="565" cy="60" r="9"/>
+            </g>
+
+            <g font-size="17" font-weight="bold" fill="#553d69">
+                <text x="260" y="245">Small Intestine Wall</text>
+                <text x="260" y="25">Villi</text>
+            </g>
+
+            <path d="M325 30 L325 95" stroke="#7041a6"
+                  stroke-width="2" stroke-dasharray="5 4"/>
+        </svg>
+
+        <p>
+            The villi are close together, creating a larger surface
+            area for absorbing nutrients and water.
+        </p>
+
+    </div>
+</section>
+
+<!-- SIMULATION -->
+<section class="section">
+    <h2>🔬 Interactive Lab: Smooth Wall vs Villi</h2>
+
+    <p>
+        Let's compare a smooth surface with a surface that has villi.
+        Which one can absorb more nutrients?
+    </p>
+
+    <div class="simulation">
+
+        <div class="surface-comparison">
+
+            <div class="surface-card">
+                <h3>Flat Surface</h3>
+
+                <div class="surface-visual">
+                    <div class="flat-wall"></div>
+                </div>
+
+                <p>Smaller surface area</p>
+                <div class="nutrient-dots" id="flatDots"></div>
+                <strong id="flatCount">Not tested yet</strong>
+            </div>
+
+            <div class="surface-card">
+                <h3>Surface with Villi</h3>
+
+                <div class="surface-visual">
+                    <div class="villi-wall">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <p>Larger surface area</p>
+                <div class="nutrient-dots" id="villiDots"></div>
+                <strong id="villiCount">Not tested yet</strong>
+            </div>
+
+        </div>
+
+        <button onclick="runAbsorption()">Start Simulation 🚀</button>
+        <button onclick="resetAbsorption()">Reset ↻</button>
+
+        <div class="sim-result" id="absorptionResult">
+            Press Start Simulation to compare the two surfaces!
+        </div>
+    </div>
+</section>
+
+<!-- TOWEL ANALOGY -->
+<section class="section">
+    <h2>🧽 Think Like a Scientist!</h2>
+
+    <p>
+        Look at the surface of a towel.
+        A towel with many loop-like threads can absorb water better
+        than a flat cloth.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="emoji">🧻</div>
+            <h3>Flat Surface</h3>
+            <p>Has fewer places to absorb water.</p>
+        </div>
+
+        <div class="info-card">
+            <div class="emoji">🧽</div>
+            <h3>Many Loops</h3>
+            <p>More surface area helps absorb more water.</p>
+        </div>
+
+    </div>
+
+    <div class="definition">
+        <strong>Connect the Idea!</strong><br>
+        Just like the loops on a towel, the villi increase
+        the surface area of the small intestine.
+        This helps it absorb nutrients and water efficiently.
+    </div>
+</section>
+
+<!-- NUTRIENT JOURNEY GAME -->
+<section class="section">
+    <h2>🎮 Brainy's Nutrient Journey Game</h2>
+
+    <div class="route-game">
+
+        <div style="font-size:55px;">🤖🍎</div>
+
+        <p class="question" id="routeQuestion">
+            Where are most nutrients from digested food absorbed?
+        </p>
+
+        <div class="answer-options" id="routeOptions">
+            <button onclick="routeAnswer(0)">Large Intestine</button>
+            <button onclick="routeAnswer(1)">Small Intestine</button>
+            <button onclick="routeAnswer(2)">Stomach</button>
+        </div>
+
+        <p class="feedback" id="routeFeedback"></p>
+
+        <button id="routeNext" onclick="nextRouteQuestion()" style="display:none;">
+            Continue ➜
+        </button>
+
+        <p id="routeProgress">Challenge 1 of 4</p>
+    </div>
+</section>
+
+<!-- STEP BY STEP -->
+<section class="section">
+    <h2>📚 Explore the Absorption Process</h2>
+
+    <p>Click each step to understand the journey of nutrients.</p>
+
+    <div class="step-list">
+
+        <button class="step active" onclick="showStep(0)">
+            <span class="step-number">1</span>
+            Digested Food
+        </button>
+
+        <button class="step" onclick="showStep(1)">
+            <span class="step-number">2</span>
+            Small Intestine
+        </button>
+
+        <button class="step" onclick="showStep(2)">
+            <span class="step-number">3</span>
+            Blood
+        </button>
+
+        <button class="step" onclick="showStep(3)">
+            <span class="step-number">4</span>
+            Liver
+        </button>
+
+        <button class="step" onclick="showStep(4)">
+            <span class="step-number">5</span>
+            Whole Body
+        </button>
+
+    </div>
+
+    <div class="step-description" id="stepDescription">
+        <strong>Step 1 - Digested Food:</strong><br>
+        After digestion, food becomes nutrients that can be absorbed.
+    </div>
+</section>
+
+<!-- QUICK CHALLENGE -->
+<section class="section">
+    <h2>🧠 Brainy's Quick Challenge</h2>
+
+    <div class="game-box">
+        <div style="font-size:55px;">🤖</div>
+
+        <p class="question">
+            Why are villi important in the small intestine?
+        </p>
+
+        <div class="answer-options">
+            <button onclick="quickAnswer(this,false)">
+                They make food taste better.
+            </button>
+
+            <button onclick="quickAnswer(this,true)">
+                They increase the surface area for absorption.
+            </button>
+
+            <button onclick="quickAnswer(this,false)">
+                They carry air to the lungs.
+            </button>
+        </div>
+
+        <p class="feedback" id="quickFeedback"></p>
+    </div>
+</section>
+
+<!-- FINAL QUIZ -->
+<section class="section">
+    <h2>🏆 Lesson 3-3 Final Quiz</h2>
+
+    <p>
+        Are you ready to test everything you have learned?
+    </p>
+
+    <div id="quizArea">
+
+        <div>
+            <strong id="questionNumber">Question 1 of 7</strong>
+            <span id="quizScore" style="float:right;">Score: 0</span>
+        </div>
+
+        <div class="progress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p class="question" id="quizQuestion"></p>
+
+        <div class="answer-options" id="quizOptions"></div>
+
+        <p class="feedback" id="quizFeedback"></p>
+
+        <button id="nextButton" onclick="nextQuestion()" style="display:none;">
+            Next Question ➜
+        </button>
+    </div>
+
+    <div class="result" id="quizResult">
+        <div style="font-size:65px;">🏆</div>
+
+        <h2>Excellent Work, Science Explorer!</h2>
+
+        <h3 id="finalScore"></h3>
+        <h3 id="finalPercentage"></h3>
+        <p id="resultMessage"></p>
+
+        <button onclick="restartQuiz()">Try Again ↻</button>
+
+        <button onclick="window.location.href='unit3.html'">
+            Back to Unit Three
+        </button>
+    </div>
+</section>
+
+<!-- NAVIGATION -->
+<section class="section">
+    <h2>🚀 What's Next?</h2>
+
+    <div class="navigation">
+        <button onclick="window.location.href='lesson3-2.html'">
+            ← Previous Lesson
+        </button>
+
+        <button onclick="window.location.href='unit3.html'">
+            Unit Three
+        </button>
+
+        <button onclick="window.location.href='units.html'">
+            All Units
+        </button>
+
+        <button onclick="window.location.href='index.html'">
+            Home 🏠
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h3>🌍 Science World</h3>
+    <p>Learn Science, Explore the World! 🚀</p>
+</footer>
+
+<script>
+
+// ================= AUDIO =================
+
+function speakLesson() {
+
+    if (!("speechSynthesis" in window)) {
+        document.getElementById("audioStatus").textContent =
+            "Audio is not supported in this browser.";
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    let explanation = `
+    Hello Science Explorer!
+    Today we will learn how absorption occurs.
+    After food is digested, nutrients need to enter the body.
+    Most nutrients from digested food are absorbed in the small intestine,
+    along with water.
+    The large intestine absorbs more water.
+    The small intestine has small bumps on its inner wall.
+    These bumps are called villi.
+    Villi increase the inner surface area of the small intestine.
+    This helps the intestine absorb nutrients and water efficiently.
+    The absorbed nutrients are carried by the blood through the liver
+    to the whole body.
+    The liver stores some nutrients and sends them out when needed.
+    Great job, Science Explorer!
+    `;
+
+    let utterance = new SpeechSynthesisUtterance(explanation);
+
+    utterance.lang = "en-US";
+    utterance.rate = 0.88;
+    utterance.pitch = 1.05;
+
+    utterance.onstart = function() {
+        document.getElementById("audioStatus").textContent =
+            "🔊 Brainy is explaining the lesson...";
+    };
+
+    utterance.onend = function() {
+        document.getElementById("audioStatus").textContent =
+            "✅ Explanation completed!";
+    };
+
+    utterance.onerror = function() {
+        document.getElementById("audioStatus").textContent =
+            "Audio could not be played. Try again.";
+    };
+
+    speechSynthesis.speak(utterance);
+}
+
+function pauseSpeech() {
+    if (speechSynthesis.speaking) {
+        speechSynthesis.pause();
+        document.getElementById("audioStatus").textContent = "⏸ Audio paused.";
+    }
+}
+
+function resumeSpeech() {
+    if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+        document.getElementById("audioStatus").textContent = "▶ Audio resumed.";
+    }
+}
+
+function stopSpeech() {
+    speechSynthesis.cancel();
+    document.getElementById("audioStatus").textContent = "Audio stopped.";
+}
+
+
+// ================= CLICKABLE ORGANS =================
+
+function showOrgan(id) {
+
+    document.querySelectorAll(".info-detail").forEach(function(item) {
+        item.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "block";
+}
+
+
+// ================= ABSORPTION SIMULATION =================
+
+let absorptionDone = false;
+
+function runAbsorption() {
+
+    if (absorptionDone) return;
+
+    absorptionDone = true;
+
+    let flat = document.getElementById("flatDots");
+    let villi = document.getElementById("villiDots");
+
+    flat.innerHTML = "";
+    villi.innerHTML = "";
+
+    for (let i = 0; i < 3; i++) {
+        flat.innerHTML += '<span class="nutrient-dot"></span>';
+    }
+
+    for (let i = 0; i < 10; i++) {
+        villi.innerHTML += '<span class="nutrient-dot"></span>';
+    }
+
+    document.getElementById("flatCount").textContent =
+        "3 nutrient particles (model)";
+
+    document.getElementById("villiCount").textContent =
+        "10 nutrient particles (model)";
+
+    document.getElementById("absorptionResult").textContent =
+        "🌟 The surface with villi has a larger surface area, so it can absorb more nutrients efficiently!";
+}
+
+function resetAbsorption() {
+
+    absorptionDone = false;
+
+    document.getElementById("flatDots").innerHTML = "";
+    document.getElementById("villiDots").innerHTML = "";
+
+    document.getElementById("flatCount").textContent = "Not tested yet";
+    document.getElementById("villiCount").textContent = "Not tested yet";
+
+    document.getElementById("absorptionResult").textContent =
+        "Press Start Simulation to compare the two surfaces!";
+}
+
+
+// ================= STEP BY STEP =================
+
+const steps = [
+
+    "<strong>Step 1 - Digested Food:</strong><br>After digestion, food becomes nutrients that can be absorbed.",
+
+    "<strong>Step 2 - Small Intestine:</strong><br>Most nutrients from digested food are absorbed here along with water. Villi help make this process efficient.",
+
+    "<strong>Step 3 - Blood:</strong><br>The nutrients absorbed in the small intestine are carried by the blood.",
+
+    "<strong>Step 4 - Liver:</strong><br>The blood carries nutrients through the liver. The liver stores some nutrients and sends them out when needed.",
+
+    "<strong>Step 5 - Whole Body:</strong><br>The blood carries nutrients to the whole body."
+];
+
+function showStep(index) {
+
+    document.querySelectorAll(".step").forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    document.querySelectorAll(".step")[index].classList.add("active");
+
+    document.getElementById("stepDescription").innerHTML = steps[index];
+}
+
+
+// ================= NUTRIENT JOURNEY GAME =================
+
+const routeQuestions = [
+
+    {
+        question: "Where are most nutrients from digested food absorbed?",
+        options: ["Large Intestine", "Small Intestine", "Stomach"],
+        answer: 1,
+        explanation: "Correct! Most nutrients are absorbed in the small intestine."
+    },
+
+    {
+        question: "What are the small bumps inside the small intestine called?",
+        options: ["Villi", "Lungs", "Muscles"],
+        answer: 0,
+        explanation: "Correct! These small bumps are called villi."
+    },
+
+    {
+        question: "What carries the absorbed nutrients to the whole body?",
+        options: ["Air", "Nerves", "Blood"],
+        answer: 2,
+        explanation: "Correct! Blood carries the absorbed nutrients."
+    },
+
+    {
+        question: "Which organ stores some nutrients and sends them out when needed?",
+        options: ["Stomach", "Liver", "Large Intestine"],
+        answer: 1,
+        explanation: "Correct! The liver stores some nutrients and sends them out when needed."
+    }
+
+];
+
+let routeIndex = 0;
+let routeScore = 0;
+let routeAnswered = false;
+
+function loadRouteQuestion() {
+
+    routeAnswered = false;
+
+    let q = routeQuestions[routeIndex];
+
+    document.getElementById("routeQuestion").textContent = q.question;
+
+    document.getElementById("routeProgress").textContent =
+        "Challenge " + (routeIndex + 1) + " of " + routeQuestions.length;
+
+    document.getElementById("routeFeedback").textContent = "";
+
+    document.getElementById("routeNext").style.display = "none";
+
+    let html = "";
+
+    q.options.forEach(function(option, index) {
+        html += '<button onclick="routeAnswer(' + index + ')">' + option + '</button>';
+    });
+
+    document.getElementById("routeOptions").innerHTML = html;
+}
+
+function routeAnswer(index) {
+
+    if (routeAnswered) return;
+
+    routeAnswered = true;
+
+    let q = routeQuestions[routeIndex];
+    let buttons = document.querySelectorAll("#routeOptions button");
+
+    buttons.forEach(function(btn) {
+        btn.disabled = true;
+    });
+
+    if (index === q.answer) {
+
+        routeScore++;
+
+        buttons[index].classList.add("correct");
+
+        document.getElementById("routeFeedback").textContent =
+            "✅ " + q.explanation;
+
+        document.getElementById("routeFeedback").style.color = "#21804b";
+
+    } else {
+
+        buttons[index].classList.add("wrong");
+        buttons[q.answer].classList.add("correct");
+
+        document.getElementById("routeFeedback").textContent =
+            "❌ " + q.explanation;
+
+        document.getElementById("routeFeedback").style.color = "#bd5845";
+    }
+
+    document.getElementById("routeNext").style.display = "inline-block";
+
+    document.getElementById("routeNext").textContent =
+        routeIndex === routeQuestions.length - 1
+        ? "See My Game Result 🏆"
+        : "Continue ➜";
+}
+
+function nextRouteQuestion() {
+
+    routeIndex++;
+
+    if (routeIndex < routeQuestions.length) {
+        loadRouteQuestion();
+    } else {
+
+        document.getElementById("routeQuestion").textContent =
+            "🏆 You completed Brainy's Nutrient Journey!";
+
+        document.getElementById("routeOptions").innerHTML = "";
+
+        document.getElementById("routeFeedback").textContent =
+            "Your score: " + routeScore + " / " + routeQuestions.length;
+
+        document.getElementById("routeNext").style.display = "inline-block";
+        document.getElementById("routeNext").textContent = "Play Again ↻";
+        document.getElementById("routeNext").onclick = restartRoute;
+    }
+}
+
+function restartRoute() {
+
+    routeIndex = 0;
+    routeScore = 0;
+
+    document.getElementById("routeNext").onclick = nextRouteQuestion;
+
+    loadRouteQuestion();
+}
+
+
+// ================= QUICK CHALLENGE =================
+
+let quickDone = false;
+
+function quickAnswer(button, correct) {
+
+    if (quickDone) return;
+
+    quickDone = true;
+
+    if (correct) {
+
+        button.classList.add("correct");
+
+        document.getElementById("quickFeedback").textContent =
+            "Excellent! Villi increase the surface area for absorption. 🌟";
+
+        document.getElementById("quickFeedback").style.color = "#21804b";
+
+    } else {
+
+        button.classList.add("wrong");
+
+        document.getElementById("quickFeedback").textContent =
+            "Try again next time! Remember that villi increase the surface area.";
+
+        document.getElementById("quickFeedback").style.color = "#bd5845";
+    }
+}
+
+
+// ================= FINAL QUIZ =================
+
+const questions = [
+
+    {
+        question: "Where are most nutrients from digested food absorbed?",
+        options: ["Stomach", "Small intestine", "Large intestine"],
+        answer: 1,
+        explanation: "Most nutrients are absorbed in the small intestine."
+    },
+
+    {
+        question: "Where is more water absorbed after the small intestine?",
+        options: ["Large intestine", "Mouth", "Esophagus"],
+        answer: 0,
+        explanation: "The large intestine absorbs more water."
+    },
+
+    {
+        question: "What are the small bumps inside the small intestine called?",
+        options: ["Villi", "Bronchi", "Alveoli"],
+        answer: 0,
+        explanation: "The small bumps are called villi."
+    },
+
+    {
+        question: "What do villi do?",
+        options: [
+            "Decrease the surface area",
+            "Increase the surface area",
+            "Carry air"
+        ],
+        answer: 1,
+        explanation: "Villi increase the inner surface area of the small intestine."
+    },
+
+    {
+        question: "What carries the absorbed nutrients to the whole body?",
+        options: ["Blood", "Air", "Saliva"],
+        answer: 0,
+        explanation: "The blood carries absorbed nutrients to the whole body."
+    },
+
+    {
+        question: "Which organ does the blood pass through after nutrients are absorbed?",
+        options: ["Lungs", "Liver", "Mouth"],
+        answer: 1,
+        explanation: "The nutrients are carried by blood through the liver."
+    },
+
+    {
+        question: "What does the liver do with some nutrients?",
+        options: [
+            "Stores them and sends them out when needed",
+            "Changes them into air",
+            "Eliminates all of them"
+        ],
+        answer: 0,
+        explanation: "The liver stores some nutrients and sends them out when needed."
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+
+    answered = false;
+
+    let q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + score;
+
+    document.getElementById("quizQuestion").textContent = q.question;
+
+    document.getElementById("progressFill").style.width =
+        (currentQuestion / questions.length * 100) + "%";
+
+    document.getElementById("quizFeedback").textContent = "";
+
+    document.getElementById("nextButton").style.display = "none";
+
+    let html = "";
+
+    q.options.forEach(function(option, index) {
+        html += '<button onclick="checkQuizAnswer(' + index + ', this)">' +
+                option + '</button>';
+    });
+
+    document.getElementById("quizOptions").innerHTML = html;
+}
+
+function checkQuizAnswer(index, button) {
+
+    if (answered) return;
+
+    answered = true;
+
+    let q = questions[currentQuestion];
+
+    let buttons = document.querySelectorAll("#quizOptions button");
+
+    buttons.forEach(function(btn) {
+        btn.disabled = true;
+    });
+
+    if (index === q.answer) {
+
+        score++;
+
+        button.classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "✅ " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "#21804b";
+
+    } else {
+
+        button.classList.add("wrong");
+        buttons[q.answer].classList.add("correct");
+
+        document.getElementById("quizFeedback").textContent =
+            "❌ " + q.explanation;
+
+        document.getElementById("quizFeedback").style.color = "#bd5845";
+    }
+
+    document.getElementById("quizScore").textContent =
+        "Score: " + score;
+
+    document.getElementById("nextButton").style.display = "inline-block";
+
+    document.getElementById("nextButton").textContent =
+        currentQuestion === questions.length - 1
+        ? "See My Result 🏆"
+        : "Next Question ➜";
+}
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+
+    document.getElementById("quizArea").style.display = "none";
+    document.getElementById("quizResult").style.display = "block";
+
+    let percentage = Math.round((score / questions.length) * 100);
+
+    document.getElementById("finalScore").textContent =
+        "Your Score: " + score + " / " + questions.length;
+
+    document.getElementById("finalPercentage").textContent =
+        "Your Result: " + percentage + "%";
+
+    let message = "";
+
+    if (score === questions.length) {
+        message = "Amazing! You are a Super Science Explorer! 🌟";
+    } else if (score >= 4) {
+        message = "Great work! Keep learning and exploring! 👏";
+    } else {
+        message = "Good try! Review the lesson and try again! 💪";
+    }
+
+    document.getElementById("resultMessage").textContent = message;
+
+    localStorage.setItem("lesson33Score", score);
+    localStorage.setItem("lesson33Percentage", percentage);
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("quizArea").style.display = "block";
+    document.getElementById("quizResult").style.display = "none";
+
+    loadQuestion();
+}
+
+
+// ================= START =================
+
+loadQuestion();
+loadRouteQuestion();
+
+</script>
+
+</body>
+</html>

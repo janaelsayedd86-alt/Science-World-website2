@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Four Final Quiz | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f1eaff, #e8f3ff);
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #7051a8, #4385c5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.intro,
+.quiz-box,
+.result-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 5px 18px rgba(70, 50, 120, 0.12);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.brainy {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #7051a8;
+}
+
+.intro p {
+    line-height: 1.8;
+}
+
+.progress-container {
+    background: #e5dcf5;
+    height: 13px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #7051a8, #4385c5);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s;
+}
+
+.question-number {
+    color: #7051a8;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.question {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border: 2px solid #d9cbed;
+    border-radius: 12px;
+    background: #faf8ff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.option:hover:not(:disabled) {
+    background: #eee5ff;
+    border-color: #7051a8;
+    transform: translateY(-2px);
+}
+
+.option:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.option.correct {
+    background: #d9f5e2;
+    border-color: #37a65a;
+    color: #176b35;
+}
+
+.option.wrong {
+    background: #ffe0e0;
+    border-color: #df5555;
+    color: #a32929;
+}
+
+.feedback {
+    display: none;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 12px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.feedback.correct-feedback {
+    display: block;
+    background: #e2f7e9;
+    color: #176b35;
+}
+
+.feedback.wrong-feedback {
+    display: block;
+    background: #fff0e8;
+    color: #9b4329;
+}
+
+button {
+    background: linear-gradient(135deg, #7051a8, #4385c5);
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(80, 60, 140, 0.25);
+}
+
+#nextButton {
+    display: none;
+}
+
+.result-box {
+    display: none;
+}
+
+.result-icon {
+    font-size: 75px;
+    margin: 15px;
+}
+
+.final-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #7051a8;
+    margin: 15px;
+}
+
+.percentage {
+    font-size: 28px;
+    color: #4385c5;
+    font-weight: bold;
+}
+
+.result-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.result-card {
+    background: #f5f0ff;
+    padding: 18px 25px;
+    border-radius: 13px;
+    min-width: 130px;
+}
+
+.result-card strong {
+    display: block;
+    font-size: 25px;
+    color: #7051a8;
+    margin-bottom: 8px;
+}
+
+.result-message {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* New Finish Button */
+
+.finish-button {
+    display: block;
+    width: 85%;
+    max-width: 350px;
+    margin: 25px auto 10px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #8b65c5, #4385c5);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(100, 75, 160, 0.2);
+}
+
+.finish-button:hover {
+    background: linear-gradient(135deg, #7650b0, #3474b5);
+}
+
+footer {
+    background: #7051a8;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 15px auto;
+        padding: 12px;
+    }
+
+    .intro,
+    .quiz-box,
+    .result-box {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .finish-button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏆 Unit Four Final Quiz</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit4.html">Unit Four</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="intro" id="intro">
+        <div class="brainy">🤖</div>
+
+        <h2>Brainy's Final Challenge!</h2>
+
+        <p>
+            Hello Science Explorer!
+            You have learned about the heart, blood,
+            kidneys, and different organs of the human body.
+        </p>
+
+        <p>
+            Now it's time to test what you have learned!
+        </p>
+
+        <p>
+            <strong>10 Questions | 10 Points</strong>
+        </p>
+
+        <button onclick="startQuiz()">
+            Start Quiz 🚀
+        </button>
+    </section>
+
+
+    <section class="quiz-box" id="quizArea" style="display:none;">
+
+        <div class="question-number" id="questionNumber">
+            Question 1 of 10
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="question" id="questionText"></div>
+
+        <div id="optionsContainer"></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <button id="nextButton" onclick="nextQuestion()">
+            Next Question ➡️
+        </button>
+
+    </section>
+
+
+    <section class="result-box" id="resultArea">
+
+        <div class="brainy">🤖</div>
+
+        <h2>Quiz Completed!</h2>
+
+        <div class="result-icon" id="resultIcon">🏆</div>
+
+        <div class="final-score" id="finalScore">
+            0 / 10
+        </div>
+
+        <div class="percentage" id="finalPercentage">
+            0%
+        </div>
+
+        <div class="result-details">
+
+            <div class="result-card">
+                <strong id="correctCount">0</strong>
+                Correct Answers
+            </div>
+
+            <div class="result-card">
+                <strong id="wrongCount">0</strong>
+                Wrong Answers
+            </div>
+
+        </div>
+
+        <div class="result-message" id="resultMessage"></div>
+
+        <!-- New Button: Go to Unit Four Final Page -->
+
+        <button class="finish-button"
+        onclick="window.location.href='certificate.html'">
+            Finish Unit Four 🎉
+        </button>
+
+        <button onclick="restartQuiz()">
+            Try Again 🔄
+        </button>
+
+        <button onclick="window.location.href='unit4.html'">
+            Back to Unit Four 📚
+        </button>
+
+        <button onclick="window.location.href='units.html'">
+            All Units 🏠
+        </button>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>Science World | Learn, Explore and Discover! 🌍</p>
+</footer>
+
+
+<script>
+
+const questions = [
+
+{
+    question: "What is the main function of the heart?",
+    options: [
+        "To digest food",
+        "To pump blood",
+        "To filter urine",
+        "To absorb water"
+    ],
+    answer: 1,
+    explanation: "The heart pumps blood to different parts of the body."
+},
+
+{
+    question: "Which organs help the body get oxygen from the air?",
+    options: [
+        "Kidneys",
+        "Stomach",
+        "Lungs",
+        "Liver"
+    ],
+    answer: 2,
+    explanation: "The lungs take oxygen from the air and help remove carbon dioxide."
+},
+
+{
+    question: "What carries blood throughout the body?",
+    options: [
+        "Blood vessels",
+        "Bones",
+        "Muscles",
+        "Nerves"
+    ],
+    answer: 0,
+    explanation: "Blood vessels carry blood between the heart and different body organs."
+},
+
+{
+    question: "What is the main function of the kidneys?",
+    options: [
+        "To pump blood",
+        "To break down food",
+        "To filter waste products from blood",
+        "To take oxygen from the air"
+    ],
+    answer: 2,
+    explanation: "The kidneys filter waste products and extra water from the blood."
+},
+
+{
+    question: "How many kidneys does a human normally have?",
+    options: [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+    ],
+    answer: 1,
+    explanation: "A human normally has two kidneys, one on each side of the backbone."
+},
+
+{
+    question: "What is the liquid waste produced by the kidneys called?",
+    options: [
+        "Saliva",
+        "Blood",
+        "Urine",
+        "Digestive juice"
+    ],
+    answer: 2,
+    explanation: "The kidneys remove waste products and extra water to form urine."
+},
+
+{
+    question: "Where is urine temporarily stored?",
+    options: [
+        "In the heart",
+        "In the urinary bladder",
+        "In the stomach",
+        "In the lungs"
+    ],
+    answer: 1,
+    explanation: "Urine is temporarily stored in the urinary bladder before leaving the body."
+},
+
+{
+    question: "Which organs are located inside the chest?",
+    options: [
+        "Heart and lungs",
+        "Stomach and kidneys",
+        "Liver and stomach",
+        "Small and large intestines"
+    ],
+    answer: 0,
+    explanation: "The heart and lungs are located in the chest and protected by the ribs."
+},
+
+{
+    question: "Where is the large intestine located in relation to the small intestine?",
+    options: [
+        "Inside the stomach",
+        "Around the small intestine",
+        "Above the lungs",
+        "Inside the heart"
+    ],
+    answer: 1,
+    explanation: "The large intestine surrounds the small intestine."
+},
+
+{
+    question: "How are the different organs in the body connected?",
+    options: [
+        "By bones only",
+        "By air passages",
+        "By blood vessels",
+        "By muscles only"
+    ],
+    answer: 2,
+    explanation: "Blood vessels connect different organs and carry oxygen and nutrients to them."
+}
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function startQuiz() {
+
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("quizArea").style.display = "block";
+    document.getElementById("resultArea").style.display = "none";
+
+    currentQuestion = 0;
+    score = 0;
+
+    showQuestion();
+}
+
+
+function showQuestion() {
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion) / questions.length * 100) + "%";
+
+    document.getElementById("questionText").textContent = q.question;
+
+    const optionsContainer =
+        document.getElementById("optionsContainer");
+
+    optionsContainer.innerHTML = "";
+
+    document.getElementById("feedback").className = "feedback";
+    document.getElementById("feedback").textContent = "";
+
+    document.getElementById("nextButton").style.display = "none";
+
+    q.options.forEach((option, index) => {
+
+        const button = document.createElement("button");
+
+        button.className = "option";
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " + option;
+
+        button.onclick = function() {
+            checkAnswer(index, button);
+        };
+
+        optionsContainer.appendChild(button);
+
+    });
+
+}
+
+
+function checkAnswer(selectedIndex, selectedButton) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const allOptions =
+        document.querySelectorAll(".option");
+
+    allOptions.forEach(button => {
+        button.disabled = true;
+    });
+
+    const feedback = document.getElementById("feedback");
+
+    if (selectedIndex === q.answer) {
+
+        score++;
+
+        selectedButton.classList.add("correct");
+
+        feedback.className = "feedback correct-feedback";
+
+        feedback.innerHTML =
+            "✅ <strong>Correct Answer!</strong><br>" +
+            q.explanation;
+
+    } else {
+
+        selectedButton.classList.add("wrong");
+
+        allOptions[q.answer].classList.add("correct");
+
+        feedback.className = "feedback wrong-feedback";
+
+        feedback.innerHTML =
+            "❌ <strong>Not quite!</strong><br>" +
+            "Correct answer: <strong>" +
+            q.options[q.answer] +
+            "</strong><br>" +
+            q.explanation;
+
+    }
+
+    document.getElementById("progressBar").style.width =
+        ((currentQuestion + 1) / questions.length * 100) + "%";
+
+
+    if (currentQuestion === questions.length - 1) {
+
+        document.getElementById("nextButton").style.display = "none";
+
+        setTimeout(function() {
+            showResult();
+        }, 1400);
+
+    } else {
+
+        document.getElementById("nextButton").style.display = "inline-block";
+
+    }
+
+}
+
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        showQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+}
+
+
+function showResult() {
+
+    document.getElementById("quizArea").style.display = "none";
+
+    document.getElementById("resultArea").style.display = "block";
+
+    const percentage =
+        Math.round((score / questions.length) * 100);
+
+    const wrong = questions.length - score;
+
+    document.getElementById("finalScore").textContent =
+        score + " / " + questions.length;
+
+    document.getElementById("finalPercentage").textContent =
+        percentage + "%";
+
+    document.getElementById("correctCount").textContent =
+        score;
+
+    document.getElementById("wrongCount").textContent =
+        wrong;
+
+
+    let message = "";
+    let icon = "";
+
+    if (percentage >= 90) {
+
+        icon = "🏆";
+        message = "Excellent! You are a Science Champion! Keep up the amazing work!";
+
+    } else if (percentage >= 70) {
+
+        icon = "🌟";
+        message = "Very Good! You understand most of the lesson. Keep learning!";
+
+    } else if (percentage >= 50) {
+
+        icon = "👏";
+        message = "Good Job! Review the lesson and try again to improve your score.";
+
+    } else {
+
+        icon = "💪";
+        message = "Don't give up! Review Unit Four and try the quiz again. You can do it!";
+
+    }
+
+    document.getElementById("resultIcon").textContent = icon;
+
+    document.getElementById("resultMessage").textContent =
+        message;
+
+
+    // Save quiz result
+
+    localStorage.setItem("unit4Score", score);
+
+    localStorage.setItem("unit4Percentage", percentage);
+
+    localStorage.setItem("unit4Correct", score);
+
+    localStorage.setItem("unit4Wrong", wrong);
+
+    localStorage.setItem("unit4QuizCompleted", "true");
+
+}
+
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("resultArea").style.display = "none";
+
+    document.getElementById("intro").style.display = "block";
+
+    document.getElementById("quizArea").style.display = "none";
+
+    document.getElementById("progressBar").style.width = "0%";
+
+}
+
+</script>
+
+</body>
+</html>

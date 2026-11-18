@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Two Final Quiz | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fff7f5;
+    color: #444;
+}
+
+header {
+    background: linear-gradient(135deg, #ff758c, #ff9a9e);
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 22px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #e85d75;
+    text-align: center;
+}
+
+.intro {
+    text-align: center;
+    line-height: 1.8;
+}
+
+.brainy {
+    text-align: center;
+    font-size: 55px;
+    margin: 10px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.progress-container {
+    background: #ffe0e5;
+    height: 14px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff758c, #e85d75);
+    transition: width 0.4s;
+}
+
+#questionNumber {
+    text-align: center;
+    color: #e85d75;
+    font-weight: bold;
+}
+
+#questionText {
+    text-align: center;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answer-btn {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ffd1d9;
+    border-radius: 12px;
+    background: #fff7f5;
+    color: #444;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: #ffe0e5;
+    transform: translateY(-2px);
+}
+
+.answer-btn:disabled {
+    cursor: default;
+}
+
+.answer-btn.correct {
+    background: #d8f5df;
+    border-color: #4caf50;
+    color: #246b32;
+}
+
+.answer-btn.wrong {
+    background: #ffe0e0;
+    border-color: #e05252;
+    color: #a52b2b;
+}
+
+#feedback {
+    display: none;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.correct-feedback {
+    background: #e2f7e7;
+    color: #246b32;
+}
+
+.wrong-feedback {
+    background: #ffe5e5;
+    color: #a52b2b;
+}
+
+button.main-btn {
+    background: #e85d75;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: 0.3s;
+}
+
+button.main-btn:hover {
+    background: #d94461;
+    transform: scale(1.03);
+}
+
+.button-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#nextBtn {
+    display: none;
+}
+
+#quizResult {
+    display: none;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.result-emoji {
+    font-size: 65px;
+}
+
+.result-score {
+    color: #e85d75;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.result-message {
+    background: #fff0f2;
+    padding: 18px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+footer {
+    background: linear-gradient(135deg, #ff758c, #ff9a9e);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏆 Unit Two Final Quiz</h1>
+    <p>Science World - Grade 6</p>
+</header>
+
+<div class="container">
+
+    <div class="card intro">
+        <div class="brainy">🤖</div>
+
+        <h2>Welcome to the Final Challenge!</h2>
+
+        <p>
+            Hello, Young Scientist! 🌟
+            <br>
+            You have learned about respiration and how our lungs work.
+            Now it's time to test your knowledge!
+        </p>
+
+        <p>
+            <strong>Number of Questions:</strong> 10
+            <br>
+            <strong>Each Question:</strong> 1 Point
+            <br>
+            <strong>Total Score:</strong> 10 Points
+        </p>
+
+        <p id="studentWelcome"></p>
+    </div>
+
+    <div class="card" id="quizArea">
+
+        <h2>🧠 Brainy's Final Challenge</h2>
+
+        <div id="questionNumber">Question 1 of 10</div>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <h3 id="questionText"></h3>
+
+        <div class="answers" id="answersArea"></div>
+
+        <div id="feedback"></div>
+
+        <div class="button-area">
+            <button class="main-btn" id="nextBtn" onclick="nextQuestion()">
+                Next Question ➡️
+            </button>
+        </div>
+
+    </div>
+
+    <div class="card" id="quizResult">
+
+        <div class="result-emoji" id="resultEmoji">🏆</div>
+
+        <h2>Quiz Completed!</h2>
+
+        <p id="resultStudent"></p>
+
+        <p>Your Final Score:</p>
+
+        <div class="result-score" id="finalScore"></div>
+
+        <p id="percentage"></p>
+
+        <div class="result-message">
+            <h3 id="resultTitle"></h3>
+            <p id="resultMessage"></p>
+        </div>
+
+        <p>
+            Keep learning and exploring, Young Scientist! 🌟
+        </p>
+
+        <div class="button-area">
+            <button class="main-btn" onclick="restartQuiz()">
+                🔄 Try Again
+            </button>
+
+            <button class="main-btn" onclick="goToUnit()">
+                📚 Back to Unit Two
+            </button>
+
+            <button class="main-btn" onclick="goToUnits()">
+                🏠 All Units
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>Science World | Learn Science with Brainy 🤖</p>
+</footer>
+
+<script>
+
+const questions = [
+
+    {
+        question: "1. What is respiration?",
+        answers: [
+            "The process of making food",
+            "The process of releasing energy from food",
+            "The process of drinking water",
+            "The process of growing plants"
+        ],
+        correct: 1,
+        explanation: "Respiration is the process in which energy is released from food inside living cells."
+    },
+
+    {
+        question: "2. What happens during inhalation?",
+        answers: [
+            "Air moves out of the lungs",
+            "The body stops breathing",
+            "Air moves into the lungs",
+            "Carbon dioxide enters the body"
+        ],
+        correct: 2,
+        explanation: "During inhalation, we breathe air into our lungs."
+    },
+
+    {
+        question: "3. Which gas is found in a larger amount in exhaled air than in inhaled air?",
+        answers: [
+            "Oxygen",
+            "Carbon dioxide",
+            "Nitrogen",
+            "Hydrogen"
+        ],
+        correct: 1,
+        explanation: "Exhaled air contains more carbon dioxide because it is produced by body cells."
+    },
+
+    {
+        question: "4. What is the correct pathway of air into the lungs?",
+        answers: [
+            "Nose → Throat → Trachea → Bronchi → Lungs",
+            "Lungs → Nose → Throat → Bronchi",
+            "Nose → Lungs → Throat → Trachea",
+            "Throat → Nose → Lungs → Bronchi"
+        ],
+        correct: 0,
+        explanation: "Air passes through the nose, throat, trachea and bronchi before reaching the lungs."
+    },
+
+    {
+        question: "5. What is the main function of the lungs?",
+        answers: [
+            "To digest food",
+            "To pump blood",
+            "To exchange oxygen and carbon dioxide",
+            "To produce food"
+        ],
+        correct: 2,
+        explanation: "The lungs help exchange oxygen and carbon dioxide between the air and the blood."
+    },
+
+    {
+        question: "6. What are alveoli?",
+        answers: [
+            "Small air sacs inside the lungs",
+            "Bones in the chest",
+            "Muscles in the arms",
+            "Blood cells"
+        ],
+        correct: 0,
+        explanation: "Alveoli are tiny air sacs where gas exchange takes place."
+    },
+
+    {
+        question: "7. Where does oxygen move after reaching the alveoli?",
+        answers: [
+            "Into the stomach",
+            "Into the blood",
+            "Into the bones",
+            "Out through the nose"
+        ],
+        correct: 1,
+        explanation: "Oxygen moves from the alveoli into the blood."
+    },
+
+    {
+        question: "8. During gas exchange, where does carbon dioxide move?",
+        answers: [
+            "From the blood into the alveoli",
+            "From the alveoli into the blood",
+            "From the nose into the stomach",
+            "From the lungs into the bones"
+        ],
+        correct: 0,
+        explanation: "Carbon dioxide moves from the blood into the alveoli to be breathed out."
+    },
+
+    {
+        question: "9. What happens to the diaphragm during inhalation?",
+        answers: [
+            "It relaxes and moves up",
+            "It contracts and moves down",
+            "It disappears",
+            "It stops moving permanently"
+        ],
+        correct: 1,
+        explanation: "During inhalation, the diaphragm contracts and moves down, helping the chest cavity expand."
+    },
+
+    {
+        question: "10. What is the role of blood in respiration?",
+        answers: [
+            "It carries oxygen to body cells",
+            "It produces air",
+            "It changes oxygen into food",
+            "It stops the lungs from working"
+        ],
+        correct: 0,
+        explanation: "Blood transports oxygen from the lungs to body cells and carries carbon dioxide back to the lungs."
+    }
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+const questionNumber = document.getElementById("questionNumber");
+const questionText = document.getElementById("questionText");
+const answersArea = document.getElementById("answersArea");
+const feedback = document.getElementById("feedback");
+const nextBtn = document.getElementById("nextBtn");
+const progressBar = document.getElementById("progressBar");
+
+const studentName = localStorage.getItem("studentName") || "Young Scientist";
+
+document.getElementById("studentWelcome").textContent =
+    "Good luck, " + studentName + "!";
+
+function loadQuestion() {
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    questionNumber.textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+    questionText.textContent = q.question;
+
+    progressBar.style.width =
+        (currentQuestion / questions.length * 100) + "%";
+
+    answersArea.innerHTML = "";
+
+    feedback.style.display = "none";
+    feedback.className = "";
+
+    nextBtn.style.display = "none";
+
+    q.answers.forEach(function(answer, index) {
+
+        const button = document.createElement("button");
+
+        button.className = "answer-btn";
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " + answer;
+
+        button.onclick = function() {
+            checkAnswer(index);
+        };
+
+        answersArea.appendChild(button);
+
+    });
+
+}
+
+function checkAnswer(selectedIndex) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const buttons = answersArea.querySelectorAll(".answer-btn");
+
+    buttons.forEach(function(button, index) {
+
+        button.disabled = true;
+
+        if (index === q.correct) {
+            button.classList.add("correct");
+        }
+
+        if (index === selectedIndex && selectedIndex !== q.correct) {
+            button.classList.add("wrong");
+        }
+
+    });
+
+    if (selectedIndex === q.correct) {
+
+        score++;
+
+        feedback.className = "correct-feedback";
+
+        feedback.innerHTML =
+            "✅ Excellent! Correct Answer!<br>" + q.explanation;
+
+    } else {
+
+        feedback.className = "wrong-feedback";
+
+        feedback.innerHTML =
+            "❌ Not quite!<br>" +
+            "The correct answer is: <strong>" +
+            q.answers[q.correct] +
+            "</strong><br>" +
+            q.explanation;
+
+    }
+
+    feedback.style.display = "block";
+
+    if (currentQuestion === questions.length - 1) {
+        nextBtn.textContent = "See My Result 🏆";
+    } else {
+        nextBtn.textContent = "Next Question ➡️";
+    }
+
+    nextBtn.style.display = "inline-block";
+
+}
+
+function nextQuestion() {
+
+    if (!answered) return;
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+}
+
+function showResult() {
+
+    document.getElementById("quizArea").style.display = "none";
+    document.getElementById("quizResult").style.display = "block";
+
+    const percentage = Math.round((score / questions.length) * 100);
+
+    document.getElementById("resultStudent").textContent =
+        "Well done, " + studentName + "!";
+
+    document.getElementById("finalScore").textContent =
+        score + " / " + questions.length;
+
+    document.getElementById("percentage").textContent =
+        "Your Percentage: " + percentage + "%";
+
+    localStorage.setItem("unit2Score", score);
+    localStorage.setItem("unit2Percentage", percentage);
+
+    if (percentage === 100) {
+
+        document.getElementById("resultEmoji").textContent = "🏆";
+        document.getElementById("resultTitle").textContent =
+            "Amazing! Perfect Score!";
+
+        document.getElementById("resultMessage").textContent =
+            "You are a Science Superstar! You answered all questions correctly.";
+
+    } else if (percentage >= 80) {
+
+        document.getElementById("resultEmoji").textContent = "🌟";
+        document.getElementById("resultTitle").textContent =
+            "Excellent Work!";
+
+        document.getElementById("resultMessage").textContent =
+            "Great job! You understand most of the respiration lessons.";
+
+    } else if (percentage >= 60) {
+
+        document.getElementById("resultEmoji").textContent = "👏";
+        document.getElementById("resultTitle").textContent =
+            "Good Work!";
+
+        document.getElementById("resultMessage").textContent =
+            "You are doing well! Review the lessons and try again.";
+
+    } else {
+
+        document.getElementById("resultEmoji").textContent = "💪";
+        document.getElementById("resultTitle").textContent =
+            "Keep Practicing!";
+
+        document.getElementById("resultMessage").textContent =
+            "Don't give up! Review both lessons and try the quiz again.";
+
+    }
+
+    progressBar.style.width = "100%";
+
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+
+    document.getElementById("quizResult").style.display = "none";
+    document.getElementById("quizArea").style.display = "block";
+
+    loadQuestion();
+
+}
+
+function goToUnit() {
+    window.location.href = "unit2.html";
+}
+
+function goToUnits() {
+    window.location.href = "units.html";
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>

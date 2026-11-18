@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Three - Digestion | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f5ff, #e8f5ff);
+    color: #263238;
+}
+
+header {
+    background: #168aad;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffdf6c;
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #168aad, #48cae4);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin: 10px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.hero-icon {
+    font-size: 85px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #126782;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.brainy-box {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    margin-bottom: 35px;
+}
+
+.brainy-box .character {
+    font-size: 65px;
+}
+
+.brainy-box p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.lessons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.lesson-card {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    transition: 0.3s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px #0003;
+}
+
+.lesson-icon {
+    font-size: 65px;
+}
+
+.lesson-card h3 {
+    color: #168aad;
+}
+
+.lesson-card p {
+    line-height: 1.6;
+    color: #555;
+}
+
+button {
+    background: #ffb703;
+    color: #263238;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #fb8500;
+    color: white;
+    transform: scale(1.05);
+}
+
+.objectives {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    margin-top: 35px;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.objectives li {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.game-box {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 18px #0002;
+    margin-top: 35px;
+}
+
+.question {
+    background: #eaf8ff;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+    background: #168aad;
+    color: white;
+}
+
+.answer:hover {
+    background: #126782;
+}
+
+#challengeResult {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.quiz-section {
+    background: linear-gradient(135deg, #caf0f8, #ade8f4);
+    padding: 30px;
+    border-radius: 22px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.navigation {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.navigation a {
+    display: inline-block;
+    background: #168aad;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    margin: 7px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: #126782;
+}
+
+footer {
+    background: #168aad;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    header {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit3.html">Unit Three</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-icon">🍎</div>
+    <h1>Unit Three: Digestion</h1>
+    <p>
+        Welcome to the amazing journey of food inside your body!
+        <br>
+        Let's discover how our body digests food and absorbs nutrients.
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="brainy-box">
+        <div class="character">🤖</div>
+        <h2>Hello, Science Explorers!</h2>
+        <p>
+            I'm Brainy! Are you ready to follow the journey of food?
+            We will discover the digestive system, learn about saliva,
+            and explore how nutrients are absorbed into the body.
+        </p>
+        <p><strong>Let's start our digestion adventure! 🚀</strong></p>
+    </section>
+
+    <h2 class="section-title">📚 Explore Our Lessons</h2>
+
+    <section class="lessons">
+
+        <div class="lesson-card">
+            <div class="lesson-icon">🥪</div>
+            <h3>Lesson 3-1</h3>
+            <h3>Where Food Goes</h3>
+            <p>
+                Follow the journey of food through the digestive tract,
+                from the mouth to the anus.
+            </p>
+            <button onclick="location.href='lesson3-1.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+        <div class="lesson-card">
+            <div class="lesson-icon">💧</div>
+            <h3>Lesson 3-2</h3>
+            <h3>The Function of Saliva</h3>
+            <p>
+                Discover how saliva helps break down starch
+                and learn about digestive juices.
+            </p>
+            <button onclick="location.href='lesson3-2.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+        <div class="lesson-card">
+            <div class="lesson-icon">🧬</div>
+            <h3>Lesson 3-3</h3>
+            <h3>How Does Absorption Occur?</h3>
+            <p>
+                Explore the small intestine, villi,
+                and how nutrients enter the blood.
+            </p>
+            <button onclick="location.href='lesson3-3.html'">
+                Start Lesson 🚀
+            </button>
+        </div>
+
+    </section>
+
+    <section class="objectives">
+        <h2 class="section-title">🎯 What Will You Learn?</h2>
+
+        <ul>
+            <li>Understand the meaning of digestion.</li>
+            <li>Identify the organs of the digestive tract.</li>
+            <li>Follow the path of food through the body.</li>
+            <li>Understand the function of saliva in breaking down starch.</li>
+            <li>Learn about digestive juices.</li>
+            <li>Understand the structure and function of the small intestine.</li>
+            <li>Discover the role of villi in absorbing nutrients.</li>
+            <li>Learn how blood carries absorbed nutrients to the body.</li>
+        </ul>
+    </section>
+
+    <section class="game-box">
+
+        <h2 class="section-title">🧠 Brainy's Quick Challenge!</h2>
+
+        <div class="character" style="font-size:60px;">🤖</div>
+
+        <div id="questionArea">
+
+            <div class="question">
+                <h3 id="questionText"></h3>
+            </div>
+
+            <div id="answers"></div>
+
+            <p id="challengeResult"></p>
+
+            <p id="scoreText">Score: 0 / 3</p>
+
+        </div>
+
+        <button onclick="restartChallenge()">
+            🔄 Try Again
+        </button>
+
+    </section>
+
+    <section class="quiz-section">
+
+        <div style="font-size:65px;">🏆</div>
+
+        <h2>Unit Three Final Challenge!</h2>
+
+        <p>
+            Have you completed all three lessons?
+            Now it's time to test what you learned about digestion!
+        </p>
+
+        <h3>10 Questions | 10 Points</h3>
+
+        <button onclick="location.href='unit3-quiz.html'">
+            Start Final Quiz 🚀
+        </button>
+
+    </section>
+
+    <div class="navigation">
+        <a href="index.html">🏠 Home</a>
+        <a href="units.html">📚 All Units</a>
+        <a href="unit2.html">⬅️ Previous Unit</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>Science World | Learn, Explore, Discover!</p>
+</footer>
+
+<script>
+const questions = [
+    {
+        q: "What is the process of breaking down food called?",
+        options: ["Breathing", "Digestion", "Circulation"],
+        answer: 1,
+        explanation: "Correct! Digestion breaks down food into a form that is easy to absorb."
+    },
+    {
+        q: "Which organ produces saliva?",
+        options: ["Mouth", "Lungs", "Heart"],
+        answer: 0,
+        explanation: "Correct! Saliva is found in the mouth and helps break down starch."
+    },
+    {
+        q: "Where are most nutrients absorbed?",
+        options: ["Stomach", "Large intestine", "Small intestine"],
+        answer: 2,
+        explanation: "Excellent! Most nutrients are absorbed in the small intestine."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function showQuestion() {
+    answered = false;
+
+    document.getElementById("questionText").textContent =
+        questions[currentQuestion].q;
+
+    document.getElementById("challengeResult").textContent = "";
+
+    const answersDiv = document.getElementById("answers");
+    answersDiv.innerHTML = "";
+
+    questions[currentQuestion].options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.className = "answer";
+        btn.onclick = () => checkAnswer(index);
+        answersDiv.appendChild(btn);
+    });
+
+    document.getElementById("scoreText").textContent =
+        "Score: " + score + " / 3";
+}
+
+function checkAnswer(index) {
+    if (answered) return;
+    answered = true;
+
+    const result = document.getElementById("challengeResult");
+
+    if (index === questions[currentQuestion].answer) {
+        score++;
+        result.textContent = "✅ " + questions[currentQuestion].explanation;
+        result.style.color = "green";
+    } else {
+        result.textContent =
+            "❌ Not quite! " + questions[currentQuestion].explanation;
+        result.style.color = "red";
+    }
+
+    document.getElementById("scoreText").textContent =
+        "Score: " + score + " / 3";
+
+    const nextButton = document.createElement("button");
+    nextButton.textContent =
+        currentQuestion === questions.length - 1
+        ? "See Result 🏆"
+        : "Next Question ➡️";
+
+    nextButton.onclick = nextQuestion;
+
+    document.getElementById("answers").appendChild(nextButton);
+}
+
+function nextQuestion() {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        document.getElementById("questionArea").innerHTML =
+            "<h2>🎉 Challenge Completed!</h2>" +
+            "<p>You scored " + score + " out of 3.</p>" +
+            "<p>" + (score === 3
+            ? "Amazing work, Science Explorer! 🌟"
+            : "Good try! Keep learning and try again! 💪") +
+            "</p>";
+    }
+}
+
+function restartChallenge() {
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("questionArea").innerHTML =
+        '<div class="question"><h3 id="questionText"></h3></div>' +
+        '<div id="answers"></div>' +
+        '<p id="challengeResult"></p>' +
+        '<p id="scoreText">Score: 0 / 3</p>';
+
+    showQuestion();
+}
+
+showQuestion();
+</script>
+
+</body>
+</html>

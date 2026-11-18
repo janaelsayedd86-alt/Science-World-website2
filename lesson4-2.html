@@ -1,0 +1,1263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 4-2 - How the Kidneys Work | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f0, #eaf5ff);
+    color: #263238;
+}
+
+header {
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffdf6c;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 20px;
+    background: linear-gradient(135deg, #b83245, #247ba0);
+    color: white;
+}
+
+.hero-icon {
+    font-size: 80px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #a52a3a;
+    font-size: 27px;
+    margin: 35px 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px #0002;
+    margin: 25px 0;
+}
+
+.brainy-box {
+    text-align: center;
+}
+
+.brainy {
+    font-size: 65px;
+}
+
+.brainy-box p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.objectives li {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.definition {
+    background: #fff0f0;
+    border-left: 6px solid #b83245;
+    padding: 18px;
+    border-radius: 12px;
+    line-height: 1.8;
+    margin: 18px 0;
+}
+
+.definition strong {
+    color: #a52a3a;
+}
+
+.audio-box {
+    text-align: center;
+    background: #eaf5ff;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.audio-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    background: #ffb703;
+    color: #263238;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #fb8500;
+    color: white;
+    transform: scale(1.04);
+}
+
+.blue-btn {
+    background: #247ba0;
+    color: white;
+}
+
+.blue-btn:hover {
+    background: #185d7a;
+}
+
+.red-btn {
+    background: #b83245;
+    color: white;
+}
+
+.red-btn:hover {
+    background: #872638;
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 18px;
+}
+
+.system-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.organ-card {
+    background: #fff7f7;
+    border: 2px solid #f3c4ca;
+    border-radius: 15px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.organ-card:hover {
+    transform: translateY(-5px);
+    border-color: #247ba0;
+}
+
+.organ-card .emoji {
+    font-size: 48px;
+}
+
+.organ-card h3 {
+    color: #a52a3a;
+}
+
+#organInfo {
+    background: #eaf5ff;
+    padding: 18px;
+    border-radius: 15px;
+    margin-top: 18px;
+    line-height: 1.8;
+    display: none;
+}
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.process-step {
+    background: #fff0f0;
+    border: 2px solid #e9b6bd;
+    padding: 18px 10px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.process-step span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.process-arrow {
+    text-align: center;
+    font-size: 25px;
+    color: #247ba0;
+}
+
+.diagram {
+    background: #f7fbff;
+    border: 2px solid #d6e9f5;
+    padding: 15px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.diagram svg {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.game-area {
+    background: #f0f7ff;
+    padding: 22px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.game-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.game-option {
+    background: #247ba0;
+    color: white;
+    border-radius: 13px;
+}
+
+#gameFeedback {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.7;
+}
+
+#gameProgress {
+    color: #a52a3a;
+    font-weight: bold;
+}
+
+.quiz-question {
+    background: #fff0f0;
+    padding: 17px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.quiz-answer {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    margin: 10px auto;
+    background: #247ba0;
+    color: white;
+    border-radius: 12px;
+}
+
+.quiz-answer.correct {
+    background: #319b58;
+}
+
+.quiz-answer.wrong {
+    background: #d94b4b;
+}
+
+.quiz-answer:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+#quizFeedback {
+    font-weight: bold;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+#quizNext {
+    display: none;
+}
+
+.result-box {
+    display: none;
+    text-align: center;
+    background: #eaf5ff;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.result-score {
+    font-size: 40px;
+    color: #a52a3a;
+    font-weight: bold;
+}
+
+.navigation {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.navigation a {
+    display: inline-block;
+    background: #247ba0;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin: 6px;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: #185d7a;
+}
+
+footer {
+    background: #a52a3a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+}
+
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🌍 Science World</h2>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit4.html">Unit Four</a>
+        <a href="lesson4-1.html">Previous Lesson</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-icon">🫘</div>
+    <h1>Lesson 4-2: How the Kidneys Work</h1>
+    <p>
+        Discover how your kidneys clean your blood
+        and remove waste products from your body!
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="card brainy-box">
+        <div class="brainy">🤖</div>
+        <h2>Hello, Science Explorers!</h2>
+        <p>
+            I'm Brainy! Today we will discover the amazing cleaning
+            system inside our bodies.
+            Let's learn how the kidneys filter the blood,
+            remove waste products, and produce urine!
+        </p>
+        <strong>Are you ready? Let's explore! 🚀</strong>
+    </section>
+
+    <section class="card objectives">
+        <h2 class="section-title">🎯 Learning Objectives</h2>
+        <ul>
+            <li>Identify the location of the two kidneys.</li>
+            <li>Understand how blood carries waste products to the kidneys.</li>
+            <li>Explain how kidneys filter waste products and excess water.</li>
+            <li>Understand how urine is produced.</li>
+            <li>Identify the role of the urinary bladder.</li>
+            <li>Arrange the steps of removing waste products from the body.</li>
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🔊 Listen to Brainy's Explanation</h2>
+
+        <div class="audio-box">
+            <div style="font-size:55px;">🎧</div>
+
+            <p>
+                Listen to the lesson explanation.
+                You can pause, resume, or stop the audio.
+            </p>
+
+            <div class="audio-buttons">
+                <button onclick="speakLesson()">▶ Play</button>
+                <button class="blue-btn" onclick="pauseSpeech()">⏸ Pause</button>
+                <button class="blue-btn" onclick="resumeSpeech()">▶ Resume</button>
+                <button class="red-btn" onclick="stopSpeech()">⏹ Stop</button>
+            </div>
+
+            <p id="audioStatus">Ready to start listening!</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🎬 Watch and Learn</h2>
+
+        <p style="text-align:center; line-height:1.8;">
+            Watch this educational video to understand how the kidneys
+            filter blood and produce urine.
+        </p>
+
+        <iframe
+            class="video-frame"
+            src="https://www.youtube-nocookie.com/embed/3K6U6j2FZ2E"
+            title="How Kidneys Work"
+            allowfullscreen>
+        </iframe>
+
+        <p style="text-align:center; color:#666;">
+            If the video does not load, you can continue with the interactive lesson below.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🫘 What Are the Kidneys?</h2>
+
+        <div class="definition">
+            <strong>Kidneys:</strong>
+            Two organs that filter waste products and excess water
+            from the blood.
+        </div>
+
+        <p style="line-height:1.8;">
+            Our body produces waste products.
+            These unnecessary substances are carried by the blood
+            to the kidneys.
+        </p>
+
+        <p style="line-height:1.8;">
+            We have <strong>two kidneys</strong>.
+            They are located in the lower back,
+            one on each side of the backbone.
+        </p>
+
+        <div class="diagram">
+
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+
+                <rect x="10" y="10" width="580" height="380"
+                      rx="20" fill="#f7fbff"/>
+
+                <path d="M300 55 L300 340"
+                      stroke="#b9a18b" stroke-width="13"
+                      stroke-linecap="round"/>
+
+                <path d="M285 90 Q210 110 205 190 Q210 270 280 300"
+                      fill="none" stroke="#c5b8a8" stroke-width="12"/>
+
+                <path d="M315 90 Q390 110 395 190 Q390 270 320 300"
+                      fill="none" stroke="#c5b8a8" stroke-width="12"/>
+
+                <path d="M240 125
+                         C190 105 155 145 170 195
+                         C180 235 220 245 250 205
+                         C265 180 260 145 240 125Z"
+                      fill="#b83245" stroke="#872638" stroke-width="4"/>
+
+                <path d="M360 125
+                         C410 105 445 145 430 195
+                         C420 235 380 245 350 205
+                         C335 180 340 145 360 125Z"
+                      fill="#b83245" stroke="#872638" stroke-width="4"/>
+
+                <path d="M250 190 L280 285"
+                      stroke="#e0a02d" stroke-width="7"
+                      stroke-linecap="round"/>
+
+                <path d="M350 190 L320 285"
+                      stroke="#e0a02d" stroke-width="7"
+                      stroke-linecap="round"/>
+
+                <ellipse cx="300" cy="310" rx="43" ry="30"
+                         fill="#f2c66d" stroke="#bb8b32" stroke-width="4"/>
+
+                <path d="M300 340 L300 365"
+                      stroke="#e0a02d" stroke-width="7"
+                      stroke-linecap="round"/>
+
+                <path d="M170 160 L80 120 L30 120"
+                      stroke="#247ba0" stroke-width="3" fill="none"/>
+
+                <text x="30" y="105" font-size="18" fill="#a52a3a"
+                      font-weight="bold">Left Kidney</text>
+
+                <path d="M430 160 L510 120 L570 120"
+                      stroke="#247ba0" stroke-width="3" fill="none"/>
+
+                <text x="455" y="100" font-size="18" fill="#a52a3a"
+                      font-weight="bold">Right Kidney</text>
+
+                <text x="300" y="35" text-anchor="middle"
+                      font-size="18" fill="#247ba0" font-weight="bold">
+                    Backbone
+                </text>
+
+                <text x="300" y="385" text-anchor="middle"
+                      font-size="17" fill="#247ba0" font-weight="bold">
+                    Urinary Bladder
+                </text>
+
+            </svg>
+
+            <p style="line-height:1.7;">
+                Educational illustration showing the two kidneys
+                on both sides of the backbone.
+            </p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🔍 Explore the Urinary System</h2>
+
+        <p style="text-align:center;">
+            Click each part to discover its function!
+        </p>
+
+        <div class="system-layout">
+
+            <div class="organ-card" onclick="showOrgan('kidneys')">
+                <div class="emoji">🫘</div>
+                <h3>Kidneys</h3>
+                <p>Filter waste products and excess water from blood.</p>
+            </div>
+
+            <div class="organ-card" onclick="showOrgan('tubes')">
+                <div class="emoji">〰️</div>
+                <h3>Urine Tubes</h3>
+                <p>Carry urine from the kidneys to the bladder.</p>
+            </div>
+
+            <div class="organ-card" onclick="showOrgan('bladder')">
+                <div class="emoji">💧</div>
+                <h3>Urinary Bladder</h3>
+                <p>Stores urine temporarily.</p>
+            </div>
+
+        </div>
+
+        <div id="organInfo"></div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">⚙️ How Do the Kidneys Work?</h2>
+
+        <p style="line-height:1.8;">
+            Blood carries waste products from different parts of the body
+            to the kidneys.
+            The kidneys filter out waste products and excess water.
+            These substances become urine.
+        </p>
+
+        <div class="process">
+
+            <div class="process-step">
+                <span>🩸</span>
+                Blood enters the kidneys
+            </div>
+
+            <div class="process-step">
+                <span>🫘</span>
+                Waste products and excess water are filtered out
+            </div>
+
+            <div class="process-step">
+                <span>💧</span>
+                Urine is produced
+            </div>
+
+            <div class="process-step">
+                <span>🫙</span>
+                Urine is stored in the bladder
+            </div>
+
+            <div class="process-step">
+                <span>🚻</span>
+                Urine leaves the body
+            </div>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🎮 Brainy's Cleaning Factory Game!</h2>
+
+        <div class="game-area">
+
+            <div style="font-size:60px;">🤖</div>
+
+            <h3>Put the Steps in the Correct Order!</h3>
+
+            <p>
+                Choose the first step in the process of removing
+                waste products from the body.
+            </p>
+
+            <p id="gameProgress">Step 1 of 4</p>
+
+            <h3 id="gameQuestion">What happens first?</h3>
+
+            <div class="game-options" id="gameOptions"></div>
+
+            <p id="gameFeedback"></p>
+
+            <button class="blue-btn" onclick="restartGame()">
+                🔄 Restart Game
+            </button>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">🧠 Brainy's Quick Challenge</h2>
+
+        <div class="game-area">
+
+            <div style="font-size:55px;">🤖</div>
+
+            <h3 id="quickQuestion"></h3>
+
+            <div id="quickAnswers"></div>
+
+            <p id="quickFeedback"></p>
+
+            <p id="quickScore">Score: 0 / 3</p>
+
+            <button class="blue-btn" onclick="restartQuick()">
+                🔄 Try Again
+            </button>
+
+        </div>
+    </section>
+
+    <section class="card">
+        <h2 class="section-title">📝 Lesson 4-2 Final Quiz</h2>
+
+        <p style="text-align:center;">
+            Answer these questions to check what you have learned!
+            <br>
+            <strong>5 Questions | 5 Points</strong>
+        </p>
+
+        <div id="quizBox">
+
+            <p id="quizCounter"></p>
+
+            <div class="quiz-question">
+                <h3 id="quizQuestion"></h3>
+            </div>
+
+            <div id="quizAnswers"></div>
+
+            <p id="quizFeedback"></p>
+
+            <button id="quizNext" onclick="nextQuizQuestion()">
+                Next Question ➡️
+            </button>
+
+        </div>
+
+        <div class="result-box" id="quizResult">
+            <div style="font-size:60px;">🏆</div>
+            <h2>Lesson Completed!</h2>
+            <p id="quizResultName"></p>
+            <div class="result-score" id="quizFinalScore"></div>
+            <p id="quizMessage"></p>
+
+            <button onclick="restartQuiz()">Try Again 🔄</button>
+        </div>
+
+    </section>
+
+    <div class="navigation">
+        <a href="lesson4-1.html">⬅️ Previous Lesson</a>
+        <a href="unit4.html">Unit Four</a>
+        <a href="lesson4-3.html">Next Lesson ➡️</a>
+        <a href="units.html">All Units</a>
+        <a href="index.html">Home 🏠</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>Science World | Learn, Explore, Discover!</p>
+</footer>
+
+<script>
+
+// AUDIO EXPLANATION
+
+const lessonScript = `
+Hello Science Explorers!
+Today we will learn how the kidneys work.
+
+Our body produces waste products.
+These unnecessary substances are carried to the kidneys by the blood.
+
+We have two kidneys.
+They are located in the lower back, on both sides of the backbone.
+
+The kidneys filter waste products and excess water from the blood.
+These substances become urine.
+
+Urine is temporarily stored in the urinary bladder.
+Then it is discharged out of the body.
+
+Remember the process:
+Blood enters the kidneys.
+Waste products and excess water are filtered out.
+Urine is produced.
+Urine moves to the bladder.
+Finally, urine leaves the body.
+
+Great job, Science Explorers!
+`;
+
+let speech = null;
+
+function speakLesson() {
+    if (!("speechSynthesis" in window)) {
+        document.getElementById("audioStatus").textContent =
+            "Audio is not supported in this browser.";
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    speech = new SpeechSynthesisUtterance(lessonScript);
+    speech.lang = "en-US";
+    speech.rate = 0.9;
+
+    speech.onstart = function() {
+        document.getElementById("audioStatus").textContent =
+            "🔊 Brainy is explaining the lesson...";
+    };
+
+    speech.onend = function() {
+        document.getElementById("audioStatus").textContent =
+            "✅ Explanation completed!";
+    };
+
+    window.speechSynthesis.speak(speech);
+}
+
+function pauseSpeech() {
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        document.getElementById("audioStatus").textContent = "Audio paused.";
+    }
+}
+
+function resumeSpeech() {
+    if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+        document.getElementById("audioStatus").textContent = "Audio resumed.";
+    }
+}
+
+function stopSpeech() {
+    window.speechSynthesis.cancel();
+    document.getElementById("audioStatus").textContent = "Audio stopped.";
+}
+
+
+// ORGAN INFORMATION
+
+function showOrgan(part) {
+    const info = document.getElementById("organInfo");
+
+    const details = {
+        kidneys: "<strong>Kidneys 🫘</strong><br>There are two kidneys. They filter waste products and excess water from the blood to produce urine.",
+
+        tubes: "<strong>Urine Tubes 〰️</strong><br>These tubes carry urine from the kidneys toward the urinary bladder.",
+
+        bladder: "<strong>Urinary Bladder 🫙</strong><br>The urinary bladder temporarily stores urine before it is discharged out of the body."
+    };
+
+    info.innerHTML = details[part];
+    info.style.display = "block";
+}
+
+
+// CLEANING FACTORY GAME
+
+const gameSteps = [
+    {
+        question: "What happens first?",
+        options: [
+            "Urine leaves the body",
+            "Blood enters the kidneys",
+            "Urine is stored in the bladder"
+        ],
+        answer: 1
+    },
+    {
+        question: "What do the kidneys filter out?",
+        options: [
+            "Waste products and excess water",
+            "Oxygen only",
+            "Nutrients only"
+        ],
+        answer: 0
+    },
+    {
+        question: "What is produced after filtration?",
+        options: [
+            "Blood",
+            "Oxygen",
+            "Urine"
+        ],
+        answer: 2
+    },
+    {
+        question: "Where is urine temporarily stored?",
+        options: [
+            "Heart",
+            "Urinary bladder",
+            "Lungs"
+        ],
+        answer: 1
+    }
+];
+
+let gameIndex = 0;
+let gameScore = 0;
+let gameAnswered = false;
+
+function loadGame() {
+    gameAnswered = false;
+
+    const step = gameSteps[gameIndex];
+
+    document.getElementById("gameProgress").textContent =
+        "Step " + (gameIndex + 1) + " of 4";
+
+    document.getElementById("gameQuestion").textContent =
+        step.question;
+
+    document.getElementById("gameFeedback").textContent = "";
+
+    const area = document.getElementById("gameOptions");
+    area.innerHTML = "";
+
+    step.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.className = "game-option";
+        btn.textContent = option;
+        btn.onclick = () => answerGame(index);
+        area.appendChild(btn);
+    });
+}
+
+function answerGame(index) {
+    if (gameAnswered) return;
+
+    gameAnswered = true;
+
+    const correct = gameSteps[gameIndex].answer;
+    const buttons = document.querySelectorAll(".game-option");
+
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (index === correct) {
+        gameScore++;
+        document.getElementById("gameFeedback").textContent =
+            "✅ Correct! Great job!";
+        document.getElementById("gameFeedback").style.color = "green";
+    } else {
+        document.getElementById("gameFeedback").textContent =
+            "❌ Not quite! The correct answer is: " +
+            gameSteps[gameIndex].options[correct];
+        document.getElementById("gameFeedback").style.color = "red";
+    }
+
+    const next = document.createElement("button");
+    next.className = "red-btn";
+    next.textContent =
+        gameIndex === gameSteps.length - 1
+        ? "See My Score 🏆"
+        : "Next Step ➡️";
+
+    next.onclick = nextGameStep;
+
+    document.getElementById("gameOptions").appendChild(next);
+}
+
+function nextGameStep() {
+    gameIndex++;
+
+    if (gameIndex < gameSteps.length) {
+        loadGame();
+    } else {
+        document.getElementById("gameQuestion").textContent =
+            "🎉 Cleaning Factory Completed!";
+
+        document.getElementById("gameOptions").innerHTML = "";
+
+        document.getElementById("gameFeedback").textContent =
+            "Your score: " + gameScore + " / 4";
+
+        document.getElementById("gameProgress").textContent =
+            "Mission Completed!";
+    }
+}
+
+function restartGame() {
+    gameIndex = 0;
+    gameScore = 0;
+    loadGame();
+}
+
+loadGame();
+
+
+// QUICK CHALLENGE
+
+const quickQuestions = [
+    {
+        q: "How many kidneys do we have?",
+        options: ["One", "Two", "Four"],
+        answer: 1
+    },
+    {
+        q: "What do kidneys filter from the blood?",
+        options: [
+            "Waste products and excess water",
+            "Only oxygen",
+            "Only nutrients"
+        ],
+        answer: 0
+    },
+    {
+        q: "Where is urine stored temporarily?",
+        options: ["Heart", "Lungs", "Urinary bladder"],
+        answer: 2
+    }
+];
+
+let quickIndex = 0;
+let quickScore = 0;
+let quickAnswered = false;
+
+function loadQuick() {
+    quickAnswered = false;
+
+    document.getElementById("quickQuestion").textContent =
+        quickQuestions[quickIndex].q;
+
+    document.getElementById("quickFeedback").textContent = "";
+
+    const area = document.getElementById("quickAnswers");
+    area.innerHTML = "";
+
+    quickQuestions[quickIndex].options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.className = "blue-btn";
+        btn.style.display = "block";
+        btn.style.margin = "10px auto";
+        btn.style.width = "100%";
+        btn.style.maxWidth = "400px";
+        btn.textContent = option;
+        btn.onclick = () => answerQuick(index);
+        area.appendChild(btn);
+    });
+
+    document.getElementById("quickScore").textContent =
+        "Score: " + quickScore + " / 3";
+}
+
+function answerQuick(index) {
+    if (quickAnswered) return;
+    quickAnswered = true;
+
+    const correct = quickQuestions[quickIndex].answer;
+
+    if (index === correct) {
+        quickScore++;
+        document.getElementById("quickFeedback").textContent =
+            "✅ Excellent! Correct answer!";
+        document.getElementById("quickFeedback").style.color = "green";
+    } else {
+        document.getElementById("quickFeedback").textContent =
+            "❌ Correct answer: " +
+            quickQuestions[quickIndex].options[correct];
+        document.getElementById("quickFeedback").style.color = "red";
+    }
+
+    document.getElementById("quickScore").textContent =
+        "Score: " + quickScore + " / 3";
+
+    const next = document.createElement("button");
+    next.className = "red-btn";
+    next.textContent =
+        quickIndex === 2 ? "Finish Challenge 🏆" : "Next Question ➡️";
+    next.onclick = nextQuick;
+    document.getElementById("quickAnswers").appendChild(next);
+}
+
+function nextQuick() {
+    quickIndex++;
+
+    if (quickIndex < quickQuestions.length) {
+        loadQuick();
+    } else {
+        document.getElementById("quickQuestion").textContent =
+            "🎉 Challenge Completed!";
+
+        document.getElementById("quickAnswers").innerHTML = "";
+
+        document.getElementById("quickFeedback").textContent =
+            "You scored " + quickScore + " out of 3!";
+    }
+}
+
+function restartQuick() {
+    quickIndex = 0;
+    quickScore = 0;
+    loadQuick();
+}
+
+loadQuick();
+
+
+// FINAL LESSON QUIZ
+
+const quizQuestions = [
+    {
+        q: "What is the main function of the kidneys?",
+        options: [
+            "To pump blood",
+            "To filter waste products and excess water from blood",
+            "To digest food"
+        ],
+        answer: 1,
+        explanation: "The kidneys filter waste products and excess water from the blood."
+    },
+    {
+        q: "How many kidneys are there in the human body?",
+        options: ["One", "Two", "Three"],
+        answer: 1,
+        explanation: "There are two kidneys, one on each side of the backbone."
+    },
+    {
+        q: "What carries waste products to the kidneys?",
+        options: ["Blood", "Air", "Food"],
+        answer: 0,
+        explanation: "Waste products are carried to the kidneys by the blood."
+    },
+    {
+        q: "What is the liquid waste produced by the kidneys called?",
+        options: ["Saliva", "Urine", "Blood"],
+        answer: 1,
+        explanation: "The filtered waste products and excess water become urine."
+    },
+    {
+        q: "Where is urine temporarily stored?",
+        options: ["Stomach", "Lungs", "Urinary bladder"],
+        answer: 2,
+        explanation: "Urine is temporarily stored in the urinary bladder before leaving the body."
+    }
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+function loadQuiz() {
+    quizAnswered = false;
+
+    const q = quizQuestions[quizIndex];
+
+    document.getElementById("quizCounter").textContent =
+        "Question " + (quizIndex + 1) + " of " + quizQuestions.length;
+
+    document.getElementById("quizQuestion").textContent = q.q;
+
+    document.getElementById("quizFeedback").textContent = "";
+    document.getElementById("quizNext").style.display = "none";
+
+    const area = document.getElementById("quizAnswers");
+    area.innerHTML = "";
+
+    q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-answer";
+        btn.textContent = option;
+        btn.onclick = () => answerQuiz(index);
+        area.appendChild(btn);
+    });
+}
+
+function answerQuiz(index) {
+    if (quizAnswered) return;
+    quizAnswered = true;
+
+    const q = quizQuestions[quizIndex];
+    const buttons = document.querySelectorAll(".quiz-answer");
+
+    buttons.forEach((btn, i) => {
+        btn.disabled = true;
+
+        if (i === q.answer) {
+            btn.classList.add("correct");
+        }
+    });
+
+    if (index === q.answer) {
+        quizScore++;
+        document.getElementById("quizFeedback").textContent =
+            "✅ Correct! " + q.explanation;
+        document.getElementById("quizFeedback").style.color = "green";
+    } else {
+        buttons[index].classList.add("wrong");
+        document.getElementById("quizFeedback").textContent =
+            "❌ Not quite! " + q.explanation;
+        document.getElementById("quizFeedback").style.color = "red";
+    }
+
+    document.getElementById("quizNext").style.display = "inline-block";
+
+    document.getElementById("quizNext").textContent =
+        quizIndex === quizQuestions.length - 1
+        ? "Show My Result 🏆"
+        : "Next Question ➡️";
+}
+
+function nextQuizQuestion() {
+    if (!quizAnswered) return;
+
+    quizIndex++;
+
+    if (quizIndex < quizQuestions.length) {
+        loadQuiz();
+    } else {
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    document.getElementById("quizBox").style.display = "none";
+    document.getElementById("quizResult").style.display = "block";
+
+    const percentage = Math.round(
+        (quizScore / quizQuestions.length) * 100
+    );
+
+    const studentName = localStorage.getItem("studentName");
+
+    document.getElementById("quizResultName").textContent =
+        studentName
+        ? "Well done, " + studentName + "!"
+        : "Well done, Science Explorer!";
+
+    document.getElementById("quizFinalScore").textContent =
+        quizScore + " / " + quizQuestions.length;
+
+    let message = "";
+
+    if (quizScore === 5) {
+        message = "🌟 Perfect! You are a Kidney Expert!";
+    } else if (quizScore >= 4) {
+        message = "👏 Excellent work! Keep it up!";
+    } else if (quizScore >= 3) {
+        message = "👍 Good job! Review the lesson and try again.";
+    } else {
+        message = "💪 Keep practicing! You can do better!";
+    }
+
+    document.getElementById("quizMessage").textContent =
+        message + " Your result is " + percentage + "%.";
+
+    localStorage.setItem("lesson42Score", quizScore);
+    localStorage.setItem("lesson42Percentage", percentage);
+}
+
+function restartQuiz() {
+    quizIndex = 0;
+    quizScore = 0;
+    quizAnswered = false;
+
+    document.getElementById("quizBox").style.display = "block";
+    document.getElementById("quizResult").style.display = "none";
+
+    loadQuiz();
+}
+
+loadQuiz();
+
+</script>
+
+</body>
+</html>

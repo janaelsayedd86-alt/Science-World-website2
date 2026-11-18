@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science World</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.welcome-page {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.welcome-card {
+    background: white;
+    max-width: 650px;
+    width: 100%;
+    padding: 40px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px #0002;
+}
+
+.brainy {
+    font-size: 85px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% { transform: translateY(-12px); }
+}
+
+.welcome-card h2 {
+    color: #2563eb;
+    font-size: 30px;
+}
+
+.welcome-card p {
+    font-size: 18px;
+}
+
+.welcome-card input {
+    width: 85%;
+    padding: 15px;
+    border: 2px solid #93c5fd;
+    border-radius: 12px;
+    font-size: 18px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.welcome-card button {
+    display: block;
+    margin: 15px auto;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 15px;
+    background: #2563eb;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.welcome-card button:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Science World</h1>
+</header>
+
+<main class="welcome-page">
+    <section class="welcome-card">
+
+        <div class="brainy">🤖</div>
+
+        <h2>Welcome, Science Explorer!</h2>
+
+        <p>
+            Hello! I am Brainy.
+            Let's discover the amazing world of science together!
+        </p>
+
+        <h3>What is your name?</h3>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your name here..."
+        >
+
+        <button onclick="startAdventure()">
+            Start Adventure 🚀
+        </button>
+
+        <p id="message" style="color:red;"></p>
+
+    </section>
+</main>
+
+<footer>
+    <p>🌍 Science World - Explore and Discover!</p>
+</footer>
+
+<script>
+function startAdventure() {
+
+    const name = document.getElementById("studentName").value.trim();
+
+    if (name === "") {
+        document.getElementById("message").textContent =
+            "Please enter your name first! 😊";
+        return;
+    }
+
+    localStorage.setItem("studentName", name);
+
+    window.location.href = "units.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 - Conditions for Burning</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .lesson-area {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 25px;
+            border-radius: 22px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px #00000012;
+        }
+
+        .lesson-card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .lesson-card p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .science-box {
+            background: #eff6ff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .experiment-options {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .experiment-options button,
+        .quiz-option,
+        .main-btn {
+            border: none;
+            padding: 13px 20px;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .experiment-options button:hover,
+        .main-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .experiment-result {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 15px;
+            min-height: 70px;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .quiz-question {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 15px;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            text-align: left;
+            background: #64748b;
+        }
+
+        .quiz-option:hover {
+            background: #475569;
+        }
+
+        .quiz-feedback {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .correct {
+            color: #15803d;
+        }
+
+        .wrong {
+            color: #dc2626;
+        }
+
+        .brainy-tip {
+            background: #f3e8ff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .lesson-nav {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 25px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Science World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="unit1.html">Unit One</a>
+    </nav>
+</header>
+
+<section class="lesson-hero">
+    <h1>🔥 Conditions for Burning</h1>
+    <p>Let's discover the secret behind fire!</p>
+    <div class="lesson-brainy">🧠 Brainy says: Let's explore together!</div>
+    <button class="main-btn" onclick="startLesson()"><button onclick="window.location.href='lessons.html'">
+    Start Learning 🚀
+</button>
+</button>
+</section>
+
+<main class="lesson-area" id="lesson-content">
+
+    <!-- PART 1 -->
+    <section class="lesson-card">
+        <h2>📘 Part 1: Air Passages and Burning</h2>
+
+        <p>
+            For things to keep burning, fresh air must constantly
+            flow in and out.
+        </p>
+
+        <div class="science-box">
+            <h3>🕯️ What happens to a candle inside a jar?</h3>
+
+            <p>
+                <strong>Without a lid:</strong>
+                Fresh air comes from the surroundings, so the candle
+                keeps burning.
+            </p>
+
+            <p>
+                <strong>With a lid:</strong>
+                When the air inside the jar is used up,
+                the flame goes out.
+            </p>
+        </div>
+    </section>
+
+    <!-- VIRTUAL EXPERIMENT -->
+    <section class="lesson-card">
+        <h2>🧪 Virtual Experiment</h2>
+
+        <p>
+            Choose what happens to the candle!
+        </p>
+
+        <div class="experiment-options">
+            <button onclick="showExperiment(1)">Open Jar</button>
+            <button onclick="showExperiment(2)">Jar with Lid</button>
+            <button onclick="showExperiment(3)">Air Gaps</button>
+        </div>
+
+        <div class="experiment-result" id="experiment-result">
+            👆 Choose an experiment to discover the result!
+        </div>
+
+        <div class="brainy-tip">
+            🧠 <strong>Brainy asks:</strong>
+            Why does a candle go out when the jar is covered?
+        </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="lesson-card">
+        <h2>📗 Part 2: The Role of Oxygen</h2>
+
+        <p>
+            Air is a mixture of gases, including nitrogen,
+            oxygen, and carbon dioxide.
+        </p>
+
+        <div class="science-box">
+            <h3>🌬️ Which gas helps things burn?</h3>
+
+            <p>🟢 Oxygen helps things burn.</p>
+            <p>🔵 Nitrogen does not help things burn.</p>
+            <p>🔵 Carbon dioxide does not help things burn.</p>
+        </div>
+
+        <p>
+            Oxygen is the gas in air that helps things burn.
+        </p>
+    </section>
+
+    <!-- GAS ACTIVITY -->
+    <section class="lesson-card">
+        <h2>🎮 Guess the Gas!</h2>
+
+        <p>
+            What happens when a burning candle is placed inside
+            a jar containing different gases?
+        </p>
+
+        <div class="experiment-options">
+            <button onclick="showGas('oxygen')">Oxygen</button>
+            <button onclick="showGas('nitrogen')">Nitrogen</button>
+            <button onclick="showGas('carbon')">Carbon Dioxide</button>
+        </div>
+
+        <div class="experiment-result" id="gas-result">
+            Choose a gas to see what happens!
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="lesson-card">
+        <h2>🏆 Brainy's Quiz</h2>
+        <p>Answer the questions and test your knowledge!</p>
+
+        <div class="quiz-question">
+            <h3>Question 1</h3>
+            <p>What does a candle need to keep burning?</p>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                A. Water
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,true)">
+                B. Fresh air
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                C. Darkness
+            </button>
+
+            <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 2</h3>
+            <p>Which gas helps things burn?</p>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                A. Nitrogen
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,true)">
+                B. Oxygen
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                C. Carbon dioxide
+            </button>
+
+            <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 3</h3>
+            <p>What happens when a candle is covered with a lid?</p>
+
+            <button class="quiz-option" onclick="checkAnswer(this,true)">
+                A. The flame goes out
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                B. The flame becomes bigger
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                C. Nothing happens
+            </button>
+
+            <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 4</h3>
+            <p>Which gas does NOT help things burn?</p>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                A. Oxygen
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,true)">
+                B. Nitrogen
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                C. Oxygen in fresh air
+            </button>
+
+            <div class="quiz-feedback"></div>
+        </div>
+
+        <div class="quiz-question">
+            <h3>Question 5</h3>
+            <p>What happens to a candle in a jar with oxygen?</p>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                A. It goes out immediately
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,true)">
+                B. It burns brightly
+            </button>
+
+            <button class="quiz-option" onclick="checkAnswer(this,false)">
+                C. It becomes cold
+            </button>
+
+            <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="main-btn" onclick="showScore()">Show My Score 🏅</button>
+
+        <div class="experiment-result" id="score-result">
+            Your score will appear here!
+        </div>
+    </section>
+
+    <div class="lesson-nav">
+        <button class="main-btn" onclick="window.location.href='unit1.html'">
+            ⬅ Back to Unit One
+        </button>
+
+        <button class="main-btn" onclick="window.location.href='lesson2.html'">
+            Next Lesson ➡
+        </button>
+    </div>
+
+</main>
+
+<footer>
+    <p>🌍 Science World - Explore and Discover!</p>
+</footer>
+
+<script>
+    function startLesson() {
+        document.getElementById("lesson-content").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    function showExperiment(choice) {
+        const result = document.getElementById("experiment-result");
+
+        if (choice === 1) {
+            result.innerHTML =
+                "🕯️ The candle keeps burning because fresh air is supplied.";
+        }
+
+        if (choice === 2) {
+            result.innerHTML =
+                "❌ The flame goes out when the air inside the jar is used up.";
+        }
+
+        if (choice === 3) {
+            result.innerHTML =
+                "🔥 The candle keeps burning because fresh air can flow in and out.";
+        }
+    }
+
+    function showGas(gas) {
+        const result = document.getElementById("gas-result");
+
+        if (gas === "oxygen") {
+            result.innerHTML =
+                "🔥 The candle burns brightly in oxygen!";
+        }
+
+        if (gas === "nitrogen") {
+            result.innerHTML =
+                "❌ The flame goes out in nitrogen.";
+        }
+
+        if (gas === "carbon") {
+            result.innerHTML =
+                "❌ The flame goes out in carbon dioxide.";
+        }
+    }
+
+    let score = 0;
+    let answered = 0;
+
+    function checkAnswer(button, correct) {
+        const question = button.closest(".quiz-question");
+        const feedback = question.querySelector(".quiz-feedback");
+        const options = question.querySelectorAll(".quiz-option");
+
+        if (question.dataset.answered === "true") {
+            return;
+        }
+
+        question.dataset.answered = "true";
+        answered++;
+
+        options.forEach(option => {
+            option.disabled = true;
+        });
+
+        if (correct) {
+            score++;
+            feedback.innerHTML = "🎉 Correct! Great job!";
+            feedback.className = "quiz-feedback correct";
+        } else {
+            feedback.innerHTML = "❌ Try to remember the lesson!";
+            feedback.className = "quiz-feedback wrong";
+        }
+    }
+
+    function showScore() {
+        const result = document.getElementById("score-result");
+
+        if (answered === 0) {
+            result.innerHTML = "Answer the questions first! 😊";
+            return;
+        }
+
+        result.innerHTML =
+            "🏆 Your Score: " + score + " / 5";
+
+        if (score === 5) {
+            result.innerHTML += " 🌟 Amazing! You are a Science Genius!";
+        } else if (score >= 3) {
+            result.innerHTML += " 👏 Great work! Keep learning!";
+        } else {
+            result.innerHTML += " 💪 Review the lesson and try again!";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Three Final Quiz | Science World</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff7ed, #f3e8ff);
+    color: #392b50;
+}
+
+header {
+    background: linear-gradient(135deg, #6c3fa0, #9b5de5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,.18);
+    padding: 9px 15px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,.32);
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 35px auto;
+}
+
+.intro, .quiz-box, .result-box {
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(70,40,100,.10);
+    margin-bottom: 25px;
+}
+
+.intro {
+    text-align: center;
+    border-top: 6px solid #f4a261;
+}
+
+.brainy {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    color: #7541a5;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #684c83;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.progress-bg {
+    width: 100%;
+    height: 13px;
+    background: #eee5f7;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #9b5de5, #f4a261);
+    transition: width .3s;
+}
+
+.question-number {
+    color: #a05acb;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.question {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #392b50;
+    margin-bottom: 20px;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    border: 2px solid #e8dcf3;
+    background: #fffaff;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    color: #392b50;
+    transition: .2s;
+}
+
+.answer:hover:not(:disabled) {
+    border-color: #9b5de5;
+    background: #f7efff;
+}
+
+.answer:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.answer.correct {
+    background: #e4f8e9;
+    border-color: #39a65a;
+    color: #176b32;
+}
+
+.answer.wrong {
+    background: #fff0ed;
+    border-color: #e76f51;
+    color: #a83220;
+}
+
+.feedback {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.feedback.correct-feedback {
+    display: block;
+    background: #eaf8ed;
+    color: #176b32;
+}
+
+.feedback.wrong-feedback {
+    display: block;
+    background: #fff1ed;
+    color: #a83220;
+}
+
+.main-btn {
+    display: inline-block;
+    border: none;
+    background: linear-gradient(135deg, #7541a5, #a45de0);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.main-btn:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+}
+
+#nextBtn {
+    display: none;
+}
+
+.result-box {
+    display: none;
+    text-align: center;
+}
+
+.result-box h2 {
+    color: #7541a5;
+}
+
+.result-score {
+    font-size: 42px;
+    font-weight: bold;
+    color: #e58b32;
+    margin: 20px;
+}
+
+.result-message {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.result-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer {
+    background: #68408d;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    .intro, .quiz-box, .result-box {
+        padding: 20px;
+    }
+
+    .question {
+        font-size: 19px;
+    }
+
+    .answer {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌍 Science World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="units.html">All Units</a>
+        <a href="unit3.html">Unit Three</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="intro">
+        <div class="brainy">🤖</div>
+        <h2>Unit Three Final Challenge!</h2>
+        <p id="welcomeText">
+            Hello, Science Explorer! Are you ready to test your knowledge
+            about Digestion?
+        </p>
+        <p>
+            Answer 10 questions about the three lessons.
+            Each correct answer gives you one point!
+        </p>
+        <strong>10 Questions | 10 Points 🏆</strong>
+    </section>
+
+    <section class="quiz-box" id="quizBox">
+
+        <div class="info">
+            <span id="questionCounter">Question 1 of 10</span>
+            <span id="scoreDisplay">Score: 0</span>
+        </div>
+
+        <div class="progress-bg">
+            <div class="progress" id="progressBar"></div>
+        </div>
+
+        <div class="question-number" id="questionLabel">Question 1</div>
+        <div class="question" id="questionText"></div>
+
+        <div class="answers" id="answersArea"></div>
+
+        <div class="feedback" id="feedback"></div>
+
+        <button class="main-btn" id="nextBtn" onclick="nextQuestion()">
+            Next Question ➜
+        </button>
+
+    </section>
+
+    <section class="result-box" id="resultBox">
+        <div class="brainy">🏆</div>
+        <h2>Quiz Completed!</h2>
+        <p id="studentResult"></p>
+        <div class="result-score" id="finalScore"></div>
+        <p class="result-message" id="resultMessage"></p>
+
+        <div class="result-links">
+            <button class="main-btn" onclick="restartQuiz()">
+                Try Again 🔄
+            </button>
+            <button class="main-btn" onclick="location.href='unit3.html'">
+                Back to Unit Three
+            </button>
+            <button class="main-btn" onclick="location.href='units.html'">
+                All Units
+            </button>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>Science World | Keep Learning, Keep Discovering! 🌟</p>
+</footer>
+
+<script>
+const questions = [
+    {
+        question: "What is digestion?",
+        answers: [
+            "Changing food into a form that is easy to absorb",
+            "Moving air into the lungs",
+            "Changing water into blood",
+            "Removing oxygen from the body"
+        ],
+        correct: 0,
+        explanation: "Digestion is breaking down food and changing it into a form that is easy for the body to absorb."
+    },
+    {
+        question: "Which is the correct order of the digestive tract?",
+        answers: [
+            "Mouth → Stomach → Pharynx → Esophagus",
+            "Mouth → Pharynx → Esophagus → Stomach → Small intestine → Large intestine",
+            "Mouth → Esophagus → Large intestine → Stomach",
+            "Mouth → Small intestine → Stomach → Pharynx"
+        ],
+        correct: 1,
+        explanation: "Food passes through the mouth, pharynx, esophagus, stomach, small intestine, and large intestine, then leaves through the anus."
+    },
+    {
+        question: "What is the path of food from the mouth to the anus called?",
+        answers: [
+            "Respiratory system",
+            "Blood circulation",
+            "Digestive tract (canal)",
+            "Nervous system"
+        ],
+        correct: 2,
+        explanation: "The path of food from the mouth to the anus is called the digestive tract or digestive canal."
+    },
+    {
+        question: "What is the function of saliva?",
+        answers: [
+            "It breaks down starch in food",
+            "It carries oxygen",
+            "It absorbs nutrients into blood",
+            "It stores nutrients"
+        ],
+        correct: 0,
+        explanation: "Saliva breaks down starch in foods such as rice and bread into another substance that is easier for the body to digest."
+    },
+    {
+        question: "What is a liquid that helps digest food, like saliva, called?",
+        answers: [
+            "Blood vessel",
+            "Digestive juice",
+            "Villi",
+            "Feces"
+        ],
+        correct: 1,
+        explanation: "A liquid that has the function of digesting food, like saliva, is called a digestive juice."
+    },
+    {
+        question: "In the saliva experiment, what happens to starch mixed with water when iodine is added?",
+        answers: [
+            "It turns dark blue",
+            "It becomes clear",
+            "It turns green",
+            "It disappears immediately"
+        ],
+        correct: 0,
+        explanation: "The starch and water tube turns dark blue when iodine is added because the starch is still present."
+    },
+    {
+        question: "Where are nutrients from digested food mainly absorbed?",
+        answers: [
+            "Stomach",
+            "Esophagus",
+            "Small intestine",
+            "Mouth"
+        ],
+        correct: 2,
+        explanation: "Nutrients from digested food are mainly absorbed in the small intestine along with water."
+    },
+    {
+        question: "What are the small bumps on the inside of the small intestine called?",
+        answers: [
+            "Alveoli",
+            "Villi",
+            "Bronchi",
+            "Muscles"
+        ],
+        correct: 1,
+        explanation: "Villi are small bumps lining the inside of the small intestine. They increase its inner surface area."
+    },
+    {
+        question: "What carries the absorbed nutrients to the whole body?",
+        answers: [
+            "Nerves",
+            "Muscles",
+            "Blood",
+            "Air"
+        ],
+        correct: 2,
+        explanation: "Nutrients absorbed in the small intestine are carried to the whole body by the blood, passing through the liver."
+    },
+    {
+        question: "Which organ stores some nutrients and sends them to the whole body when needed?",
+        answers: [
+            "Liver",
+            "Lungs",
+            "Esophagus",
+            "Large intestine"
+        ],
+        correct: 0,
+        explanation: "The liver stores some nutrients and sends them out to the whole body when needed."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+const questionText = document.getElementById("questionText");
+const answersArea = document.getElementById("answersArea");
+const feedback = document.getElementById("feedback");
+const nextBtn = document.getElementById("nextBtn");
+
+const studentName = localStorage.getItem("studentName");
+
+if (studentName) {
+    document.getElementById("welcomeText").textContent =
+        "Hello, " + studentName + "! Are you ready to test your knowledge about Digestion?";
+}
+
+function loadQuestion() {
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionCounter").textContent =
+        "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+    document.getElementById("questionLabel").textContent =
+        "Question " + (currentQuestion + 1);
+
+    document.getElementById("scoreDisplay").textContent =
+        "Score: " + score;
+
+    document.getElementById("progressBar").style.width =
+        (currentQuestion / questions.length * 100) + "%";
+
+    questionText.textContent = q.question;
+    answersArea.innerHTML = "";
+    feedback.className = "feedback";
+    feedback.textContent = "";
+    nextBtn.style.display = "none";
+
+    q.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.textContent = String.fromCharCode(65 + index) + ". " + answer;
+        button.onclick = () => checkAnswer(index, button);
+        answersArea.appendChild(button);
+    });
+}
+
+function checkAnswer(selected, selectedButton) {
+    if (answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+    const buttons = answersArea.querySelectorAll(".answer");
+
+    buttons.forEach((button, index) => {
+        button.disabled = true;
+
+        if (index === q.correct) {
+            button.classList.add("correct");
+        }
+    });
+
+    if (selected === q.correct) {
+        score++;
+        selectedButton.classList.add("correct");
+        feedback.className = "feedback correct-feedback";
+        feedback.innerHTML = "✅ <strong>Excellent!</strong> " + q.explanation;
+    } else {
+        selectedButton.classList.add("wrong");
+        feedback.className = "feedback wrong-feedback";
+        feedback.innerHTML = "❌ <strong>Not quite!</strong> " + q.explanation;
+    }
+
+    document.getElementById("scoreDisplay").textContent =
+        "Score: " + score;
+
+    nextBtn.style.display = "inline-block";
+    nextBtn.textContent =
+        currentQuestion === questions.length - 1
+        ? "Show My Result 🏆"
+        : "Next Question ➜";
+}
+
+function nextQuestion() {
+    if (!answered) return;
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    document.getElementById("quizBox").style.display = "none";
+    document.getElementById("resultBox").style.display = "block";
+
+    const percentage = Math.round((score / questions.length) * 100);
+
+    document.getElementById("progressBar").style.width = "100%";
+    document.getElementById("studentResult").textContent =
+        studentName
+        ? "Well done, " + studentName + "!"
+        : "Well done, Science Explorer!";
+
+    document.getElementById("finalScore").textContent =
+        score + " / " + questions.length;
+
+    let message = "";
+
+    if (score >= 9) {
+        message = "🌟 Amazing! You are a Digestion Expert!";
+    } else if (score >= 7) {
+        message = "👏 Great job! You understand most of the lessons.";
+    } else if (score >= 5) {
+        message = "👍 Good effort! Review the lessons and try again.";
+    } else {
+        message = "💪 Keep practicing! You can do better next time.";
+    }
+
+    document.getElementById("resultMessage").textContent =
+        message + " Your result is " + percentage + "%.";
+
+    localStorage.setItem("unit3Score", score);
+    localStorage.setItem("unit3Percentage", percentage);
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+
+    document.getElementById("quizBox").style.display = "block";
+    document.getElementById("resultBox").style.display = "none";
+
+    loadQuestion();
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
